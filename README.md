@@ -1,2 +1,2 @@
-# JohnDDuncanIII.github.io
- Repository that holds my weather program and personal website files
+# Website
+Repository that holds my weather program and personal website files

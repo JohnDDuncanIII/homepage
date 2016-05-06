@@ -1,0 +1,13 @@
+# Ignore everything
+/*
+/*/
+
+
+
+# But not these files...
+!.gitignore
+!index.html
+!/assets/
+
+# ...even if they are in subdirectories
+# !*/
