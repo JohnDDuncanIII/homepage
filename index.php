@@ -118,6 +118,12 @@
     <link rel="stylesheet" type="text/css" href="assets/no_aa.css" charset="utf-8">
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="assets/weather.js"></script>
+    <script>
+      function readfile() {
+      var text = document.createTextNode(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);
+      document.getElementById('footer-text').appendChild(text);
+      }
+    </script>
     <script language="JavaScript">
 
       <!-- Beginning of JavaScript Applet -------------------
@@ -274,11 +280,16 @@
     </div>
     -->
 
-<div class="footer-text">
+<?php 
+include("counter.php"); 
+?>
+
+<div id="footer-text" class="footer-text">
   <hr class="style0">
   <a href="http://www.gettysburg.edu/"> <img src="assets/old_seal_trans.png" height="48" width="48" align="right" title="alma mater">
     <a href="assets/about.html">about</a> <BR>
-    © 2016 John D. Duncan, III <duncanjdiii@gmail.com> 
+    © 2016 John D. Duncan, III <duncanjdiii@gmail.com> <BR>
+       <iframe id="iframe" src="countlog.txt" onload='readfile()' style='display:none'></iframe> 
 </div>
 
   </body>

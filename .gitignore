@@ -6,7 +6,8 @@
 
 # But not these files...
 !.gitignore
-!index.html
+!index.php
+!counter.php
 !/assets/
 
 # ...even if they are in subdirectories
