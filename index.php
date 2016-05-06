@@ -120,7 +120,7 @@
     <script type="text/javascript" src="assets/weather.js"></script>
     <script>
       function readfile() {
-      var text = document.createTextNode(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);
+      var text = document.createTextNode("Hits: " + document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);
       document.getElementById('footer-text').appendChild(text);
       }
     </script>
