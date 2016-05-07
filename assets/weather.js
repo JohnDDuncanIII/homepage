@@ -54,6 +54,17 @@ map["Slight Chance Rain"] = "mayberainy";
 map["Severe Thunderstorms"] = "heavystormy";
 map[" Light Rain and Windy"] = "rainywindy";
 map["Cloudy"] = "cloudy";
+map["Slight Chance T-storms and Windy"] = "maybestormywindy";
+map["Increasing Clouds"] = "cloudy";
+map["Slight Chance T-storms and Patchy Fog"] = "maybestormyfoggy";
+map["Showers Likely and Areas Fog"] = "rainyfoggy";
+map["Areas Fog"] = "foggy";
+map["Chance Showers and Areas Fog"] = "mayberainyfoggy";
+map["T-storms"] = "stormy";
+map[" Thunderstorm Smoke"] = "smokey";
+map["Slight Chance T-storms and Breezy"] = "maybestormywindy";
+map["Chance T-storms and Windy"] = "maybestormywindy";
+map[" Smoke"] = "smokey";
 map[""] = true;
 map["NA"] = true;
 
@@ -142,8 +153,7 @@ function weather() {
     //toAdd.className = "img-with-text-weather";
     toAdd.setAttribute('src', "assets/weather/day/today/face.gif");
     weatherBox.appendChild(toAdd);
-    var br = document.createElement("br");
-    weatherBox.appendChild(br);
+
 
     // this requests the file and executes a 
     //    callback with the parsed result once it is available
@@ -162,6 +172,7 @@ function weather() {
 		      var j = 0;
 		      var afternoon = false;
 		      var today = false;
+		      var tonight = true;
 
 		      if(data.time.startPeriodName[0]=="This Afternoon") {
 			  helper(tempArray[j], precipArray[j], forecastArray[j], afternoon, text[j]);
@@ -174,19 +185,64 @@ function weather() {
 			  helper(tempArray[j], precipArray[j], forecastArray[j], today, text[j]);
 			  j++;
 		      }
-
-		      // add "Tonight" image
+		     
+		      if(data.time.startPeriodName[0]=="Tonight") {
+			  // add "Tonight" image
+			  var toAdd = document.createElement("img");
+			  toAdd.setAttribute('id', "day");
+			  //toAdd.className = "img-with-text-weather";
+			  toAdd.setAttribute('src', "assets/weather/day/tonight/face.gif");
+			  weatherBox.appendChild(toAdd);
+			  var br = document.createElement("br");
+			  weatherBox.appendChild(br);
+			  
+			  tonight = true;
+			  helper(tempArray[j], precipArray[j], forecastArray[j], false, text[j]);
+			  j++; 
+		      } else if(data.time.startPeriodName[1]=="Tonight") {
+			  // add "Tonight" image
+			  var toAdd = document.createElement("img");
+			  toAdd.setAttribute('id', "day");
+			  //toAdd.className = "img-with-text-weather";
+			  toAdd.setAttribute('src', "assets/weather/day/tonight/face.gif");
+			  weatherBox.appendChild(toAdd);
+			  var br = document.createElement("br");
+			  weatherBox.appendChild(br);
+			  
+			  tonight = true;
+			  helper(tempArray[j], precipArray[j], forecastArray[j], false, text[j]);
+			  j++; 
+		      }
+		      /*// dd "Tonight" image
 		      var toAdd = document.createElement("img");
 		      toAdd.setAttribute('id', "day");
 		      //toAdd.className = "img-with-text-weather";
 		      toAdd.setAttribute('src', "assets/weather/day/tonight/face.gif");
 		      weatherBox.appendChild(toAdd);
 		      var br = document.createElement("br");
-		      weatherBox.appendChild(br);
-		      showDate = false;
+		      weatherBox.appendChild(br);*/
+
+		      
 		      
 		      for(j; j < tempArray.length; j++) {
+			  if(j==1 && tonight || (j==2 && tonight) && afternoon) {
+			      var toAdd = document.createElement("hr");
+			      toAdd.className = "style0";
+			      weatherBox.appendChild(toAdd);
+
+			      var toAdd = document.createElement("div");
+			      toAdd.innerHTML = '(this space left blank)';
+			      toAdd.setAttribute("style", 'visibility: hidden;');
+			      weatherBox.appendChild(toAdd);
+			      counter++;
+			      if(counter==weekday.length) { counter =0;}
+			      n = weekday[counter];
+			  }
+			
 			  helper(tempArray[j], precipArray[j], forecastArray[j], showDate, text[j]);
+			  
+			 
+			  
 			  if(j==1 && (afternoon||today)) {
 			      var toAdd = document.createElement("hr");
 			      toAdd.className = "style0";
@@ -207,6 +263,7 @@ function weather() {
 			      weatherBox.appendChild(toAdd);
 			  }
 			  
+			  
 			  if(afternoon || today) {
 			      if(j%2!=0) {
 				  if(j >= 1) {
@@ -216,13 +273,16 @@ function weather() {
 				      var toAdd = document.createElement("hr");
 				      toAdd.className = "style0";
 				      weatherBox.appendChild(toAdd);
+				      var br = document.createElement("br");
+				      weatherBox.appendChild(br);
 				  }
 				  
 				  showDate = true;
 			      } else {
 				  showDate = false;
 			      }
-			  } else {
+			  } 
+			  else {
 			      if(j%2==0) {
 				  if(j >= 2) {
 				      counter++;
@@ -231,6 +291,8 @@ function weather() {
 				      var toAdd = document.createElement("hr");
 				      toAdd.className = "style0";
 				      weatherBox.appendChild(toAdd);
+				      var br = document.createElement("br");
+				      weatherBox.appendChild(br);
 				  }
 				  
 				  showDate = true;
@@ -285,7 +347,7 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	var toAdd = document.createElement("img");
 	toAdd.setAttribute('id', "temp"+i);
 	toAdd.className = "img-with-text-weather-letter";
-	if(curTemp == "M" || curTemp =="") {
+	if(curTemp == "M" || curTemp =="" || curTemp ==null) {
 	    toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
 	} else {
 	    toAdd.setAttribute('src', 'assets/weather/nums/'+curTemp.charAt(i)+'.gif');
@@ -310,8 +372,9 @@ function helper(curTemp, precip, forecast, showDate, text) {
 
 
 
-    if(curTemp != "M" || curTemp != "") {
+    if(curTemp != 'M' && curTemp != "" && curTemp != null) {
 	weatherPath = curTemp;
+	//alert(curTemp);
 	while(weatherPath%5 != 0) { weatherPath--; } // decrement the value to a valid picon therm
 	if(weatherPath<100 && weatherPath>0) {
 	    weatherPath = "p0" + weatherPath;
@@ -328,8 +391,11 @@ function helper(curTemp, precip, forecast, showDate, text) {
     var toAdd = document.createElement("img");
     toAdd.setAttribute('id', "therm");
     toAdd.className = "img-with-text-weather-block";
-    toAdd.setAttribute('src', "assets/weather/temp2/" + weatherPath + "/face.gif");
-
+    	if(curTemp == "M" || curTemp =="" || curTemp ==null) {
+	    toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+	} else {
+	    toAdd.setAttribute('src', "assets/weather/temp2/" + weatherPath + "/face.gif");
+	}
     if(firstRun) {
 	//document.querySelectorAll("link[rel*='icon'")[0].href = 'assets/weather/temp/' + weatherPath + '/face.gif';
 	var link = document.createElement('link');
@@ -372,9 +438,9 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	    var precipBox =  document.createElement("div");
 	    precipBox.className = "img-with-text-weather-table";
 	    precipBox.setAttribute('id', "precipBox");
-	    precipBox.setAttribute('style',"display: inline-block;");
+	    precipBox.setAttribute('style',"display: inline-block; padding-top:5px;");
 
-	    for(var i = 0; i < curTemp.length; i++) {
+	    for(var i = 0; i < precip.length; i++) {
 		var toAdd = document.createElement("img");
 		toAdd.setAttribute('id', "precip"+i);
 		toAdd.className = "img-with-text-weather-letter";
@@ -431,9 +497,9 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	    var precipBox =  document.createElement("div");
 	    precipBox.className = "img-with-text-weather-table";
 	    precipBox.setAttribute('id', "precipBox");
-	    precipBox.setAttribute('style',"display: inline-block;");
+	    precipBox.setAttribute('style',"display: inline-block; padding-top:5px;");
 
-	    for(var i = 0; i < curTemp.length; i++) {
+	    for(var i = 0; i < precip.length; i++) {
 		var toAdd = document.createElement("img");
 		toAdd.setAttribute('id', "precip"+i);
 		toAdd.className = "img-with-text-weather-letter";
