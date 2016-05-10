@@ -65,6 +65,7 @@ map[" Thunderstorm Smoke"] = "smokey";
 map["Slight Chance T-storms and Breezy"] = "maybestormywindy";
 map["Chance T-storms and Windy"] = "maybestormywindy";
 map[" Smoke"] = "smokey";
+map["Patchy Smoke"] = "smokey";
 map[""] = true;
 map["NA"] = true;
 
