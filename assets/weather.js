@@ -66,6 +66,7 @@ map["Slight Chance T-storms and Breezy"] = "maybestormywindy";
 map["Chance T-storms and Windy"] = "maybestormywindy";
 map[" Smoke"] = "smokey";
 map["Patchy Smoke"] = "smokey";
+map["Areas Drizzle"] = "drizzly";
 map[""] = true;
 map["NA"] = true;
 
@@ -83,14 +84,11 @@ weekday[6] = "sat";
 var n = weekday[d.getDay()]; // get picon val of current day
 var hasShownMoon = false;
 var firstRun = true;
-//var LATITUDE=39.83092929999999;
-//var LONGITUDE=-77.23109549999998;
 var LATITUDE = 0.0;
 var LONGITUDE = 0.0;
 var geocoder = new google.maps.Geocoder();
 var address = "Truth or Consequences";
 var loc = location.toString();
-
 var tLat = window.localStorage.getItem("latitude");
 var tLong = window.localStorage.getItem("longitude");
 
@@ -106,7 +104,6 @@ function computeLocation() {
 	} 
      });
 }
-
 
 // fetches the json file from weather.gov
 function fetchJSONFile(path, callback) {
@@ -125,7 +122,7 @@ function fetchJSONFile(path, callback) {
 
 function weather() {
     var weatherBox = document.getElementById("weatherBox");
- 
+
     var toAdd = document.createElement("hr");
     toAdd.className = "style0";
     weatherBox.appendChild(toAdd);
@@ -136,7 +133,6 @@ function weather() {
 	buttonnode.setAttribute('type','button');
 	buttonnode.setAttribute('name','geolocation');
 	buttonnode.setAttribute('value','Reset Geolocation Coordinates');
-	//buttonnode.attachEvent('OnClick',alert("Hi"));
 	buttonnode.addEventListener("click", function(){
 	    window.localStorage.removeItem("latitude");
 	    window.localStorage.removeItem("longitude");
@@ -154,7 +150,6 @@ function weather() {
     //toAdd.className = "img-with-text-weather";
     toAdd.setAttribute('src', "assets/weather/day/today/face.gif");
     weatherBox.appendChild(toAdd);
-
 
     // this requests the file and executes a 
     //    callback with the parsed result once it is available
@@ -181,26 +176,15 @@ function weather() {
 			  afternoon = true;
 			  
 		      }
+
 		      if(data.time.startPeriodName[0]=="Today") {
 			  today = true;
 			  helper(tempArray[j], precipArray[j], forecastArray[j], today, text[j]);
 			  j++;
 		      }
 		     
-		      if(data.time.startPeriodName[0]=="Tonight") {
-			  // add "Tonight" image
-			  var toAdd = document.createElement("img");
-			  toAdd.setAttribute('id', "day");
-			  //toAdd.className = "img-with-text-weather";
-			  toAdd.setAttribute('src', "assets/weather/day/tonight/face.gif");
-			  weatherBox.appendChild(toAdd);
-			  var br = document.createElement("br");
-			  weatherBox.appendChild(br);
-			  
-			  tonight = true;
-			  helper(tempArray[j], precipArray[j], forecastArray[j], false, text[j]);
-			  j++; 
-		      } else if(data.time.startPeriodName[1]=="Tonight") {
+		      if(data.time.startPeriodName[0]=="Tonight" ||
+			data.time.startPeriodName[1]=="Tonight") {
 			  // add "Tonight" image
 			  var toAdd = document.createElement("img");
 			  toAdd.setAttribute('id', "day");
@@ -214,19 +198,9 @@ function weather() {
 			  helper(tempArray[j], precipArray[j], forecastArray[j], false, text[j]);
 			  j++; 
 		      }
-		      /*// dd "Tonight" image
-		      var toAdd = document.createElement("img");
-		      toAdd.setAttribute('id', "day");
-		      //toAdd.className = "img-with-text-weather";
-		      toAdd.setAttribute('src', "assets/weather/day/tonight/face.gif");
-		      weatherBox.appendChild(toAdd);
-		      var br = document.createElement("br");
-		      weatherBox.appendChild(br);*/
-
-		      
-		      
+		     	      
 		      for(j; j < tempArray.length; j++) {
-			  if(j==1 && tonight || (j==2 && tonight) && afternoon) {
+			  if(j==1 && tonight || (j==2 && tonight) && (afternoon || today)) {
 			      var toAdd = document.createElement("hr");
 			      toAdd.className = "style0";
 			      weatherBox.appendChild(toAdd);
@@ -242,9 +216,8 @@ function weather() {
 			
 			  helper(tempArray[j], precipArray[j], forecastArray[j], showDate, text[j]);
 			  
-			 
-			  
-			  if(j==1 && (afternoon||today)) {
+			  if( (j == 0 && (!afternoon||!today)) || 
+			      (j==1 && (afternoon||today))) {
 			      var toAdd = document.createElement("hr");
 			      toAdd.className = "style0";
 			      weatherBox.appendChild(toAdd);
@@ -253,17 +226,7 @@ function weather() {
 			      toAdd.innerHTML = '(this space left blank)';
 			      toAdd.setAttribute("style", 'visibility: hidden;');
 			      weatherBox.appendChild(toAdd);
-			  } else if (j == 0 && (!afternoon||!today)) {
-			      var toAdd = document.createElement("hr");
-			      toAdd.className = "style0";
-			      weatherBox.appendChild(toAdd);
-			      
-			      var toAdd = document.createElement("div");
-			      toAdd.innerHTML = '(this space left blank)';
-			      toAdd.setAttribute("style", 'visibility: hidden;');
-			      weatherBox.appendChild(toAdd);
 			  }
-			  
 			  
 			  if(afternoon || today) {
 			      if(j%2!=0) {
@@ -277,7 +240,6 @@ function weather() {
 				      var br = document.createElement("br");
 				      weatherBox.appendChild(br);
 				  }
-				  
 				  showDate = true;
 			      } else {
 				  showDate = false;
@@ -295,7 +257,6 @@ function weather() {
 				      var br = document.createElement("br");
 				      weatherBox.appendChild(br);
 				  }
-				  
 				  showDate = true;
 			      } else {
 				  showDate = false;
@@ -306,7 +267,6 @@ function weather() {
 		      toAdd.className = "style0";
 		      weatherBox.appendChild(toAdd);
 		  });
-
 }
 function helper(curTemp, precip, forecast, showDate, text) {
     var weatherPath = 0;
@@ -327,10 +287,10 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	} else {
 	    toAdd.setAttribute('src', "assets/weather/sky/moonny/face.gif");
 	}
-	    //hasShownMoon = true;
-	//} else {
-	    //toAdd.style.visibility = 'hidden';
-	//}
+	    /*hasShownMoon = true;
+	} else {
+	    toAdd.style.visibility = 'hidden';
+	}*/
     }
     dayBox.appendChild(toAdd);
     weatherBox.appendChild(dayBox);
@@ -369,13 +329,10 @@ function helper(curTemp, precip, forecast, showDate, text) {
     eworldBox.appendChild(toAdd);
     tempBox.appendChild(eworldBox);
 
-    /***** PRECIP ******/
-
-
+    /***** OLD PRECIP ******/
 
     if(curTemp != 'M' && curTemp != "" && curTemp != null) {
 	weatherPath = curTemp;
-	//alert(curTemp);
 	while(weatherPath%5 != 0) { weatherPath--; } // decrement the value to a valid picon therm
 	if(weatherPath<100 && weatherPath>0) {
 	    weatherPath = "p0" + weatherPath;
@@ -392,11 +349,11 @@ function helper(curTemp, precip, forecast, showDate, text) {
     var toAdd = document.createElement("img");
     toAdd.setAttribute('id', "therm");
     toAdd.className = "img-with-text-weather-block";
-    	if(curTemp == "M" || curTemp =="" || curTemp ==null) {
-	    toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
-	} else {
-	    toAdd.setAttribute('src', "assets/weather/temp2/" + weatherPath + "/face.gif");
-	}
+    if(curTemp == "M" || curTemp =="" || curTemp ==null) {
+	toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+    } else {
+	toAdd.setAttribute('src', "assets/weather/temp2/" + weatherPath + "/face.gif");
+    }
     if(firstRun) {
 	//document.querySelectorAll("link[rel*='icon'")[0].href = 'assets/weather/temp/' + weatherPath + '/face.gif';
 	var link = document.createElement('link');
@@ -432,7 +389,7 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	tableBox.appendChild(toAdd);
 	weatherBox.appendChild(tableBox);
 
-	/*NEWPRECIP*/
+	/*NEW PRECIP*/
 	if(precip != null) {
 	    var br = document.createElement("br");
 	    tableBox.appendChild(br);
@@ -521,7 +478,6 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	}
     }
 
-
     var br = document.createElement("br");
     weatherBox.appendChild(br);
 }
@@ -545,7 +501,6 @@ if((tLat != null) &&
 	    },
 	    function (error) { // if not, just load the weather w/ default lat & long
 		if (error.code == error.PERMISSION_DENIED) {  
-		    //computeLocation();
 		    geocoder.geocode( { 'address': address}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
 			    LATITUDE = results[0].geometry.location.lat();
@@ -558,7 +513,6 @@ if((tLat != null) &&
 		} 
 	    });
     } else {
-	//computeLocation();
 	geocoder.geocode( { 'address': address}, function(results, status) {
 	    if (status == google.maps.GeocoderStatus.OK) {
 		LATITUDE = results[0].geometry.location.lat();
@@ -566,6 +520,5 @@ if((tLat != null) &&
 		window.onload = weather; // if no geolocation, just load the weather stuff on pageload
 	    } 
 	});
-	
     }
 }
