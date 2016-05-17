@@ -1,5 +1,3 @@
-// http://forecast.weather.gov/MapClick.php?lat=39.83092929999999&lon=-77.23109549999998&FcstType=json
-
 // needed to translate weather.gov forecast notation to picon notation
 var map = new Object(); // or var map = {};
 map["Scattered Showers"]= "drizzly";
@@ -67,6 +65,35 @@ map["Chance T-storms and Windy"] = "maybestormywindy";
 map[" Smoke"] = "smokey";
 map["Patchy Smoke"] = "smokey";
 map["Areas Drizzle"] = "drizzly";
+map["Scattered T-storms"] = "stormy";
+map["Patchy Drizzle"] = "drizzly";
+map["Lt Rain Shwr"] = "drizzly";
+map["Rain/Snow Likely"] = "rainysnowy";
+map["Chance Rain/Snow"] = "mayberainysnowy";
+map["Scattered Snow Showers"] = "snowy";
+map["Mixed Prcp"] = "sleety"; 
+map["Rain/Snow and Breezy"] = "rainysnowybreezy";
+map["Chance Snow"] = "maybesnowy";
+map["Rain/Snow Likely and Breezy"] = "rainysnowybreezy";
+map["Chance Rain/Snow and Breezy"] = "mayberainysnowybreezy";
+map["Snow"] = "snowy";
+map["Slight Chance Snow Showers"] = "maybesnowy";
+map["Chance Snow Showers"] = "maybesnowy";
+map["Slight Chance Rain/Snow"] = "mayberainysnowy";
+map["Snow Showers"] = "snowy";
+map["Slight Chance Showers and Breezy"] = "mayberainybreezy";
+map["Mostly Cloudy and Breezy"] = "cloudybreezy";
+map["Chance Showers and Breezy"] = "mayberainybreezy";
+map["Decreasing Clouds and Breezy"] = "cloudybreezy";
+map["Chance T-storms and Breezy"] = "maybestormywindy";
+map["Drizzle"] = "drizzly";
+map["Overcast and Breezy"] = "cloudybreezy";
+map["Areas Dense Fog"] = "foggy";
+map["Mostly Cloudy and Blustery"] = "cloudybreezy";
+map["Patchy Frost"] = "";
+map["Patchy Drizzle and Patchy Fog"] = "drizzlyfoggy";
+map["Partly Sunny and Breezy"] = "partlysunnybreezy";
+map["Scattered Sprinkles"] = "drizzly";
 map[""] = true;
 map["NA"] = true;
 
@@ -334,8 +361,12 @@ function helper(curTemp, precip, forecast, showDate, text) {
     if(curTemp != 'M' && curTemp != "" && curTemp != null) {
 	weatherPath = curTemp;
 	while(weatherPath%5 != 0) { weatherPath--; } // decrement the value to a valid picon therm
-	if(weatherPath<100 && weatherPath>0) {
-	    weatherPath = "p0" + weatherPath;
+	if(weatherPath<100 && weatherPath>=0) {
+	    if(weatherPath == 0) {
+		weatherPath = "p00" + weatherPath;
+	    } else {
+		weatherPath = "p0" + weatherPath; 
+	    }
 	}
 	if(weatherPath < 0) {
 	    weatherPath = weatherPath * -1;
@@ -402,19 +433,23 @@ function helper(curTemp, precip, forecast, showDate, text) {
 		var toAdd = document.createElement("img");
 		toAdd.setAttribute('id', "precip"+i);
 		toAdd.className = "img-with-text-weather-letter";
-		if(curTemp == "M" || curTemp =="") {
+		if(curTemp == "M" || curTemp =="" || precip=="NA") {
 		    toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+		    precipBox.appendChild(toAdd);
+		    break;
 		} else {
 		    toAdd.setAttribute('src', 'assets/weather/nums/'+precip.charAt(i)+'.gif');
 		}
 		
 		precipBox.appendChild(toAdd);
 	    }
-	    var toAdd = document.createElement("img");
-	    toAdd.setAttribute('id', "percent");
-	    toAdd.className = "img-with-text-weather-letter";
-	    toAdd.setAttribute('src', 'assets/weather/nums/percent.gif');
-	    precipBox.appendChild(toAdd);
+	    if(curTemp != "M" && curTemp !="" && precip!="NA") {
+		var toAdd = document.createElement("img");
+		toAdd.setAttribute('id', "percent");
+		toAdd.className = "img-with-text-weather-letter";
+		toAdd.setAttribute('src', 'assets/weather/nums/percent.gif');
+		precipBox.appendChild(toAdd);
+	    }
 	    tableBox.appendChild(precipBox);
 	}
 
@@ -461,19 +496,23 @@ function helper(curTemp, precip, forecast, showDate, text) {
 		var toAdd = document.createElement("img");
 		toAdd.setAttribute('id', "precip"+i);
 		toAdd.className = "img-with-text-weather-letter";
-		if(curTemp == "M" || curTemp =="") {
+		if(curTemp == "M" || curTemp =="" || precip=="NA") {
 		    toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+		    precipBox.appendChild(toAdd);
+		    break;
 		} else {
 		    toAdd.setAttribute('src', 'assets/weather/nums/'+precip.charAt(i)+'.gif');
 		}
 		
 		precipBox.appendChild(toAdd);
 	    }
-	    var toAdd = document.createElement("img");
-	    toAdd.setAttribute('id', "percent");
-	    toAdd.className = "img-with-text-weather-letter";
-	    toAdd.setAttribute('src', 'assets/weather/nums/percent.gif');
-	    precipBox.appendChild(toAdd);
+	    if(curTemp != "M" && curTemp !="" && precip!="NA") {
+		var addPercent = document.createElement("img");
+		addPercent.setAttribute('id', "percent");
+		addPercent.className = "img-with-text-weather-letter";
+		addPercent.setAttribute('src', 'assets/weather/nums/percent.gif');
+		precipBox.appendChild(addPercent);
+	     }
 	    tableBox.appendChild(precipBox);
 	}
     }
