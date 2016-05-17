@@ -123,7 +123,7 @@ include("counter.php");
     © 2016 John D. Duncan, III 
     <a href="mailto:duncanjdiii@gmail.com?Subject=Hello%20again">duncanjdiii@gmail.com</a> <BR>
    <!-- <iframe id="iframe" src="countlog.txt" onload='readfile()' style='display:none'></iframe> -->
-    <i>You are visitor number <a href="https://stuff.mit.edu/doc/counter-howto.html"><img src="http://www.mit.edu/cgi/counter/jduncan" alt=""></a></i>
+    <i>You are visitor number <a href="https://stuff.mit.edu/doc/counter-howto.html"><img src="http://www.mit.edu/cgi/counter/jduncan" alt="" align="top"></a></i>
 
 </div>
 

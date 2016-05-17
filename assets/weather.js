@@ -94,6 +94,10 @@ map["Patchy Frost"] = "";
 map["Patchy Drizzle and Patchy Fog"] = "drizzlyfoggy";
 map["Partly Sunny and Breezy"] = "partlysunnybreezy";
 map["Scattered Sprinkles"] = "drizzly";
+map["Snow Showers Likely"] = "snowy";
+map["Scattered T-storms and Breezy"] = "stormybreezy";
+map["Slight Chance Rain and Patchy Fog"] = "mayberainyfoggy";
+map["Slight Chance Sprinkles"] = "drizzly";
 map[""] = true;
 map["NA"] = true;
 
