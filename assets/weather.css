@@ -78,17 +78,20 @@
 /*font-size:18px;
   font-family: eWorldTight_18;*/ /* hopefully this will work in firefox some day*/
 }
-.header-box:after { /* set page bg to base64 gif*/
-    background-image: url(data:image/gif;base64,R0lGODdhAwADAIACAPn5+f39/SwAAAAAAwADAAACA0RuWAA7);
-    content : "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity : 0.9;
-    z-index: -1;
+#content { /* set page bg to base64 gif*/
+    background-image: url(data:image/gif;base64,R0lGODdhAwADAIACAPn5+f39/SwAAAAAAwADAAACA0RuWAA7) !important;
+    background-color: none; !important
+    background-repeat: repeat-y;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+#border { 
+    padding-right: 75px; 
+    padding-left: 75px;
+    background-color:#E6E6FA;
+}
+body {
+    margin: 0 !important;
 }
 hr.style0 {
     border: 0; 
