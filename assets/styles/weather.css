@@ -1,0 +1,126 @@
+.footer-text img{ 
+    /*position: fixed;*/   
+    text-align: center;    
+    bottom: 5px; 
+    right:5px;
+    z-index:1;
+    image-rendering: auto !important;
+}  
+.footer-text{
+    /* position: fixed;*/ 
+    text-align: center;    
+    bottom: 5px;
+    width:100%;
+    z-index:0;
+    padding-bottom: 5px;
+    
+}
+.img-with-text-weather-block {
+    /*display:inline-block;*/
+    text-align: center;
+    vertical-align: top;
+    display: block; 
+    margin-right:2px;
+}
+.img-with-text-weather-table {
+    /*display:inline-block;*/
+    text-align: center;
+    vertical-align: top;
+    display: table-cell; /* ensure that this element stretches to fill parent*/
+    margin-right:2px;
+    margin-bottom:2px;
+}
+.img-with-text-weather-letter {
+    text-align: center;
+    margin-right:2px;
+    margin-bottom:2px;
+}
+.img-with-text {
+    /*display:inline-block;*/
+    text-align: center;
+    vertical-align: top;
+    padding-left:8px;
+    padding-right:8px;
+    margin-right: -4px;
+    border-right: 1px solid #2a2a2a;
+    display: table-cell; /* ensure that this element stretches to fill parent*/
+}
+.img-with-text:last-child {
+    border-right:none;
+    margin-right: 0px;
+}
+.img-with-text:hover {
+    /*background:#f7d7d7;*/
+    background-color:rgba(245, 215, 215, 0.6);
+    
+}
+.img-with-text:active {
+    /*background: #A1C0A3;*/
+    background-color:rgba(161, 192, 163, 0.6);
+}
+.header-box a:hover, .header-box a:visited, 
+.header-box a:link, .header-box a:active 
+/* hack to disable a pesky webkit bug*/
+{
+    text-decoration: none;
+}
+.header-box {
+    display: inline-block;
+    text-align:center;
+    border-bottom: 1px solid #2a2a2a;
+    border-left: 1px solid #2a2a2a;
+    border-right: 1px solid #2a2a2a;
+    margin-top:-8px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: #A1C0A3;
+    background-image: url(data:image/png;base64,R0lGODdhAwADAIACAPn5+f39/SwAAAAAAwADAAACA0SMVwA7);
+/*font-size:18px;
+  font-family: eWorldTight_18;*/ /* hopefully this will work in firefox some day*/
+}
+#content { /* set page bg to base64 gif*/
+    background-image: url(data:image/gif;base64,R0lGODdhAwADAIACAPn5+f39/SwAAAAAAwADAAACA0RuWAA7) !important;
+    background-color: transparent !important;
+    background-repeat: repeat;
+    padding-top: 5px;
+    padding-left: 5px;
+    border: 1px solid #1b1b1b;
+    box-shadow:  0 0 0 6px #F7F7F7, 0 0 0 8px #A3A3A3;
+}
+#border { 
+    padding-right: 50px; 
+    padding-left: 50px;
+    background-color:#E6E6FA;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+body {
+    margin: 0 !important;
+    cursor: url(../images/cursors/cursor.png), default;
+   
+}
+a:link:active {
+     cursor: url(../images/cursors/pointer_active.png), pointer ;
+}
+a:link {
+     cursor: url(../images/cursors/pointer.png), pointer ;
+}
+input[type=text] {
+    cursor: url(../images/cursors/text.png), text;
+}
+
+hr.style0 {
+    border: 0; 
+    height: 1px; 
+    background: #333; 
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+.primary-content {
+    text-align: center;
+    vertical-align: top;
+    padding-left:8px;
+    padding-right:8px;
+    margin-right: -4px;
+    border-right: 1px solid #2a2a2a;
+    display: table-cell; /* ensure that this element stretches to fill parent*/
+}

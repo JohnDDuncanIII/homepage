@@ -536,7 +536,7 @@ if((tLat != null) &&
   (tLong != null)) {
     LATITUDE = tLat;
     LONGITUDE = tLong;
-    window.onload = weather;
+    weather();
 } else {
     // first, we try to get the location by HTML5 geolocation
     if ("geolocation" in navigator) {
@@ -566,7 +566,7 @@ if((tLat != null) &&
 	    if (status == google.maps.GeocoderStatus.OK) {
 		LATITUDE = results[0].geometry.location.lat();
 		LONGITUDE = results[0].geometry.location.lng();
-		window.onload = weather; // if no geolocation, just load the weather stuff on pageload
+		weather(); // if no geolocation, just load the weather stuff on pageload
 	    } 
 	});
     }
