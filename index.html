@@ -63,7 +63,7 @@
 	    </div>
 
 	    <div class="img-with-text">
-	      <a href="assets/images/rants.html">
+	      <a href="assets/writings/">
 		<img src="assets/images/rants.gif"
 		     onmouseover="this.src='assets/images/rants-hover.gif';" 
 		     onmouseout="this.src='assets/images/rants.gif';"/> <BR>
@@ -72,7 +72,7 @@
 	    </div>
 
 	    <div class="img-with-text" id="">
-	      <a href="assets/images/writings.html">
+	      <a href="assets/writings/">
 		<img src="assets/images/writings-single.gif" 
 		     onmouseover="this.src='assets/images/writings.gif';" 
 		     onmouseout="this.src='assets/images/writings-single.gif';"/> <BR>
@@ -119,7 +119,8 @@
     <script>
       var num = Math.floor(Math.random() * (106)) + 1;
       var border = document.getElementById("border");
-      border.style = "background-image: url(assets/images/patterns/"+num+".gif);";
+      document.body.style.backgroundImage = "url(assets/images/patterns/"+num+".gif)";
+      border.style.backgroundImage = "url(assets/images/patterns/"+num+".gif)";
       timerONE=window.setTimeout('scrollit_r2l(100)',250);
     </script> 
   </body>

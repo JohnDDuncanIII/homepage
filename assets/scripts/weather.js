@@ -1,3 +1,10 @@
+if (!String.prototype.includes) {
+    String.prototype.includes = function() {
+        'use strict';
+        return String.prototype.indexOf.apply(this, arguments) !== -1;
+    };
+}
+
 // needed to translate weather.gov forecast notation to picon notation
 var map = new Object(); // or var map = {};
 map["Scattered Showers"]= "drizzly";
