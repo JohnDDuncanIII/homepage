@@ -84,8 +84,13 @@
     background-repeat: repeat;
     padding-top: 5px;
     padding-left: 5px;
+    padding-right: 5px;
     border: 1px solid #1b1b1b;
     box-shadow:  0 0 0 6px #F7F7F7, 0 0 0 8px #4a4a4a;
+}
+.written-content {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
 }
 #border { 
     padding-right: 50px; 

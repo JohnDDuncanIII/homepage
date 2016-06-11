@@ -2,13 +2,8 @@
 /*
 /*/
 
-
-
 # But not these files...
 !.gitignore
 !index.html
 !counter.php
 !/assets/
-
-# ...even if they are in subdirectories
-# !*/
