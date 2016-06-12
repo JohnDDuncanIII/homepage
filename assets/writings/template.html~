@@ -14,7 +14,7 @@
 	<p></p>
 	<div id="footer-text" class="footer-text">
 	  <hr class="style0">
-	  <a href="../about.html">about</a> <BR>
+	  <a href="assets/about.html">about</a> <BR>
 	  You are visitor number <a href="https://stuff.mit.edu/doc/counter-howto.html">
 	    <img src="http://www.mit.edu/cgi/counter/jduncan" alt="" align="top"/></a> <BR>
 	  <time></time> <BR>
