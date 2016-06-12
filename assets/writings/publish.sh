@@ -10,10 +10,14 @@ echo "$FILENAME";
 sed "s/\(<time>\)/\1$(date +'%A, %B %d %Y - %I:%M:%S %p')/" template.html > $FILENAME ; # add date to the footer
 sed -i "s/\(<h1>\)/\1$1/" $FILENAME; # add header title
 INFILE="`sed 's/$/<br>/' $2`" # replace newline with <br>
-INFILE="$(eval "echo \"$INFILE\"" | sed -e 's/\t/\&emsp;/g')"; # replace tab with &emsp;
-INFILE="$(echo "$INFILE" | sed 's/&/\\&/')"; # ampersand fixes
+INFILE="$(eval "echo \"$INFILE\"" | sed -e 's/\t/\&emsp;\&emsp;\&emsp;/g')"; # replace tab with &emsp;
+INFILE="$(echo "$INFILE" | sed 's/&/\\&/g')"; # ampersand fixes
 INFILE=$(echo "$INFILE" | sed "s/\*\([a-zA-Z0-9]*\)\*/<b>\1<\/b>/g"); # replace * with <b>
-INFILE="$(echo "$INFILE" | sed 's/\//\\\//')"; # backslach fixes
+#INFILE="$(echo "$INFILE" |  sed 's/\(http\:\/\/\)/http\:\/\//g')"; # hyperlink fixes
+INFILE="$(echo "$INFILE" | sed -e "s|http[:]//[^ ]*|<a href=\"\0\">\0</a>|g")";
+INFILE="$(echo "$INFILE" | sed 's/\//\\\//g')"; # backslach fixes
+#echo $INFILE;
+#exit 0;
 sed -i "s/\(<p>\)/\1$(echo $INFILE)/" $FILENAME;
 chmod 755 $FILENAME;
 count=$((count+1))
