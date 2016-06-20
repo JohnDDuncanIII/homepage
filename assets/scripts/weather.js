@@ -1,4 +1,4 @@
-if (!String.prototype.includes) {
+if (!String.prototype.includes) { // indexof polyfill
     String.prototype.includes = function() {
         'use strict';
         return String.prototype.indexOf.apply(this, arguments) !== -1;
@@ -111,6 +111,7 @@ map["Breezy. Chance T-storms"] = "maybestormywindy";
 map["T-storms Likely and Breezy"] = "maybestormywindy";
 map["Heavy Rain and Patchy Fog"] = "heavyrainyfoggy";
 map["Sprinkles"] = "drizzly";
+map["Hot"] = "hot";
 map[""] = true;
 map["NA"] = true;
 
@@ -168,7 +169,6 @@ function weather() {
     var weatherBox = document.getElementById("weatherBox");
 
     var toAdd = document.createElement("hr");
-    toAdd.className = "style0";
     weatherBox.appendChild(toAdd);
 
     if((tLat != null) &&
@@ -246,7 +246,6 @@ function weather() {
 		      for(j; j < tempArray.length; j++) {
 			  if(j==1 && tonight || (j==2 && tonight) && (afternoon || today)) {
 			      var toAdd = document.createElement("hr");
-			      toAdd.className = "style0";
 			      weatherBox.appendChild(toAdd);
 
 			      var toAdd = document.createElement("div");
@@ -263,7 +262,6 @@ function weather() {
 			  if( (j == 0 && (!afternoon||!today)) || 
 			      (j==1 && (afternoon||today))) {
 			      var toAdd = document.createElement("hr");
-			      toAdd.className = "style0";
 			      weatherBox.appendChild(toAdd);
 
 			      var toAdd = document.createElement("div");
@@ -279,7 +277,6 @@ function weather() {
 				      if(counter==weekday.length) { counter =0;}
 				      n = weekday[counter];
 				      var toAdd = document.createElement("hr");
-				      toAdd.className = "style0";
 				      weatherBox.appendChild(toAdd);
 				      var br = document.createElement("br");
 				      weatherBox.appendChild(br);
@@ -296,7 +293,6 @@ function weather() {
 				      if(counter==weekday.length) { counter =0;}
 				      n = weekday[counter];
 				      var toAdd = document.createElement("hr");
-				      toAdd.className = "style0";
 				      weatherBox.appendChild(toAdd);
 				      var br = document.createElement("br");
 				      weatherBox.appendChild(br);
@@ -308,7 +304,6 @@ function weather() {
 			  }
 		      }
 		      var toAdd = document.createElement("hr");
-		      toAdd.className = "style0";
 		      weatherBox.appendChild(toAdd);
 		  });
 }
@@ -388,6 +383,13 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	if(weatherPath < 0) {
 	    weatherPath = weatherPath * -1;
 	    weatherPath = "m0" + weatherPath;
+	}
+	if(weatherPath >= 100){
+	    if(weatherPath >= 110) {
+		weatherPath = "p110";
+	    } else {
+	    weatherPath = "p" + weatherPath;
+	    }
 	}
     }
    

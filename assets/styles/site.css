@@ -92,6 +92,15 @@
     padding-left: 50px !important;
     padding-right: 50px !important;
 }
+.primary-content {
+    text-align: center;
+    vertical-align: top;
+    padding-left:8px;
+    padding-right:8px;
+    margin-right: -4px;
+    border-right: 1px solid #2a2a2a;
+    display: table-cell; /* ensure that this element stretches to fill parent*/
+}
 #border { 
     padding-right: 50px; 
     padding-left: 50px;
@@ -110,23 +119,25 @@ a:link:active {
 a:link {
      cursor: url(../images/cursors/pointer.png), pointer ;
 }
-input[type=text] {
-    cursor: url(../images/cursors/text.png), text;
+input[type=text], #text {
+    cursor: url(../images/cursors/text.png), text !important;
+    display:none !important;
 }
 
-hr.style0 {
+hr {
     border: 0; 
     height: 1px; 
     background: #333; 
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
     margin-right: 5px;
 }
-.primary-content {
-    text-align: center;
-    vertical-align: top;
-    padding-left:8px;
-    padding-right:8px;
-    margin-right: -4px;
-    border-right: 1px solid #2a2a2a;
-    display: table-cell; /* ensure that this element stretches to fill parent*/
+
+blockquote { 
+  padding-left: 15px;
+  border-left: 2px solid #ccc;
+  color: LimeGreen;
+}
+
+table, th, td {
+    border: 1px solid black;
 }
