@@ -1,5 +1,5 @@
 # Website
 Repository that holds my weather program and personal website files
 
-![site](assets/images/scrot.png)
+[screenshot!](https://raw.githubusercontent.com/JohnDDuncanIII/JohnDDuncanIII.github.io/master/assets/images/scrot.png)
 
