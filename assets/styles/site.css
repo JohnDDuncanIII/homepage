@@ -113,15 +113,18 @@ body {
     cursor: url(../images/cursors/cursor.png), default;
    
 }
+img {
+    cursor: url(../images/cursors/cursor.png), default;
+   
+}
 a:link:active {
      cursor: url(../images/cursors/pointer_active.png), pointer ;
 }
 a:link {
      cursor: url(../images/cursors/pointer.png), pointer ;
 }
-input[type=text], #text {
-    cursor: url(../images/cursors/text.png), text !important;
-    display:none !important;
+input, p, blockquote, h1, h2, h3, h4, h5, h6 {
+    cursor: url(../images/cursors/text.png), text;
 }
 
 hr {
