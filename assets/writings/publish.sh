@@ -25,7 +25,7 @@ s/\^\{([a-zA-Z0-9[:space:]_,]*)\}/<sup>\1<\/sup>/g;  # replace ^{} with <sup>
 s/\_([a-zA-Z0-9[:space:]_]*)\_/<i>\1<\/i>/g; # replace _ with <i>
 s/\!\[(.*)\]\((.*)\)/<img src=\2 alt=\1>/g;  # markdown url (force unwrap image)
 s/\[(.*)\]\((.*)\)/<a href=\2>\1<\/a>/g;  # markdown url
-s/\[(.*)\]<([a-zA-Z0-9[:space:]_,]*)>/<abbr title=\2>\1<\/abbr>/g;  # replace []<> with <abbr>
+s/\[(.*)\]<([a-zA-Z0-9[:space:]_,]*)>/<abbr title="\2">\1<\/abbr>/g;  # replace []<> with <abbr>
 s|[[:space:]](http[:]//[^ ]*[a-zA-Z])[[:space:]]| <a href=\"\1\">\1</a> |g; # replace urls with html urls
 s|\w+@\w+\.\w+(\.\w+)?|<a href=\"mailto:\0\">\0</a>|g;s/\//\\\//g' $2); # replace tab with &emsp;
 

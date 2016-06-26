@@ -122,6 +122,13 @@ map["Mostly Clear and Windy"] = "sunnywindy";
 map["Rain and Patchy Fog"] = "rainyfoggy";
 map["Patchy Blowing Dust"] = "dusty";
 map["Hot"] = "hot";
+map["Scattered Showers and Breezy"] = "rainywindy";
+map["Scattered Showers and Windy"] = "rainywindy";
+map["Breezy. Mostly Clear"] = "sunnywindy";
+map["Windy. Isolated Showers"] = "rainywindy";
+map["Windy. Mostly Clear"] = "sunnywindy";
+map["Chance T-storms and Patchy Fog"] = "stormyfoggy";
+map["Fair and Windy"] = "sunnywindy";
 map[""] = true;
 map["NA"] = true;
 
