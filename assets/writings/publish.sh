@@ -42,3 +42,5 @@ echo $((count+1)) > $COUNTER_FILE; # write this out to the file
 
 TABLEROW=$(echo "<TR>?<TD><a href="$FILENAME">$1<\/a><\/TD>?<TD>$(date +"%A, %B %d %Y - %I:%M:%S %p")<\/TD>?<\/TR>" | sed -e $'s/?/\\\n/g'); # add the post to the index's table
 sed -i "s/<time>\(.*\)<\/time>/<time>Modified: $(date +'%A, %B %d %Y - %I:%M:%S %p')<\/time>/;/\(<table\)/a $TABLEROW" index.html; # update timestamp
+emacs -batch index.html --eval '(indent-region (point-min) (point-max) nil)' -f save-buffer # LISP to properly indent the inserted HTML
+rm index.html~;
