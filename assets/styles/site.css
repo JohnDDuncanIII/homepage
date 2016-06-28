@@ -1,13 +1,11 @@
-.footer-text img{ 
-    /*position: fixed;*/   
+.footer-text img[src*="seal"] {   
     text-align: center;    
     bottom: 5px; 
     right:5px;
     z-index:1;
     image-rendering: auto !important;
 }  
-.footer-text{
-    /* position: fixed;*/ 
+.footer-text {
     text-align: center;    
     bottom: 5px;
     width:100%;
@@ -16,14 +14,12 @@
     
 }
 .img-with-text-weather-block {
-    /*display:inline-block;*/
     text-align: center;
     vertical-align: top;
     display: block; 
     margin-right:2px;
 }
 .img-with-text-weather-table {
-    /*display:inline-block;*/
     text-align: center;
     vertical-align: top;
     display: table-cell; /* ensure that this element stretches to fill parent*/
@@ -50,21 +46,18 @@
     margin-right: 0px;
 }
 .img-with-text:hover {
-    /*background:#f7d7d7;*/
     background-color:rgba(245, 215, 215, 0.6);
     
 }
 .img-with-text:active {
-    /*background: #A1C0A3;*/
     background-color:rgba(161, 192, 163, 0.6);
 }
 .header-box a:hover, .header-box a:visited, 
 .header-box a:link, .header-box a:active 
-/* hack to disable a pesky webkit bug*/
-{
+/* hack to disable a pesky webkit bug*/ {
     text-decoration: none;
 }
-.header-box {
+.header-box { /* styling for header box that contains site navigation buttons */
     display: inline-block;
     text-align:center;
     border-bottom: 1px solid #2a2a2a;
@@ -75,20 +68,21 @@
     padding-bottom: 5px;
     background-color: #A1C0A3;
     background-image: url(data:image/png;base64,R0lGODdhAwADAIACAPn5+f39/SwAAAAAAwADAAACA0SMVwA7);
-/*font-size:18px;
-  font-family: eWorldTight_18;*/ /* hopefully this will work in firefox some day*/
+    /*font-size:18px;
+      font-family: eWorldTight_18;*/ 
+    /* hopefully this will work in firefox some day */
 }
-#content { /* set page bg to base64 gif*/
+#content { /* primary page content */
     background-image: url(data:image/gif;base64,R0lGODdhAwADAIACAPn5+f39/SwAAAAAAwADAAACA0RuWAA7) !important;
-    background-color: transparent !important;
+    background-color: transparent ;
     background-repeat: repeat;
     padding-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    border: 1px solid #1b1b1b;
-    box-shadow:  0 0 0 6px #F7F7F7, 0 0 0 8px #4a4a4a;
+    border: 1px solid #4a4a4a;
+    box-shadow:  0 0 0 6px #F4F4F4, 0 0 0 8px #1b1b1b;
 }
-.written-content {
+.written-content { /* for written pieces */
     padding-left: 50px !important;
     padding-right: 50px !important;
 }
@@ -101,46 +95,49 @@
     border-right: 1px solid #2a2a2a;
     display: table-cell; /* ensure that this element stretches to fill parent*/
 }
-#border { 
+#border { /* border to hold the pattern image */
     padding-right: 50px; 
     padding-left: 50px;
-    background-color:#E6E6FA;
+    background-color:#E6E6E6;
     padding-top: 40px;
     padding-bottom: 40px;
 }
-body {
+body { /* site-wide custom cursor */
     margin: 0 !important;
     cursor: url(../images/cursors/cursor.png), default;
    
 }
-a:link:active {
-     cursor: url(../images/cursors/pointer_active.png), pointer !important;
+a:link:active, a:link:active > img {
+     cursor: url(../images/cursors/pointer_active.png), pointer;
 }
-a:link {
-     cursor: url(../images/cursors/pointer.png), pointer !important;
+a:link, a:link > img { /* only match links and links with images */
+     cursor: url(../images/cursors/pointer.png), pointer;
 }
-img {
-    /*cursor: url(../images/cursors/cursor.png), default;*/
-   
+img { /* when an image is not a link, ensure it is a standard cursor*/
+   cursor: url(../images/cursors/cursor.png), default;
 }
-input, p, blockquote, h1, h2, h3, h4, h5, h6 {
+/* text I-bar cursor where necessary */
+input, p, blockquote, h1, h2, h3, h4, h5, h6, td {
     cursor: url(../images/cursors/text.png), text;
 }
 
-hr {
+hr { /* modern-ish style for hr */
     border: 0; 
     height: 1px; 
     background: #333; 
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    background-image: linear-gradient(to right, #6a6a6a, #1b1b1b, #6a6a6a);
     /*margin-right: 4px;*/
 }
 
-blockquote { 
+blockquote { /* modern-ish style for blockquotes */
   padding-left: 15px;
   border-left: 2px solid #ccc;
   color: LimeGreen;
 }
 
-table, th, td {
+table, th, td { /* add border to table and table elements */
     border: 1px solid black;
+}
+table { /* center table on page */
+     margin: 0 auto;
 }
