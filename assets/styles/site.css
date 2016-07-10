@@ -142,5 +142,11 @@ table, th, td { /* add border to table and table elements */
     border: 1px solid black;
 }
 table { /* center table on page */
-     margin: 0 auto;
+    margin: 0 auto;
 }
+
+ pre, code {
+     margin-left: 4em;
+     margin-right: 4em;
+     /* font-family: 'Inconsolata', monospace; */
+  }

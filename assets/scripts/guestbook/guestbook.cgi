@@ -50,7 +50,7 @@ fi
 if [ -f $guestbook ] ; then
   echo "<table>"
   while read line 
-  do 
+  do
     date="$(echo $line | cut -d\| -f1)"
     name="$(echo $line | cut -d\| -f2)"
     email="$(echo $line | cut -d\| -f3)"

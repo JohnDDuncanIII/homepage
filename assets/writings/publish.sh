@@ -31,8 +31,6 @@ s|[[:space:]](http[:]//[^ ]*[a-zA-Z])[[:space:]]| <a href=\"\1\">\1</a> |g;  # r
 s|https[:]\/\/www.youtube.com\/watch\?v=([a-zA-Z0-9_]*)|<object style="width:100%;height:100%;width:420px;height:315px;float:none;clear:both;margin:2px auto;" data="http:\/\/www.youtube.com\/embed\/\1"><\/object>|g;
 s|\w+@\w+\.\w+(\.\w+)?|<a href=\"mailto:\0\">\0</a>|g;s/\//\\\//g' $2);  # replace tab with &emsp;
 
-
-
 sed "s/\(<h1>\)/\1$1/; # add header title
 s/\(<time>\)/\1$(date +'%A, %B %d %Y - %I:%M:%S %p')/ # add date to footer
 s/\(<p>\)/\1$(echo $INFILE)/" template.html > $FILENAME; # add it all back into the new document
