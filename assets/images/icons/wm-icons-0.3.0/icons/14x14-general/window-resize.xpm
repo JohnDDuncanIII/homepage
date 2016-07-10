@@ -1,0 +1,22 @@
+/* XPM */
+static char * mini-resize_xpm[] = {
+"14 14 4 1",
+" 	c None",
+"O	c black",
+"=	c navy",
+".	c white",
+"              ",
+"OOOOOOOOOO OOO",
+"O========O   O",
+"O========O    ",
+"O........O   O",
+"O.....OO.O   O",
+"O.....OOOO    ",
+"O......OOO O O",
+"OOOOOOOOOOOO O",
+"         OOO  ",
+"O       OOOO O",
+"O            O",
+"OO OO OO OO OO",
+"              ",
+};

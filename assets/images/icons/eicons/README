@@ -1,0 +1,57 @@
+eicons-1.0 [1999.01.27] V C Hui
+
+  Gnome Look Alike Icons:
+  -----------------------
+
+    I have made a number of icons which based on 
+    the i-regular.png and i-director.png from mc-4.5.6
+    and from the traditional xfm sources.
+
+    This collection of icons consumed only 16 colors
+    which included major colors like, black, white, red,
+    green, blue and yellow.
+
+    My aim was to create a set of icons which are 
+    visually coherent and reflect a functional
+    consistency about their properties.
+    (see READM.pixmaps for a full comment)
+
+
+  Contents:
+  ---------
+
+    pixmaps/
+      pixmaps for general use;
+
+    xfm.bitmaps/ xfm.pixmaps:
+      replacements bitmaps and pixmaps for xfm
+      offix-files or other derivatives for visual
+      compatibility with the new pixmaps in pixmaps/; 
+      (see README.xfm.*i*maps for details)
+
+    dnd-cursor/
+      replacements bitmaps for offix's dndlib;
+      (see README.dnd-cursor for detail);
+
+
+  Notes:
+  ------
+
+    It is necessary to recompile xfm, offix-files and
+    dndlib in order to make the full use of the new
+    pixmaps and bitmaps;  It should be straight forward.
+
+    The "Makefile"s included with this package are mainly
+    for archive management and do not do any installation.
+
+    The first letter 'e' in eicons has no meaning.
+
+
+  Acknowledgements:
+  ----------------
+
+    Thanks to the GNOME team for creating the basic
+    file and directory icons in the first place.
+
+
+

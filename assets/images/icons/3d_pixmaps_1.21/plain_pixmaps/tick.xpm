@@ -1,0 +1,42 @@
+/* XPM */
+static char *tick[] = {
+/* width height ncolors chars_per_pixel */
+"32 32 3 1",
+/* colors */
+"` c slate grey",
+"a c red",
+"b c white",
+/* pixels */
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbabbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbaabbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbaaabbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbaaaabbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbaaaaaabbbbbbbb",
+"bbbbbbbbbbbbbbbbbbaaaaaaaabbbbbb",
+"bbbbbbbbbbbbbbbbbaaaaaaaaaabbbbb",
+"bbbbbbbbbbbbbbbbaaaaaaaaabbbbbbb",
+"bbbbbbbbbbbbbbbbaaaaaaaab```bbbb",
+"bbbbbbbbbbbbbbbaaaaaaabb``bbbbbb",
+"bbbbbbbbbbbbbbbaaaaaab```bbbbbbb",
+"bbbbbbbbbbbbbbbaaaaab``bbbbbbbbb",
+"bbbbbbbbbbbbbbbaaaab``bbbbbbbbbb",
+"bbbbbbbbbbbbbbaaaaa``bbbbbbbbbbb",
+"bbbbbbbbabbbbbaaaab`bbbbbbbbbbbb",
+"bbbbbbbbaabbbbaaab``bbbbbbbbbbbb",
+"bbbbbbbbbaabbaaaa``bbbbbbbbbbbbb",
+"bbbbbbbbbaaabaaab`bbbbbbbbbbbbbb",
+"bbbbbbbb`baabaaa``bbbbbbbbbbbbbb",
+"bbbbbbbb``aaaaab`bbbbbbbbbbbbbbb",
+"bbbbbbbb``aaaaa``bbbbbbbbbbbbbbb",
+"bbbbbbbbb`baaaa`bbbbbbbbbbbbbbbb",
+"bbbbbbbbb``aaab`bbbbbbbbbbbbbbbb",
+"bbbbbbbbbb`baa``bbbbbbbbbbbbbbbb",
+"bbbbbbbbbb``ab`bbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbb`b``bbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbb```bbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbb`bbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+};

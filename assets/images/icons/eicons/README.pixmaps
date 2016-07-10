@@ -1,0 +1,50 @@
+eicons-1.0 [1999.01.26] V C Hui
+
+  Design criteria:
+    + Economic use of colors and consequently visual coherency
+        (see pixmaps/zcolor for the list of color used);
+    + All browse-able files must use the file icons for 
+        functional consistency;
+    + icons are look alike within the same category;
+    + Minimum use of words in icons or defeat the purpose of icons;
+
+  Major Icon Groupings (Categories):
+    + a_editor*  : editors;
+    + a_exe*     : shells, etc;
+    + a_telnet_* : telnets;
+    + a_term_*   : terminals;
+    + a_*        : others;
+    + d_*        : directories;
+    + f_dot_*    : *.c, *.h, *.f, etc;
+    + f_*        : others;
+    + m_*        : link, broken links, noentry, etc;
+    + t_*        : template files;
+    + v_block*   : block devices;
+    + v_char*    : character devices;
+    + v_socket*  : sockets;
+    + *lnk*      : symbolic links;
+    + *hidden*   : hidden files and directories;
+
+  Comments on some icons:
+    + the outline and basic colors of the "flying" file and
+        the open directory icons are taken from
+        i-regular.png and i-directory.png
+        from gmc-4.5.6;
+    + a_netscape.xpm, a_gimp.xpm, a_xv, a_paint.xpm, a_lpr.xpm
+        and a_lprm.xpm were color reduced;
+    + the design of the dot_*.xpm and a few other icons are adopted from
+        those commonly available with xfm;
+    + f_perl.xpm for perl scripts and modules;
+        it needs some polishing for it looks a bit like a dinosaur!
+    + a_xfig.xpm and f_fig.xpm for xfig and the associated files;
+        the icon is taken from the glue button in xfig;
+    + f_chinese.xpm and f_japanese.xpm;
+        the character on f_chinese.xpm means Chinese and
+        the one on f_japanese.xpm means Japanese;
+    + a_editor*.xpm is simply a file with pensil;
+    + f_archive.xpm for tar, zip, etc., is a stack of files;
+    + compressed files are files with squashing triangle on the side
+        as in kde;
+    + suggested the use of smiley for configure, config.in, etc!
+    + the curves in a_graph.xpm and f_graph.xpm are the sine/cosine curves;
+    + v_block*.xpm, v_char*.xpm and v_socket.xpm are for devices; 

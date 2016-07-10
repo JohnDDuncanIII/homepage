@@ -1,0 +1,43 @@
+/* XPM */
+static char *binoculars[] = {
+/* width height ncolors chars_per_pixel */
+"32 32 4 1",
+/* colors */
+"` c black",
+"c c grey",
+"b c white",
+"a c slate grey",
+/* pixels */
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbb`````````bbb`````````bbbbbb",
+"bbbbb`ccaaaaa`bbb`ccaaaaa`bbbbbb",
+"bbbbb`````````bbb`````````bbbbbb",
+"bbbbb`ccaaaaa`bbb`ccaaaaa`bbbbbb",
+"bbbbb`ccaaaaa`bbb`ccaaaaa`bbbbbb",
+"bbbbb`ccaaaaa`bbb`ccaaaaa`bbbbbb",
+"bbbbb`ccaaaaa`bbb`ccaaaaa`bbbbbb",
+"bbbbb`ccaaaaa`bbb`ccaaaaa`bbbbbb",
+"bbbbb`ccaaaaa`````ccaaaaa`bbbbbb",
+"bbbbb`ccaaaaa`aaa`ccaaaaa`bbbbbb",
+"bbbbb`ccaaaa```````caaaaa`bbbbbb",
+"bbbbb`ccaaaa`ccaaa`caaaaa`bbbbbb",
+"bbbbb`ccaaaa```````caaaaa`bbbbbb",
+"bbbbb`ccaaaaa`````ccaaaaa`bbbbbb",
+"bbbbb``````````b``````````bbbbbb",
+"bbbbbbb`cccaaa`b`ccccaa`bbbbbbbb",
+"bbbbbbb````````b````````bbbbbbbb",
+"bbbbbbbbb`aaa`bbb`aaa`bbbbbbbbbb",
+"bbbbbbbbb`````bbb`````bbbbbbbbbb",
+"bbbbbbbb`aaaaa`b`aaaaa`bbbbbbbbb",
+"bbbbbbbb```````b```````bbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+};

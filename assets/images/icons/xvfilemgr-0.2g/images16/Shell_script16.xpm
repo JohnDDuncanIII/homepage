@@ -1,0 +1,25 @@
+/* XPM */
+static char * Shell_script16_xpm[] = {
+/* width height ncolors chars_per_pixel */
+"16 16 3 1",
+/* colors */
+" 	c white",
+".	c black",
+"X	c lightgreen",
+/* pixels */
+"                ",
+"       .        ",
+" ......X.....   ",
+" .XXX.XXX.XXX.  ",
+" .XX.XXXXX.XX.  ",
+" .X.XXXXXXX.X.  ",
+" ..XX....XXX..  ",
+" .XXXXXXXXXXX.  ",
+".XXXX......XXX. ",
+" .XXXXXXXXXXX.  ",
+" ..XX....XXX..  ",
+" .X.XXXXXXX.X.  ",
+" .XX.XXXXX.XX.  ",
+" .XXX.XXX.XXX.  ",
+" ......X......  ",
+"       .        "};

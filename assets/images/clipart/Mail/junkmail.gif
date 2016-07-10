@@ -1,0 +1,14 @@
+<HTML>
+<HEAD>
+<TITLE>Busy</TITLE>
+</HEAD>
+<BODY>
+<H1>North*Star - Web Server is busy!</H1>
+
+<HR>
+
+<P>Sorry, there are already 40 Web connections active on this system.
+Please try again in a moment.
+
+</BODY>
+</HTML>

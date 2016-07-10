@@ -1,0 +1,26 @@
+/* XPM */
+static char * language16_xpm[] = {
+/**/
+"16 16 4 1",
+/*ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ*/
+" 	c white",
+".	c black",
+"X	c yellow",
+"o	c LightBlue3",
+/*ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ*/
+"  ........      ",
+"  .XXXXXX..     ",
+"  .XXXXXX.X.    ",
+"  .XooooX.XX.   ",
+"  .XXooXX.....  ",
+"  .XXooXXXXXX.  ",
+"  .XXooXXXXXX.  ",
+"  .XXooXXXXXX.  ",
+"  .XXooXXXXXX.  ",
+"  .XXooXXXXoX.  ",
+"  .XXooXXXXoX.  ",
+"  .XXoooooooX.  ",
+"  .XooooooooX.  ",
+"  .XXXXXXXXXX.  ",
+"  ............  ",
+"   ...........  "};

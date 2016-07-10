@@ -1,0 +1,22 @@
+/* XPM */
+static char * window-shade_xpm[] = {
+"14 14 4 1",
+" 	c None",
+"O	c black",
+"=	c navy",
+".	c white",
+"              ",
+"OOOOOOOOOOOOOO",
+"O============O",
+"O============O",
+"O============O",
+"O......O.....O",
+"O.....OOO....O",
+"O....OOOOO...O",
+"O......O.....O",
+"O....OOOOO...O",
+"O.....OOO....O",
+"O......O.....O",
+"OOOOOOOOOOOOOO",
+"              ",
+};

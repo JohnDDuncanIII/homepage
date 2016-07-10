@@ -1,0 +1,26 @@
+/* XPM */
+static char * mini_iconify_xpm[] = {
+/**/
+"14 14 5 1",
+/*Á
+*/
+" 	c black",
+".	c #CBCBC5C5C6C6",
+"X	c black",
+"o	c #51515151FBFB",
+"a	c none",
+/*@Oh*/
+"           aaa",
+" . ... . . aaa",
+"           Xaa",
+" ......... Xaa",
+" ...oo.... Xaa",
+" ..oooo... Xaa",
+" ...oo.... .Xa",
+" ......... .Xa",
+" ......... .Xa",
+"           .Xa",
+"aaXXX......X.X",
+"aaaaaXXX...X.X",
+"aaaaaaaaXXX.  ",
+"aaaaaaaaaaaX  "};

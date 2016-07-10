@@ -1,0 +1,43 @@
+/* XPM */
+static char *s_korea_xpm[] = {
+/* width height ncolors chars_per_pixel */
+"32 32 4 1",
+/* colors */
+"` c black",
+"a c red",
+"b c navy blue",
+"c c white",
+/* pixels */
+"cccccccccccccccccccccccccccccccc",
+"cccccccccccccccccccccccccccccccc",
+"cccccccccccccccccccccccccccccccc",
+"cccccccccccccccccccccccccccccccc",
+"cccccccccccccccccccccccccccccccc",
+"````````````````````````````````",
+"cccccccccccccccccccccccccccccccc",
+"cccccccccccccccccccccccccccccccc",
+"ccccccc`cccccccccccccccc`ccccccc",
+"cccccc`c`cccccccccccccc`c`cccccc",
+"ccccc`c`c`cccccccccccc`c`ccccccc",
+"cccc`c`c`cccccccccccccccc`c`cccc",
+"ccccc`c`ccccccaaaacccccc`c`ccccc",
+"cccccc`ccccccaaaaaacccccc`cccccc",
+"ccccccccccccaaaaaaaacccccccccccc",
+"ccccccccccbcaaaaaaaaaccccccccccc",
+"ccccccccccbcaaacccccaccccccccccc",
+"ccccccccccbcccccbbbcaccccccccccc",
+"ccccccccccbbbbbbbbbcacccc`cccccc",
+"ccccc`cccccbbbbbbbbccccc`c`ccccc",
+"cccc`c`cccccbbbbbbccccccc`c`cccc",
+"ccc`c`c`cccccbbbbccccc`ccc`ccccc",
+"cccc`ccc`cccccccccccc`c`cccccccc",
+"ccccc`c`cccccccccccccc`c`ccccccc",
+"cccccc`cccccccccccccccc`cccccccc",
+"cccccccccccccccccccccccccccccccc",
+"````````````````````````````````",
+"cccccccccccccccccccccccccccccccc",
+"cccccccccccccccccccccccccccccccc",
+"cccccccccccccccccccccccccccccccc",
+"cccccccccccccccccccccccccccccccc",
+"cccccccccccccccccccccccccccccccc"
+};

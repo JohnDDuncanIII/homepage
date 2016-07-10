@@ -1,0 +1,43 @@
+/* XPM */
+static char *hiker_xpm[] = {
+/* width height ncolors chars_per_pixel */
+"32 32 4 1",
+/* colors */
+"` c black",
+"a c firebrick",
+"b c red",
+"c c sea green",
+/* pixels */
+"````````````````````````````````",
+"````````````````````````````````",
+"````````````````````````````````",
+"````````````````````````````````",
+"````````````````````````````````",
+"``c`c`c```````````````````c`c`c`",
+"``c`c`c```````````````````c`c`c`",
+"``ccccccc```````````````ccccccc`",
+"```ccc```c``ccccccc````c```ccc``",
+"````c`````ccccccccccc```````c```",
+"````c````ccccccccccccc``````c```",
+"```cc```ccccccccccccccc`````c```",
+"```c```ccccccccccccccccc````cc``",
+"``cc```ccccccccccccccccc````cc``",
+"``cc``ccccccccccccccccccc````c``",
+"`cc```ccccccccccccccccccc````cc`",
+"`cc```ccccccccccccccccccc````cc`",
+"`cc``cccc`ccccccccccc`cccc```cc`",
+"cc```ccc`c```cccccc``c`ccc````cc",
+"cc``cc`cc`````````````cc`cc```cc",
+"cc`ccc`cc```bbb``b````cc`ccc``cc",
+"ccccc```ccc``bbabbb`ccc```ccc`cc",
+"`cccc````ccccbbbabbbcc````cccccc",
+"``cc``````ccccbbabbbc``````cccc`",
+"````````````ccbbbabb`````````cc`",
+"``````````````bbbabbb```````````",
+"```````````````bbabbb```````````",
+"```````````````bbbabb```````````",
+"```````````````bbbabb```````````",
+"````````````````bbbb````````````",
+"`````````````````bb`````````````",
+"````````````````````````````````"
+};

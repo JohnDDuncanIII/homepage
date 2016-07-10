@@ -1,0 +1,198 @@
+{\rtf0\ansi{\fonttbl\f0\fswiss Helvetica;\f1\fmodern Courier;\f2\fmodern Ohlfs;\f3\ftech Symbol;\f4\fnil Times-Roman;}
+\paperw9840
+\paperh8400
+\margl120
+\margr120
+{\colortbl;\red0\green0\blue0;\red82\green82\blue82;}
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\f0\b\i0\ulnone\fs24\fc1\cf1 Date:
+\f1\b0  Fri, 21 May 93 02:31:38 -0400\
+
+\f0\b From:
+\f1\b0  Glenn Brown <gbrown@raven.ctr.columbia.edu>\
+
+\f0\b To:
+\f1\b0  next-icon@gun.com\
+
+\f0\b Subject:
+\f1\b0  Automated Icon Compression!\
+
+\f0\b Reply-To:
+\f1\b0  gbrown@raven.ctr.columbia.edu (Glenn Brown: NextMail Prefered)\
+\
+
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\f0\i\fc0\cf0 Here it is, what you've all been waiting for:
+\i0 \
+
+\i\fs48 Automated Icon Compression!\
+And it's FREE!*\
+
+\b\i0\fs24 compress_tiff
+\b0 :
+{{\NeXTGraphic323 compress_tiff \width960 \height960
+}
+¬}\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\f0\b0\i0\ulnone\fs24\fc0\cf0 (This executable is a sh script. Command-drag to Edit.app to display the script text.)\
+
+\li720 syntax: 
+\f2\fs20 compress_tiff file [file ...]
+\f0\fs24 \
+
+\fi-720\li1440 Function: Attempts to reduce the size of each 
+\f2\fs20 file
+\f0\fs24  if it is a tiff file by converting it to the LZW compressed tiff format.  Each 
+\f2\fs20 file
+\f0\fs24  is change if and only if it is a valid tiff file and conversion reduces its size. Directories and non-tiff files are unchanged.\
+Why: So you can type "
+\f2\fs20 compress_tiff *
+\f0\fs24 " to compress all the files in a directory or "
+\f2\fs20 compress_tiff first.tiff second.tiff third.tiff
+\f0\fs24 " instead of using 
+\f2\fs20 tiffutil
+\f0\fs24  many times.\
+Recommended installation location: any directory listed when you type 'echo $PATH' in a terminal window.\
+
+\b\fi0\li0 compress_tiffs_in_dir
+\b0 :
+{{\NeXTGraphic1010 441128_compress_tiff \width960 \height960
+}
+¬}\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\f0\b0\i0\ulnone\fs24\fc0\cf0 (This executable is a sh script. Command-drag to Edit.app to display the script text.)\
+
+\li720 sytax: 
+\f2\fs20 compress_tiffs_in_dir \{file | directory\} [\{file | directory\} ...]\
+
+\f0\fs24\fi-720\li1440 Function: Attempts to reduce the size of each 
+\f2\fs20 file
+\f0\fs24  if it is a tiff file by converting it to the LZW compressed tiff format.  Each 
+\f2\fs20 file
+\f0\fs24  is change if and only if it is a valid tiff file and conversion reduces its size.  
+\b All 
+\f2\b0\fs20 .tiff
+\f0\b\fs24  files in each 
+\f2\b0\fs20 directory
+\f0\b\fs24  and recursively in its subdirectories are similarly compressed.\
+
+\b0 Why: So you can type "
+\f2\fs20 compress_tiffs_in_dir /LocalLibrary/Images
+\f0\fs24 " to compress all the tiffs there.  This utility should be extremely handy for the next-icon archive handlers and anyone compiling a CD-ROM*.\
+Recommended installation location: any directory listed when you type 'echo $PATH' in a terminal window.\
+Bugs: Requires that compress_tiff be installed somewhere in the user's path, preferably in the same directory as compress_tiffs_in_dir.\
+
+\fi0\li0 \
+
+\b Legal Stuff:
+{{\NeXTGraphic1947 GnuGeneralPublicLicense \width960 \height960
+}
+¬}\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\f0\b0\i0\ulnone\fs24\fc0\cf0 <-Gnu General Public License\
+
+\fs22 compress_tiffs_in_dir (a NeXT TIFF file compression tool) Copyright 
+\f3 ã
+\f0  1992 Glenn Brown\
+compress_tiff (a NeXT TIFF file compression tool) Copyright 
+\f3 ã
+\f0  1992 Glenn Brown\
+
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\fs20\fc0\cf0 	This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2, or (at your option) any later version.\
+	This program is distributed WITHOUT ANY WARRANTY; without even the implied warrenty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\
+	You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+\qc \
+
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\fs22\fc0\cf0 \
+
+\b\fs24 * If you use this software or a modified version of this software to compress files for a commercial software distribution, the author would appreciate some sort of gift such as a copy of the software, although none is required.  \
+\
+
+\b0 					Enjoy!\
+					--Glenn\
+
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\b\fc1\cf1 \
+\
+Date:
+\f1\b0  Fri, 21 May 93 15:33:16 -0400\
+
+\f0\b From:
+\f1\b0  Glenn Brown <gbrown@raven.ctr.columbia.edu>\
+
+\f0\b To:
+\f1\b0  nobody@ctr.columbia.edu\
+
+\f0\b Subject:
+\f1\b0  Re: Thoughts on face-tiff collections and information\
+
+\f0\b Cc:
+\f1\b0  next-icon@gun.com\
+
+\f0\b Reply-To:
+\f1\b0  gbrown@raven.ctr.columbia.edu (Glenn Brown: NextMail Prefered)\
+\
+
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\f4\fs28\fc0\cf0 Garrance Drosehn wrote:\
+
+\gray333\fc2\cf2 I was thinking it would be nice if we distributed icons in a different format, one\
+which would do a better job of keeping track of the information.\
+\
+
+\gray0\fc1\cf1 I like the format used by some X mailer: A mailer would try to find an icon for 
+\f0\fs24 Lovstrand.EuroPARC.Xerox.COM.tiff
+\f4\fs28  by looking for:\
+
+\pard\tx1920\tx5460\tx5760\tx6720\tx7680\tx8640\tx9600\f0\fs24\fc1\cf1 lovstrand
+\f4\fs28 .tiff	in .../com/xerox/europarc 	and then\
+.dir.tiff	in .../com/xerox/europarc 	if that failed and then\
+
+\f0\fs24 lovstrand
+\f4\fs28 .tiff 	in .../com/xerox 	if that failed and then\
+.dir.tiff 	in .../com/xerox 	if that failed and then\
+
+\f0\fs24 lovstrand
+\f4\fs28 .tiff 	in .../com 	if that failed and then\
+.dir.tiff 	in .../com 	if that failed and then\
+
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\fc1\cf1 \
+This system lets  you specify default icons for a site (NeXT icon default for next.com, leech for microsoft.com, school or corperate logo for school.edu or company.com, etc.)  It also is a low-overhead way of specifying an icon for a person who uses a cluster of machines.  Finally, the folders would look pretty if you had lots of default icons.\
+\
+Of course, the problem is that each folder takes up 1k on disc, but there should only be around 1 directory per icon on average.\
+\
+A 
+\b\i real
+\b0\i0  system  would automatically retrieve icons somehow, datestamp the last time they were read, and flush icons nightly that haven't been looked at within some timeout period.  In the above system, automated retrieval is hard.  Flushing, however, is easy using cron(8) and find(1).\
+\
+
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\f0\b\fs24\fc1\cf1 Date:
+\f1\b0  Sat, 22 May 93 01:18:56 -0400\
+
+\f0\b From:
+\f1\b0  Glenn Brown <gbrown@raven.ctr.columbia.edu>\
+
+\f0\b To:
+\f1\b0  nobody@ctr.columbia.edu\
+
+\f0\b Subject:
+\f1\b0  Re: Automated Icon Compression!\
+
+\f0\b Cc:
+\f1\b0  next-icon@gun.com\
+
+\f0\b Reply-To:
+\f1\b0  gbrown@raven.ctr.columbia.edu (Glenn Brown: NextMail Prefered)\
+\
+
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\f2\fs20\fc0\cf0 In my earlier post, I accidentally sent two copies of my script\
+compress_tiff instead of one copy of compress_tiff and one copy of\
+compress_tiffs_in_dir.  So...\
+\
+
+{{\NeXTGraphic5085 compress_tiffs_in_dir \width960 \height960
+}
+¬}\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\f2\b0\i0\ulnone\fs20\fc0\cf0 <-compress_tiffs_in_dir\
+\
+I already have a nifty quote after sending the above script\
+to the first person who caught my error:\
+\
+"
+\fc1\cf1 Thanks for the revised compresstiff script.  \
+You've just saved me >5MB on my HD!"\
+	--Stefano Pagiola\
+\
+Thanks, Stefano, I'm glad I could help.\
+\
+--Glenn
+}

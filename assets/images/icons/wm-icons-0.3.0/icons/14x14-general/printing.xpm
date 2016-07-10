@@ -1,0 +1,30 @@
+/* XPM */
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+/* colors edited by Migo (bad) */
+static char*printer[]={
+"14 14 9 1",
+"# c #000000",
+"@ c #ffffff",
+"c c #808080",
+". c #c0c0c0",
+"o c gray30",
+"f c #ffff00",
+"g c gray60",
+"h c #00ff00",
+"  c None",
+"     ####     ",
+"    #o...###  ",
+"   #c@cco...##",
+"  #c@@@#ccco.#",
+" #c@@@#cc@f.o#",
+"#@...#cc@h.@o#",
+"#.@@...@..@oo#",
+"#...@@@..@ooo#",
+"#.gg...@@oooo#",
+"#.g@ggg.oooo# ",
+"##...@g.ooo#  ",
+"  ##..g.oo#   ",
+"    ###.o#    ",
+"       ##     ",
+};

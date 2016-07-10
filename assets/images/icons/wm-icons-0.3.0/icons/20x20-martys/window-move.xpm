@@ -1,0 +1,33 @@
+/* XPM */
+static char *mov_mico[] = {
+/* width height num_colors chars_per_pixel */
+"    20    20        6            1",
+/* colors */
+". c #000000",
+"# c #000084",
+"a c #0000ff",
+"b c none",
+"c c #ff0000",
+"d c #ffffff",
+/* pixels */
+"...............bbbbb",
+".ccccccccccccc.#bbbb",
+"...............#bbbb",
+".ddddddddddddd.#bbbb",
+".dadadaaaaaaad.#.bbb",
+".daddddddddddd.#dbbb",
+".dadadaaaaaddd.#.bbb",
+".daddddddddddd.#dbbb",
+".dadadddaaaaad.#.d.b",
+".ddddddddddddd.#dbdb",
+"...............#.b.b",
+"b###############dbdb",
+"bb.bbbbbbbbbbbbb.b.b",
+"bbdbbbbbbbbbbbbbdbdb",
+"bb.d.d.d.d.d.d.d.b.b",
+"bbbbdbbbbbbbbbbbbbdb",
+"bbbb.bbbbbbbbbbbbb.b",
+"bbbbdbbbbbbbbbbbbbdb",
+"bbbb.d.d.d.d.d.d.d.b",
+"bbbbbbbbbbbbbbbbbbbb",
+};

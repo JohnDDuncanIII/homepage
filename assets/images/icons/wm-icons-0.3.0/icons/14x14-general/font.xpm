@@ -1,0 +1,21 @@
+/* XPM */
+static char * mini_font_xpm[] = {
+"14 14 4 1",
+" 	c None",
+".	c green",
+"X	c red",
+"o	c blue",
+"              ",
+"     .        ",
+"     .        ",
+"     .        ",
+" XXXX. ...ooo ",
+" X  X..  ..  o",
+"    X.   o.   ",
+" XXXX.   o.   ",
+"X   X.   o.   ",
+"X   X..  .o   ",
+" XXXXX .. oooo",
+"              ",
+"              ",
+"              "};

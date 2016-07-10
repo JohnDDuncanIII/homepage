@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini_exclam_xpm[] = {
+"14 14 5 1",
+" 	s None	c None",
+".	c #808080",
+"X	c #008000",
+"o	c white",
+"O	c black",
+"       .X     ",
+"      .oXX.   ",
+"     .oXXXO   ",
+"     XXXXO    ",
+"    .XXXO.    ",
+"    XXXXO     ",
+"    XXXO      ",
+"    XXO       ",
+"    XO        ",
+"    O         ",
+"  .oXX        ",
+"  XXXX.       ",
+"   XXO.       ",
+"   .O.        ",
+};

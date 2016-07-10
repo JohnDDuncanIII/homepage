@@ -1,0 +1,41 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	98.09.27.23.33.15;	author raistlin;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	98.09.27.23.07.35;	author raistlin;	state Exp;
+branches;
+next	;
+
+
+desc
+@Initial rev.
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@icons_FILES	= $(sort $(wildcard *.xpm) )
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+a1 1
+FILES	= $(sort $(wildcard *.xpm) )
+@

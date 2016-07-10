@@ -1,0 +1,22 @@
+/* XPM */
+static char * mini-skull_xpm[] = {
+"14 14 4 1",
+" 	c None s None",
+".	c red",
+"X	c #808080",
+"o	c black",
+"     ....     ",
+"   X......X   ",
+"  X........X  ",
+"  ..oo..oo..  ",
+"  ..XX..XX..  ",
+"  o........o  ",
+"   o......o   ",
+".   o....o   .",
+"o.   o..o   .o",
+" o... oo ...o ",
+"  ooo....ooo  ",
+"   ........   ",
+"....oooooo....",
+"oooo      oooo",
+};

@@ -1,0 +1,23 @@
+/* XPM */
+static char * fig16_xpm[] = {
+"16 16 4 1",
+" 	c white",
+".	c black",
+"X	c dark khaki",
+"o	c medium sea green",
+"  ........      ",
+"  .      ..     ",
+"  .XX    . .    ",
+"  .XXX   .  .   ",
+"  .  XX o.....  ",
+"  .   XXooo  .  ",
+"  . ooooooooo.  ",
+"  .oooooooooo.  ",
+"  .oooooooooo.  ",
+"  .  ooooooo .  ",
+"  . ooooooo  .  ",
+"  . ooo oooo .  ",
+"  . oo  oooo .  ",
+"  .     oooo .  ",
+"  ............  ",
+"   ...........  "};

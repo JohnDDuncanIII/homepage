@@ -1,0 +1,43 @@
+/* XPM */
+static char *baseball[] = {
+/* width height ncolors chars_per_pixel */
+"32 32 4 1",
+/* colors */
+"` c black",
+"a c sienna",
+"b c white",
+"c c sea green",
+/* pixels */
+"````````````````````````````````",
+"````````````````````````````````",
+"```````ccccccccccccccccccc``````",
+"``````ccccccccccccccccccccc`````",
+"`````ccccccccccccccccccccccc````",
+"````ccccccccccccccccccccccccc```",
+"```ccccccccccccccccccccccccccc``",
+"``ccccccccccccccccccccccccccccc`",
+"`cccccccccccccccccccccccccccccc`",
+"`cccccccccccccccccccccccccccccc`",
+"`ccccccccccccccbccccccccccccccc`",
+"`cccccccccccccaaacccccccccccccc`",
+"`ccccccccccccaaaaaccccccccccccc`",
+"`cccccccccccaacccaacccccccccccc`",
+"`ccccccccccaacccccaacccccccccc``",
+"``ccccccccaacccccccaacccccccc```",
+"```ccccccaacccccccccaacccccc````",
+"````ccccaaccccaacccccaacccc`````",
+"`````ccaacccccaaccccccaacc``````",
+"``````baacccccccccccccaab```````",
+"```````aacccccccccccccaa````````",
+"````````aacccccccccccaa`````````",
+"`````````aacccccccccaa``````````",
+"``````````aacccccccaa```````````",
+"```````````aacccccaa````````````",
+"````````````aacccaa`````````````",
+"`````````````aaaaa``````````````",
+"``````````````aaa```````````````",
+"```````````````b````````````````",
+"````````````````````````````````",
+"````````````````````````````````",
+"````````````````````````````````"
+};

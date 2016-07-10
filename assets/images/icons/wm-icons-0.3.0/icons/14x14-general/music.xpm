@@ -1,0 +1,35 @@
+/* XPM */
+/* Drawn  by Nico Schirwing for the K Desktop Environment */
+/* See http://www.kde.org */
+/* edited by migo */
+static char*sound_settings[]={
+"14 14 8 1",
+"# c #000000",
+"a c #808080",
+"f c gray30",
+"e c gray60",
+"g c white",
+"d c red",
+"c c #ffff00",
+". c None",
+/*"f c #585858",*/
+/*"e c #a0a0a4",*/
+/*"g c #c0ffff",*/
+/*"d c #c05800",*/
+/*"c c #ffa858",*/
+"......###.....",
+".....#aaa##...",
+"....#aaaaaa##.",
+"...#eeaaaaae#.",
+".#.#aaeeaaef#.",
+"..##aa#feeff#.",
+"##.#afff#fff#.",
+"cd.#afga#fff#.",
+"##.#a#ef#fff#.",
+"...#afffffff#.",
+"...#fff#afff#.",
+"....##faaff#..",
+"......##ff#...",
+"........##....",
+};
+

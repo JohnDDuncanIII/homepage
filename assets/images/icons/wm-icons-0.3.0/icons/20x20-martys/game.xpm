@@ -1,0 +1,30 @@
+/* XPM */
+static char *smiley[] = {
+/* width height num_colors chars_per_pixel */
+"    20    20        3            1",
+/* colors */
+". c none",
+"# c #000000",
+"a c #ffff00",
+/* pixels */
+"....................",
+"....................",
+"........####........",
+"......##aaaa##......",
+".....#aaaaaaaa#.....",
+"....#aaaaaaaaaa#....",
+"...#aaa#aaaa#aaa#...",
+"..#aaa###aa###aaa#..",
+"..#aaaa#aaaa#aaaa#..",
+"..#aaaaaaaaaaaaaa#..",
+"..#aaaaaaaaaaaaaa#..",
+"..#aa#aaaaaaaa#aa#..",
+"..#aaa#aaaaaa#aaa#..",
+"...#aaa######aaa#...",
+"....#aaa####aaa#....",
+".....#aaaaaaaa#.....",
+"......##aaaa##......",
+"........####........",
+"....................",
+"....................",
+};

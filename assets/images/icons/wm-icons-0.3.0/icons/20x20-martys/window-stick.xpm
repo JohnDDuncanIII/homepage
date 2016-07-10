@@ -1,0 +1,34 @@
+/* XPM */
+static char *sti_mico[] = {
+/* width height num_colors chars_per_pixel */
+"    20    20        7            1",
+/* colors */
+". c #000000",
+"# c #0000ff",
+"a c #848484",
+"b c #c6c6c6",
+"c c none",
+"d c #004400",
+"e c #008000",
+/* pixels */
+"cccccccccccccccccccc",
+"ccccccc.....cccccccc",
+"cccccc.eeeee.ccccccc",
+"ccccc.eeeeeee.cccccc",
+"ccccc.#eeeeee.cccccc",
+"ccccc.e#####e.cccccc",
+"cccccc.eeeee.ccccccc",
+"ccccccc.....cccccccc",
+"cccccc..#ee..ccccccc",
+"ccccc.e.#ee.e.cccccc",
+"ccccd#ee...eee.ccccc",
+"cccc.e#eeeeeee.ccccc",
+"cccc.ee####eee.ccccc",
+"ccccc.eeeeeeedcccccc",
+"cccccc......dccccccc",
+"cccccccc.abccccccccc",
+"cccccccc.abccccccccc",
+"cccccccc.abccccccccc",
+"ccccccccc.cccccccccc",
+"cccccccccccccccccccc"
+};

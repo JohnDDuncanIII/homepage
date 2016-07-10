@@ -1,0 +1,25 @@
+/* XPM */
+static char * mini-colors_xpm[] = {
+"14 14 7 1",
+" 	c None s None",
+".	c #808080",
+"X	c red",
+"o	c yellow",
+"O	c blue",
+"+	c black",
+"#	c white",
+"              ",
+"              ",
+"............. ",
+".XXXXooooOOOO+",
+".XXXXooooOOOO+",
+".XXXXooooOOOO+",
+".XXXXooooOOOO+",
+".####....+++++",
+".####....+++++",
+".####....+++++",
+".####....+++++",
+" +++++++++++++",
+"              ",
+"              "};
+

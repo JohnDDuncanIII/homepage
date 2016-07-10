@@ -1,0 +1,24 @@
+/* XPM */
+static char * mini_telnet_xpm[] = {
+/* width height ncolors cpp [x_hot y_hot] */
+"14 14 3 1 0 0",
+/* colors */
+" 	s None	m None	c None",
+".	s iconColor1	m black	c black",
+"X	c #c0c0c0",
+/* pixels */
+"       ...    ",
+" . .  .....   ",
+" . .  .   .   ",
+"..... .  ...  ",
+".XXX. . ..... ",
+"..... . .XXX. ",
+".XXX. . .XXX. ",
+".XXX. . ..... ",
+"..... . .XXX. ",
+" ...  . ..... ",
+"  .   .  . .  ",
+"  .   .  . .  ",
+"  .....       ",
+"   ...        ",
+};

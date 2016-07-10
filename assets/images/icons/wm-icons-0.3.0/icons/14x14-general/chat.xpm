@@ -1,0 +1,26 @@
+/* XPM */
+static char *mini-chat_xpm[] = {
+/* x y colors c/p */
+"14 14 5 1",
+/* color def */
+"  s None c None",
+". c #FFFFFF",
+"e c #00A000",
+"o c #404040",
+"h c #000000",
+/* bitmap */
+"  ooooo       ",
+" o.....o      ",
+"o.eheh..o     ",
+"o.......o     ",
+"o.heheh.o  o  ",
+"o......o  oo  ",
+" o...oo  o.o  ",
+"  o.o  oo...o ",
+"  oo  o......o",
+"  o  o.ehheh.o",
+"     o.......o",
+"     o..ehhe.o",
+"      o.....o ",
+"       ooooo  ",
+};

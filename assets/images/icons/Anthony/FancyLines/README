@@ -1,0 +1,45 @@
+
+appl/www/FancyLines     Wide World Web -- Fancy Lines
+
+This direct contains assorted fancy line to use as dividers on WWW
+document pages.
+
+The lines consist of some object forming a horizontal division across
+the page. These lines are not a thin grove such as the ``Threaded Lines''
+or a rectangular box such as `Plain or Textured Lines''. They are sort of
+midway between the two line styles and are fairly `free form'' in what
+is done.
+
+
+CONTRIBS
+
+  Anthony Thyssen (library coordinator)  <anthony@cit.gu.edu.au>
+      castle_wall 
+     
+  Corey Venour <C.Venour@cit.gu.edu.au>
+      jet
+
+  Sachiko Oba <sachi@interport.net>    http://www.interport.net/~sachi/
+    As part of a larger set of contribs (see Contrib Document)
+      foot_steps and in the plain `Lines' area em_spectrum, and raised.
+
+  Gary M. Brown <skull@pixi.com>  http://www.pixi.com/~skull/skull.htm
+     grape_vine  surfer
+
+  Anni E. Claery (AFactor)
+     scroll_bottom, scroll_top,  colored "dragons"
+
+  Miscellaneous
+    http://bazaar.com/Megadeth/megadeth.html            Barbed Wire line
+    http://www.csu.edu.au/special/conference/graphic/   Banner Line Idea
+    http://gnv.ifas.ufl.edu/WWW/PIRATE/index.html       archipelago
+    http://www.fau.edu/student/chemclub/dave/img1.htm   phoneline
+
+See Also
+  The rest of the WWW icons area
+  Specifically
+     appl/www/Lines        -- Plain or Textured lines
+     appl/www/ThreadLines  -- Grooved Lines to some object or event
+     appl/www              -- Speech and block lines for indented areas
+
+Anthony Thyssen  <anthony@cit.gu.edu.au>  http://www.cit.gu.edu.au/~anthony/

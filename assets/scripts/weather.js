@@ -364,7 +364,7 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	var toAdd = document.createElement("img");
 	toAdd.setAttribute('id', "temp"+i);
 	toAdd.className = "img-with-text-weather-letter";
-	if(curTemp == "M" || curTemp =="" || curTemp ==null) {
+	if(curTemp == "M" || curTemp =="" || curTemp ==null || curTemp == "NA") {
 	    toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
 	} else {
 	    toAdd.setAttribute('src', 'assets/weather/nums/'+curTemp.charAt(i)+'.gif');
@@ -387,7 +387,7 @@ function helper(curTemp, precip, forecast, showDate, text) {
 
     /***** OLD PRECIP ******/
 
-    if(curTemp != 'M' && curTemp != "" && curTemp != null) {
+    if(curTemp != 'M' && curTemp != "" && curTemp != null && curTemp != "NA") {
 	weatherPath = curTemp;
 	while(weatherPath%5 != 0) { weatherPath--; } // decrement the value to a valid picon therm
 	if(weatherPath<100 && weatherPath>=0) {
@@ -416,7 +416,7 @@ function helper(curTemp, precip, forecast, showDate, text) {
     var toAdd = document.createElement("img");
     toAdd.setAttribute('id', "therm");
     toAdd.className = "img-with-text-weather-block";
-    if(curTemp == "M" || curTemp =="" || curTemp ==null) {
+    if(curTemp == "M" || curTemp =="" || curTemp ==null || curTemp == "NA") {
 	toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
     } else {
 	toAdd.setAttribute('src', "assets/weather/temp2/" + weatherPath + "/face.gif");

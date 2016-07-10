@@ -1,0 +1,43 @@
+/* XPM */
+static char *map_usa[] = {
+/* width height ncolors chars_per_pixel */
+"32 32 4 1",
+/* colors */
+"` c black",
+"a c grey",
+"b c white",
+"c c slate grey",
+/* pixels */
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bb`````````````````bbbbbbbbbbbbb",
+"```bbbbbbbbbbbbbac`bbbbbbbbbb```",
+"`bbaaaaaaaaaaaaaaac``bbb`bbb`ba`",
+"b`baaaaaaaaaaaaaaaacc`b`b`b`bac`",
+"b`baaaaaaaaaaaaaaaac`b`bc``bac`a",
+"`bbaaaaaaaaaaaaaaaac`b`baccaac`a",
+"`baaaaaaaaaaaaaaaaaac``baaaac`aa",
+"`baaaaaaaaaaaaaaaaaaaaaaaaac`aab",
+"`baaaaaaaaaaaaaaaaaaaaaaaaac`abb",
+"`baaaaaaaaaaaaaaaaaaaaaaaaac`abb",
+"b`baaaaaaaaaaaaaaaaaaaaaaaac`abb",
+"b`baaaaaaaaaaaaaaaaaaaaaaac`aabb",
+"bb`aaaaaaaaaaaaaaaaaaaaaac`aabbb",
+"bbb`ccccaaaaaaaaaacccccac`aabbbb",
+"bbbb````ccccaaaacc`````ac`abbbbb",
+"bbbbbaaa````cccc``aaaaa`ac`abbbb",
+"bbbbbbbbaaaa``c`aaabbbaa`a`abbbb",
+"bbbbbbbbbbbaaa``abbbbbbb`a`abbbb",
+"bbbbbbbbbbbbbaaaabbbbbbbb`cabbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbaabbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+};

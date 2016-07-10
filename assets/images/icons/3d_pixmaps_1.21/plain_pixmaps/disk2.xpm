@@ -1,0 +1,43 @@
+/* XPM */
+static char *floppy2[] = {
+/* width height ncolors chars_per_pixel */
+"32 32 4 1",
+/* colors */
+"` c black",
+"a c grey",
+"b c tomato",
+"c c white",
+/* pixels */
+"cccccccccccccccccccccccccccccccc",
+"cccccccccccccccccccccccccccccccc",
+"ccc````````````````````````````c",
+"ccc````````````````````````````c",
+"aaa``bbbbbbbbbbbbbbbb``````````c",
+"aaa``bbbbbbbbbbbbbbbb``````````c",
+"aaa``cccccccccccccccc``````````c",
+"aaa``cccccccccccccccc````````acc",
+"aaa``cccccccccccccccc````````ccc",
+"aaa````````````````````````````c",
+"aaa````````````````````````````c",
+"aaa````````````````````````````c",
+"aaa```````````aaaac````````````c",
+"aaa``````````ccccaac```````````c",
+"aaa`````````ccccccaac``````````c",
+"aaa`````````cccccccac``````````c",
+"aaa`````````cccccccac``````````c",
+"aaa``````````cccccac```````````c",
+"aaa```````````cccac````````````c",
+"aaa````````````````````````````c",
+"aaa````````````````````````````c",
+"aaa`````````````ca`````````````c",
+"aaa`````````````ca`````````````c",
+"aaa`````````````ca`````````````c",
+"aaa`````````````ca`````````````c",
+"aaa````````````````````````````c",
+"aaa````````````````````````````c",
+"aaa```````````a````a```````````c",
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaccc",
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaccc",
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaccc",
+"cccccccccccccccccccccccccccccccc"
+};

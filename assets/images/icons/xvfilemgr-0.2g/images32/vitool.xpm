@@ -1,0 +1,41 @@
+/* XPM */
+static char *vitool[] = {
+/* width height ncolors chars_per_pixel */
+"32 32 2 1",
+/* colors */
+"` c #000",
+"a c #FFF",
+/* pixels */
+"```````a`````aaaaaaaa`aaaa``````",
+"```````````a``aaaaaaaa`a``a`````",
+"``````a````aaaaaa`a``a``aaaa````",
+"````a````a```aaa`aaaaaa```a`a```",
+"`````aa``aaaaa````````aaa`aaa```",
+"````a`aa`a````````aaaa``aaaa````",
+"`````a``````````aaaaaaa`a```````",
+"````````````a`a````````aaaaaaa``",
+"``````````aaa````````aaaaaaaaa``",
+"`aa```````aaa````````aaaaaaa`aa`",
+"````````````a``````a`aaaaaaaa`a`",
+"`````````a``a`````aaa`aaaa`aaaaa",
+"``````````a``a````a`aaaa`aa``aa`",
+"`````````aa`aa`a```aaa`aa`aa``a`",
+"``````````aa`aa`aaaaaaa`aaaaa`a`",
+"``````````aaa`a``aaaa`aaaa``a`a`",
+"````````````a`aaaaa``a`aaaa`a`a`",
+"`````````aaa````a`aaaaa`a`a`a```",
+"```````````aaaa`aaaa`aa`aaaaa`a`",
+"`````````````aaa`aa`aaaa`aaaa`a`",
+"``````````a```aa``aaaaaa`aa`a```",
+"````````````a`aaaaaaaa`aaa`a`aa`",
+"````a``````````aaaaaaaaaaaaa`a``",
+"```````````````a``aaaaaaaa`aaa``",
+"```````````````a``aaaa`a`aaaa```",
+"`````````````a`aa``aaaaaaaaaaa``",
+"````````````````````aaaaaaaa````",
+"```````````aaaaaaa``aaaaaaaaa```",
+"``````````````a`aaa`aa`a`a`aa```",
+"`````````````a`aaaaaaaa``aaa````",
+"a`````````````a`a`aa`a`aa`a`````",
+"`````````````aaaaaaaaaaaa```````"
+};

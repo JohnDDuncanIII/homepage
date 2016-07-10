@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini_question_xpm[] = {
+"14 14 5 1",
+" 	s None	c None",
+".	c red",
+"X	c white",
+"o	c black",
+"O	c #808080",
+"     ....     ",
+"   .X......   ",
+"  .X..oo...o  ",
+"  ...o  ...o  ",
+"   oo   ...o  ",
+"       ...o   ",
+"      ...o    ",
+"     ..oo     ",
+"     ....o    ",
+"      ooO     ",
+"      X..     ",
+"     OX..O    ",
+"     O...O    ",
+"      ooO     ",
+};

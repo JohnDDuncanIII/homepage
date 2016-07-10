@@ -1,0 +1,28 @@
+/* XPM */
+static char * mini_palett_xpm[] = {
+/* width height ncolors cpp [x_hot y_hot] */
+"14 14 8 1 0 0",
+/* colors */
+" 	s None	m None	c None",
+".	s iconColor1	m black	c black",
+"X	s iconColor6	m white	c yellow",
+"o	s iconColor8	m black	c magenta",
+"+	s iconColor4	m white	c green",
+"@	c #808080808080",
+"#	s iconColor3	m black	c red",
+"$	s iconColor5	m black	c blue",
+/* pixels */
+"   ....       ",
+"  .XXXX..     ",
+" .XXXoooX.    ",
+".XXXXoooX..  .",
+".XX++@..XX. ..",
+".X+++@XXXXX...",
+".X@@@XXX.@... ",
+".XXXXXXX....X.",
+" .X###.XXXXXX.",
+" .X###.X$$XXX.",
+"  ..XXXX$$$XX.",
+"    ...XXXX.. ",
+"   @.. ....   ",
+" @@..         "};

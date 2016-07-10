@@ -1,0 +1,22 @@
+/* XPM */
+static char * mini_mouse_xpm[] = {
+"14 14 4 1",
+" 	c None",
+"#	c black",
+"X	c white",
+"o	c gray",
+"#    ###      ",
+"### #XXX#     ",
+"  ##XoXXX#    ",
+"  #XXXoXXo#   ",
+" #XoXXXooXX#  ",
+"#oXXoXXoXXX#  ",
+"#ooXXooXXXXX# ",
+"#XXoXoXXXXXX# ",
+" #XXoXXXXXXX# ",
+"  #XXoXXXXXo# ",
+"   #XXoXXXoX# ",
+"    #XXoooX#  ",
+"     #XXXX#   ",
+"      ####    ",
+};

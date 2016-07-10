@@ -1,0 +1,15 @@
+eicons-1.0 [19990129.18] V C Hui
+
+  replacement pixmaps for xfm
+	$(SXPM) m_broken.xpm -o xfm_blackhole.xpm
+	$(SXPM) d_dir.xpm -o xfm_dir.xpm
+	$(SXPM) d_dirlnk.xpm -o xfm_dirlnk.xpm
+	$(SXPM) a_shell.xpm -o xfm_exec.xpm
+	$(SXPM) a_execlnk.xpm -o xfm_execlnk.xpm
+	$(SXPM) f_file.xpm -o xfm_file.xpm
+	$(SXPM) f_archive.xpm -o xfm_files.xpm
+	$(SXPM) d_dir.xpm -o xfm_icon.xpm
+	$(SXPM) f_image.xpm -o xfm_image.xpm
+	$(SXPM) f_symlnk.xpm -o xfm_symlnk.xpm
+	$(SXPM) d_updir.xpm -o xfm_updir.xpm
+	grep "SXPM.*-o" Makefile >> $(README)

@@ -1,0 +1,23 @@
+/* XPM */
+static char * file-exe_t_xpm[] = {
+"14 14 6 1",
+" 	c None s None",
+".	c #808080",
+"X	c #c0c0c0",
+"o	c black",
+"#      c white",
+"O	c #000080",
+"              ",
+"..............",
+".XXXXXXXXXXX.o",
+".XOOOOOOOOOO.o",
+".XOOOOOO#o#o.o",
+".X...........o",
+".X##########.o",
+".X##########.o",
+".X##########.o",
+".X##########.o",
+".X##########.o",
+".X##########.o",
+".............o",
+"oooooooooooooo"};

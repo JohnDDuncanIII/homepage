@@ -1,0 +1,23 @@
+/* XPM */
+static char * www_xpm[] = {
+"14 14 5 1",
+" 	c None",
+".	c black",
+"o	c yellow",
+"c	c red",
+",	c navy",
+"       ,,,,,  ",
+"      ,ccccc, ",
+"       ,,,,cc,",
+"   .     .cc, ",
+"  .o.  ,.o.cc,",
+"  .o. ,ccccc, ",
+"  .o. .,,,,,  ",
+"  .o..o..o.   ",
+"  .o..o..o.   ",
+"  .o.ooo.o.   ",
+"  .ooo.ooo.   ",
+"   .o. .o.    ",
+"   .o. .o.    ",
+"    .   .     ",
+};

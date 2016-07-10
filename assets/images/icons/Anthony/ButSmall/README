@@ -1,0 +1,50 @@
+
+appl/www/ButSmall   World Wide Web Buttons (Small)
+
+These are buttons which can be used on WWW html documents for the creation
+of very small ``Button Banks''. All the buttons follow the style initially
+set out by Greg Bossert, of Rutgers University, for this sized buttons.
+
+Example Button Bank:
+
+<BLOCKQUOTE> Where do you want to go now?... <BR>
+<!-- Go to the main home page of server -->
+<A HREF="/"><IMG SRC="/images/ButSmall/home_blue.gif" ALT="[home]"
+        WIDTH=20 HEIGHT=20 ALIGN=middle></A>
+<!-- Exit this room via a door (up one directory) -->
+<A HREF="../"><IMG SRC="/images/ButSmall/up.gif" ALT="[exit]"
+        WIDTH=20 HEIGHT=20 ALIGN=middle></A>
+<!-- send me mail -->
+<A HREF="mail.html"><IMG SRC="/images/ButSmall/mail.gif" ALT="[mail]"
+        WIDTH=20 HEIGHT=20 ALIGN=middle></A>
+<!-- help! -->
+<A HREF="help.html"><IMG SRC="/images/ButSmall/question.gif" ALT="[help]"
+        WIDTH=20 HEIGHT=20 ALIGN=middle></A>
+</BLOCKQUOTE><P>
+
+Almost all the icons were created by hand using a small 12x12 image
+and wrapping it in a 3 pixel wide border. These buttons are only
+ment for small unimportant button banks at the bottom of documents.
+See the ../Buttons area for larger sized buttons.
+
+
+Contribs
+
+  Greg Bossert <bossert@maurolycus.rutgers.edu>
+      http://www-ns.rutgers.edu/doc-images/
+    The original 40x40 and 20x20 button icons in the ``appl/www'' area.
+    These include:-
+       blank, home_* up, down, left, right, top, question, warning
+    The basic style and philosophy of these images are also his doing.
+
+  Sky <sky@safari.net>
+    Sky is using this sized buttons in his Town of Overshire and Sky Castle
+    adventure  http://www.safari.net/~sky/
+      mail 
+
+See also
+
+   appl/www/Buttons  Larger 40x40 buttons
+   prog/cl-bits      Small bits and pieces to constructing icons
+
+Anthony Thyssen  <anthony@cit.gu.edu.au>  http://www.cit.gu.edu.au/~anthony/

@@ -1,0 +1,25 @@
+/* XPM */
+static char * masks_xpm[] = {
+/* width height ncolors chars_per_pixel */
+"14 14 4 1",
+/* colors */
+" 	c None",
+".	c black",
+"X	c red",
+"o	c #c0c000",
+/* pixels */
+" ..  ...      ",
+".XX..XXX.     ",
+".XXXXXX..  .. ",
+".XXXXX.oo..oo.",
+".X.X.X.oooooo.",
+".X.XX..oooooo.",
+".XXXXX.o.oo.o.",
+".XXXXX.o.oo.o.",
+".X.XX..oooooo.",
+".XX..X.oooooo.",
+" .XXXX.o.oo.o.",
+"  .XXX.oo..oo.",
+"   ... .oooo. ",
+"        ....  ",
+};

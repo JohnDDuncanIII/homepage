@@ -1,0 +1,105 @@
+# Makefile.in generated automatically by automake 1.2 from Makefile.am
+
+# Copyright (C) 1994, 1995, 1996, 1997 Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy, distribute and modify it.
+
+
+SHELL = /bin/sh
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+bindir = @bindir@
+sbindir = @sbindir@
+libexecdir = @libexecdir@
+datadir = @datadir@
+sysconfdir = @sysconfdir@
+sharedstatedir = @sharedstatedir@
+localstatedir = @localstatedir@
+libdir = @libdir@
+infodir = @infodir@
+mandir = @mandir@
+includedir = @includedir@
+oldincludedir = /usr/include
+
+pkgdatadir = $(datadir)/@PACKAGE@
+pkglibdir = $(libdir)/@PACKAGE@
+pkgincludedir = $(includedir)/@PACKAGE@
+
+top_builddir = ..
+
+ACLOCAL = @ACLOCAL@
+AUTOCONF = @AUTOCONF@
+AUTOMAKE = @AUTOMAKE@
+AUTOHEADER = @AUTOHEADER@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA = @INSTALL_DATA@
+transform = @program_transform_name@
+
+NORMAL_INSTALL = true
+PRE_INSTALL = true
+POST_INSTALL = true
+NORMAL_UNINSTALL = true
+PRE_UNINSTALL = true
+POST_UNINSTALL = true
+CC = @CC@
+CFLAGS = @CFLAGS@
+DEFAULT_CP_CMD = @DEFAULT_CP_CMD@
+DEFAULT_EDITOR = @DEFAULT_EDITOR@
+DEFAULT_MAILER = @DEFAULT_MAILER@
+DEFAULT_MV_CMD = @DEFAULT_MV_CMD@
+DEFAULT_RM_CMD = @DEFAULT_RM_CMD@
+HAVE_SLINGSHOT = @HAVE_SLINGSHOT@
+HAVE_XVIEW = @HAVE_XVIEW@
+HAVE_XVIEW_PRIVATE_HEADERS = @HAVE_XVIEW_PRIVATE_HEADERS@
+PACKAGE = @PACKAGE@
+SLINGSHOT_CFLAGS = @SLINGSHOT_CFLAGS@
+SLINGSHOT_LIBS = @SLINGSHOT_LIBS@
+VERSION = @VERSION@
+XVIEW_CFLAGS = @XVIEW_CFLAGS@
+XVIEW_LIBS = @XVIEW_LIBS@
+ac_my_xp = @ac_my_xp@
+xvdep = @xvdep@
+xvfilemgr_bindir = @xvfilemgr_bindir@
+xvfilemgr_libdir = @xvfilemgr_libdir@
+xvfilemgr_mandir = @xvfilemgr_mandir@
+
+icon_FILES	= $(sort $(wildcard *.xpm) )
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+CONFIG_HEADER = ../config.h
+CONFIG_CLEAN_FILES = 
+HEADERS =  $(HAVE_XVIEW_PRIVATE_HEADERS)
+
+DIST_COMMON =  Makefile.in
+
+
+DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
+
+TAR = gtar
+GZIP = --best
+default: all
+
+.SUFFIXES:
+
+all:
+
+install:
+	list='$(icon_FILES)'; for filename in $$list; do \
+	( $(INSTALL_DATA) $$filename $(xvfilemgr_libdir)/$$filename ); \
+	echo $(xvfilemgr_libdir)/$$filename ; \
+	done
+
+clean:
+
+distclean: clean
+	$(RM) Makefile
+
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

@@ -1,0 +1,56 @@
+
+appl/www/ThreadLines     Wide World Web -- Threaded Lines
+
+This direct contains assorted fancy line to use as dividers on WWW
+document pages.
+
+A group of these lines follow a partucualar style of a simple groove or
+string with some feature attached. The lines: bow, bubble, cut, eyes,
+music, owl, runner, and tap,  were the original set of fancy lines which
+were created by  David Bouman. (See below)
+
+Since then numerous other people have created lines of similar style,
+unfortuantly with the web the way it is it is very difficult to discover
+the original authors.
+
+
+CONTRIBS
+
+  David Bouman <dsbouma@cs.vu.nl>      http://www.cs.vu.nl/~dsbouma/
+    These were the original set of string lines.  You can get the originals
+    from  http://www.cs.vu.nl/~dsbouma/rulers.html
+      cut, eyes, music, owl, runner, tap, bomb_1, bomb_2, string
+
+
+  Chez Skal <Pascal.Massimino@ens.ens.fr>
+                        http://acacia.ens.fr:8080/home/massimin/index.ang.html 
+    Created a number in the same style. 
+      melt, bubbles, bow, ghost (completely re-colored)
+
+
+  Anthony Thyssen (library coordinator)  <anthony@cit.gu.edu.au>
+    I created most of these lines either as an experiment, or to use
+    specifically on my castle adventure home page.
+       Lines:  bomb_3, castle, castle_hall, castle_hall2, castle_pass,
+           day_night, dynamite (before bomb was found), forest, island,
+           train
+     
+  Ron Kinion  <rkinion@eecs.wsu.edu>  http://www.eecs.wsu.edu/~rkinion/
+    bulldog, doom, lightbulb, ruler, startrek
+
+  Thomas Linder <e8826423@student.tuwien.ac.at>
+                http://stud1.tuwien.ac.at/~e8826423/
+    The lemming lines
+
+  Miscellaneous
+    http://www.portal.com/~skyvis/images/               birds, glue, rocket
+    http://www.fau.edu/student/chemclub/dave/img1.htm   hippo, whale
+
+See Also
+  The rest of the WWW icons area
+  Specifically
+     appl/www/Lines       -- Plain or Textured Separators
+     appl/www/FancyLines  -- Lines consisting of some object (not grooved)
+     appl/www             -- speech and block lines for indented areas
+
+Anthony Thyssen  <anthony@cit.gu.edu.au>  http://www.cit.gu.edu.au/~anthony/

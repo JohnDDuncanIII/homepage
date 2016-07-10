@@ -1,0 +1,16 @@
+disk-cd.xpm cd-player.xpm
+todo.xpm choice-no.xpm
+todo.xpm choice-yes.xpm
+folder.xpm file-manager.xpm
+folder.xpm folder-open.xpm
+game.xpm game-action.xpm
+game-board.xpm game-logic.xpm
+graphics.xpm image-processor.xpm
+graphics.xpm image-viewer.xpm
+music.xpm sound.xpm
+window-destroy.xpm window-close.xpm
+window-destroy.xpm window-delete.xpm
+window-maximize.xpm window-iconify.xpm
+window-raise.xpm window-lower.xpm
+window-move.xpm window-resize.xpm
+window-raise.xpm window-stick.xpm

@@ -1,0 +1,28 @@
+/* XPM */
+static char *gnu_xpm[] = {
+/* columns rows colors chars-per-pixel */
+"14 14 8 1",
+"  c None",
+". c black",
+"o c gray30",
+"O c gray40",
+"@ c gray50",
+"+ c gray60",
+"# c gray85",
+"$ c white",
+/* pixels */
+" .o..      .. ",
+".O           .",
+".    .. ..   .",
+".   .oo.oo.  .",
+"...o$+$+O@+.. ",
+" ..$$$@$$@$.. ",
+" .+$$$.$$.$.  ",
+" .$$+$$#+$.   ",
+" .O#$$$#O.    ",
+"  .$#$$$$$.   ",
+"  .$$$$+++.   ",
+"   o$o$$@@    ",
+"    o+o$+o    ",
+"     O O+.    ",
+};

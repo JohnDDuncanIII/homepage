@@ -1,0 +1,70 @@
+{\rtf0\ansi{\fonttbl\f4\fswiss Helvetica;\f0\fnil Times-Roman;\f3\fmodern Courier;}
+\paperw11760
+\paperh7800
+\margl120
+\margr120
+{\colortbl;\red0\green0\blue0;}
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\f4\b\i0\ulnone\fs24\fc1\cf1 Q. What TIFF formats/pixel depths does NEXTSTEP support?\
+\
+A.
+\b0 \
+
+\b\i\fs32 (I say color rather than 8bit or 24 bit cause 2.0 \
+Icon says it's 24 bit and tiffutil -icon says 8bit.  Your guess.)\
+
+\pard\tx620\tx1240\tx1860\tx2480\tx3100\tx3720\tx4340\tx4980\tx5600\tx6220\b0\i0\fs28\fc0\cf0 \
+yes it's really 8 bits \
+2^8=256 or the number of intensity levels (one lowly byte)\
+times the number of samples (or planes) per pixel --- 256 ^ 3= the 16.77 mill colors possible.\
+one sample is the green 
+\fc1\cf1 channel, one the red, one the blue.\
+\
+(24 bits is a 'understood' misnomer its 8bits+8bits+8bits)\
+then there is the 8 bits of alpha channel which is non standard.\
+which makes our full 32bit NeXT Dimension Board\
+\
+12bits is three levels (RGB) of four bits each sample\
+2^4=16 levels of intensity\
+three of them makes 16 * 16 * 16 = 4096 colors or the NeXT Turbo colors.\
+\
+Now for the part I don't know as much about:\
+besides the stuff in 
+\f0\b\fs36 NXTIFFPboardType
+\f4\b0\fs28  in the developers online manuals\
+look under \
+
+\pard\tx7140\f0\b\li2100\fc0\cf0 findImageNamed:
+\pard\tx620\tx1240\tx1860\tx2480\tx3100\tx3720\tx4340\tx4980\tx5600\tx6220\f4\b0\fc0\cf0 \
+
+\pard\tx7140\f0\b\li2100\fc0\cf0 bestRepresentation
+\pard\tx620\tx1240\tx1860\tx2480\tx3100\tx3720\tx4340\tx4980\tx5600\tx6220\f4\b0\fc0\cf0 \
+in the 
+\f0\b\fs36 NXImage
+\f4\b0\fs28  object. (look at the rest for lots more)\
+there you will see that the icon for a application can also be a EPS file and a 
+\fc1\cf1 description of how the "best representation" is found. \
+Best representation being a comparison of the current environment and the tiffs in the file.\
+In theory you could have a hi-res 400 dpi image packed in to you tiff and it <should> be used for print out on the printer. I haven't checked it out.\
+
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\f3\fs24\fc1\cf1 \
+
+\f4\b\i\fs28 One thing that does not work, however, is \
+viewing both the color and 2bit images on \
+
+\pard\tx620\tx1240\tx1860\tx2480\tx3100\tx3720\tx4340\tx4980\tx5600\tx6220\fc1\cf1 tw
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\fc1\cf1 o-headed cubes - at least this doesn't work in 2.0 \
+I don't know bout 3.0.  I had hoped to be able to view \
+the color version of the tiff in the color monitor, \
+and the 2-bit version in the megapixel monitor,\
+however that doesn't work.\
+
+\pard\tx620\tx1240\tx1860\tx2480\tx3100\tx3720\tx4340\tx4980\tx5600\tx6220\b0\i0\fc0\cf0 \
+It would seem the problem is more along the lines that the workspace is not updating the 
+\fc1\cf1 environment
+\fc0\cf0  variables for each screen rather it is 
+\fc1\cf1 defaulting
+\fc0\cf0  to the deepest of the two.\
+(this is conjecture from a mono-person). This has to do with the off screen cache too.\
+\
+
+}

@@ -1,0 +1,158 @@
+
+www     Wide World Web Server Icons
+
+This README is copied with the icons images to three possible places
+
+Original Source for Icons in the Library...  
+http://www.cit.gu.edu.au/~anthony/icons/www/
+   This directory is a SOURCE directory of the World Wide Web icons and as
+   such is in the libraries own format X Bitmaps and X Pixmaps.
+   CONTINUED BELOW
+
+   The WWW set is designed as a basic set for new web sites, it is a
+   basic set to provide a starting point and a consistant set for
+   developing sites. It does not contain every icon in existance, nor
+   does it contain banners or backgrounds which are very site dependant,
+   being the things which make individual site unique (icon wise).
+
+CIT Server on www.cit.gu.edu.au...
+   All the icons in the above library WWW area have been converted to
+   GIF format, via an automated installation script (not published).
+   Transparency on X pixmaps and white on X bitmaps have been converted to
+   a transparent grey color in the resulting GIF file. (See below).
+
+   WARNING: This installation script can remove old obsolete images if
+   requested. Only the GIF files in this directory which are never
+   removed or replaced are those which START WITH A CAPITAL LETTER.
+   These are classed as local additions to this server, make your own
+   additions the same way.
+
+A Copy of these icons on a Remote Server...
+   That says it all. This README is therefore obsolete, and it is up to
+   the Webmaster or owner of these directories to do whatever is
+   required.  ``Images.html'' files in each of the subdirectories
+   provide image examples, indexing, and the README introduction.
+
+   I would however recommend that a new copy of these icons be
+   downloaded from  http://www.cit.gu.edu.au/images/Images.html every
+   couple of months or so.
+
+   The "Images.html" file is WWW frame compliant (read NetScape)
+   and is generated from the source "Images.m4" file, along with
+   "Images_Index.html" and "Images_Top.html", etc.  For more information
+   see the top comments of the "Images.m4" file on how this generation
+   is done.
+
+   The "Images_Ext.html" file is to display to External users who are
+   not allowed to use the Example Image Pages Provided. The file
+   "LocalOnly.htaccess" file is a example .htaccess file which will
+   redirect non-local users to the "Ext" file instead of the Example
+   pages.
+
+	  ---------------------------------------------------
+
+AIcons Library README...      AIcons directory ``www''
+
+This directory is a SOURCE directory of the World Wide Web icons and as
+such is in the libraries own format of X Bitmaps and X Pixmaps.
+
+However the Web prefers its images in the GIF format and as such when
+installing the icons you convert them to this format with appropriate
+transparency arrangements. See below.
+
+The .html files in this directory are designed for use in the /images
+directory of a Http Web Server as ``Image Examples''.  See our own
+``Server Information'' document on http://www.cit.gu.edu.au/http/
+The top level of the "Images*.html" files are also generated from the
+file "Images.cpp" (See the comments in this file).
+
+The links in this files are full paths so that client programs looking at
+these files can find the GIF images in the current servers /images area
+regardless of if reading from the actual library directory and to keep
+web spiders happy. (A Kludge)
+
+A gzip'ed tar file of all these icons is available from
+    ftp://ftp.cit.gu.edu.au/pub/AIcons/WWW_Images.tar.gz
+
+Some X Pixmap files are also using the ``Transparent'' or ``None'' color
+available in this format. To properly convert these icons into GIF files
+with the correct transparency setting for most WWW clients, you are
+recommended to use the "xbm2gif" script which can be found in the
+"support/scripts" section of this library. This script is not stand alone
+and relies on one other script ("x2p.sed") and the PbmPlus filter library
+(see main library README) to be present on your shell's PATH.
+
+This script ("xbm2gif") has a -t option to handle these special Pixmaps.
+The script first converts the X Pixmap `Transparent' color and the `white'
+color of X bitmaps into a Grey shade, and then set this as the GIF's
+transparent color in the final conversion phase. The resulting GIF will
+then to be usable by the maximum number of clients including those which
+do not understand the GIF transparency extension.
+
+Example Conversion
+  Convert bitmaps into Gifs (white becoming transparent)
+    xbm2gif -t [a-z]*.xbm
+  Convert pixmaps into Gifs (with appropriate transparency)
+    xbm2gif -t [a-z]*.xpm
+
+The "xbm2gif" script above checks if transparency is actually required
+before applying converting them correctly and appropriately into GIF. This
+is necessary due to the way older versions of some clients, such as mosaic,
+mishandle the colors close to but not exactly the transparent color if
+present.
+
+------
+Specific Contribs
+  Greg Bossert <bossert@maurolycus.rutgers.edu>
+      http://www-ns.rutgers.edu/doc-images/
+    The original 40x40 and 20x20 button icons in the ``appl/www'' area.
+    About half of these in this section are his icons including the
+    arrows, homes, gopher, images, etc. and also the basic style and
+    philosophy of these images.
+       I and other users on the WWW have added many many more to this set
+    by editing various ``desc/cl-32'' icons into the appropriate button
+    style. NOTE: all these icons have been converted to the libraries
+    standard color table.
+
+  R Kramarik <rkramari@lithium.helios.nd.edu>
+    The idea of using the crossfire thin walls as ``Box/'' parts.
+
+  Anthony Hall  <ahall@csu.edu.au>
+    For the first seven roman numerals (i to vii) and
+
+  Anni E Cleary (AFactor)  http://www.afactor.net/iconolog.html
+    For the roman `x' to continue this sequence upto 12 (viii to xii)
+    and the larger versions the `I', `V' and `X' roman numerials
+
+  Sachiko Oba <sachi@interport.net>
+    The small colored squares and miscellaneous furniture.
+      http://www.interport.net/~sachi/
+
+  CTwm Icon Archive
+     spider.xpm
+
+  Nem (Ryun) Schlecht <nem@abattoir.cc.ndsu.nodak.edu>
+  http://abattoir.cc.ndsu.nodak.edu/~nem/
+     const_build.xpm   modeled after a similar image in SimCity
+
+  The World Wide Web as a Whole
+    A complete list of all the sites icons have been collected from
+    usually only one or two per site. can be found toward the end of
+    the ``docs/contribs'' document.    Thanks to everyone concerned.
+
+    In particular 
+      http://helix.rice.edu/Icons/          
+         initial set of Latex2Html buttons
+      http://www.fau.edu/student/chemclub/dave/img1.htm
+         construction (hole & hat)  pow
+      http://www.cit.state.vt.us/icons/
+         const_barrier  sound  graph  and many transparent lines
+
+   Also look at the README files in each of the sub-directories.
+
+------
+See Also
+  appl/desktop/file   Expanded set of Index icons for NCSA Httpd server.
+  appl/math           Large set of Greek and super/subscripts for math docs.
+
+Anthony Thyssen  <anthony@cit.gu.edu.au>  http://www.cit.gu.edu.au/~anthony/

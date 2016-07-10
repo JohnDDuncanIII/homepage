@@ -1,0 +1,41 @@
+/* XPM */
+static char * IFF_xpm[] = {
+/* width height ncolors chars_per_pixe*/
+"32 32 3 1",
+/* white*/
+" 	c white",
+".	c black",
+"X	c PaleTurquoise",
+/* pixels */
+"    ..................          ",
+"    .XXXXXXXXXXXXXXXX..         ",
+"    .XXXXXXXXXXXXXXXX.X.        ",
+"    .XXXX.XX........X.XX.       ",
+"    .XXXX.XX.XXX.XXXX.XXX.      ",
+"    .XXXX.XX...X...XX.XXXX.     ",
+"    .XXXX.XX.XXX.XXXX.XXXXX.    ",
+"    .XXXX.XX.XXX.XXXX........   ",
+"    .XXXX.XX.XXX.XXXXXXXXXX..   ",
+"    .XXXXXXXXXXXXXXXXXXXXXX..   ",
+"    .XXXXXXXXXXXXXXXXXXXXXX..   ",
+"    .XXX................XXX..   ",
+"    .XXX....  ....  ....XXX..   ",
+"    .XXX....  ....  ....XXX..   ",
+"    .XXX................XXX..   ",
+"    .XXX.  .  ....  .  .XXX..   ",
+"    .XXX.  .  ....  .  .XXX..   ",
+"    .XXX................XXX..   ",
+"    .XXX.  ....  ....  .XXX..   ",
+"    .XXX.  ....  ....  .XXX..   ",
+"    .XXX................XXX..   ",
+"    .XXX....  .  ....  .XXX..   ",
+"    .XXX....  .  ....  .XXX..   ",
+"    .XXX................XXX..   ",
+"    .XXX.  .......  ....XXX..   ",
+"    .XXX.  .......  ....XXX..   ",
+"    .XXX................XXX..   ",
+"    .XXXXXXXXXXXXXXXXXXXXXX..   ",
+"    .XXXXXXXXXXXXXXXXXXXXXX..   ",
+"    .XXXXXXXXXXXXXXXXXXXXXX..   ",
+"    .........................   ",
+"     ........................   "};

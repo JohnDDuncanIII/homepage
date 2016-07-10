@@ -1,0 +1,33 @@
+/* XPM */
+static char *ify_mico[] = {
+/* width height num_colors chars_per_pixel */
+"    20    20        6            1",
+/* colors */
+". c #000000",
+"# c #000084",
+"a c #0000ff",
+"b c none",
+"c c #ff0000",
+"d c #ffffff",
+/* pixels */
+"...............bbbbb",
+".ccccccccccccc.#bbbb",
+"...............#bbbb",
+".ddddddddddddd.#bbbb",
+".ddaadaaaaaadd.#.bbb",
+".ddddddddddddd.#.bbb",
+".ddadaaaadaadd.#.bbb",
+".ddddddddddddd.#dbbb",
+".ddaaaadaadadd.#b.bb",
+".ddddddddddddd.#b.bb",
+"...............#b.bb",
+"b###############bdbb",
+"b..bbbbbbbbbbbbbbb.b",
+"bbbddbbbbbbbbbbbbb.b",
+"bbbbb..bbbbbbbbbbbdb",
+"bbbbbbbddbbbbbb....b",
+"bbbbbbbbb..bbbb.dd.#",
+"bbbbbbbbbbbd.bb.dd.#",
+"bbbbbbbbbbbbbdd....#",
+"bbbbbbbbbbbbbbbb####",
+};

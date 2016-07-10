@@ -1,0 +1,22 @@
+/* XPM */
+static char * mini-move1_xpm[] = {
+"14 14 4 1",
+" 	c None",
+"O	c black",
+"=	c navy",
+".	c white",
+"       O      ",
+"      OOO     ",
+"     OOOOO    ",
+"       O      ",
+"  O OOOOOO O  ",
+" OO O====O OO ",
+"OOOOO....OOOOO",
+" OO O....O OO ",
+"  O OOOOOO O  ",
+"       O      ",
+"     OOOOO    ",
+"      OOO     ",
+"       O      ",
+"              ",
+};

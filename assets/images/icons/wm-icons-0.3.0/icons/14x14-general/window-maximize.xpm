@@ -1,0 +1,23 @@
+/* XPM */
+static char * window_maximize_xpm[] = {
+"14 14 5 1",
+" 	c None",
+"+	c black",
+"O	c black",
+"=	c navy",
+".	c white",
+"              ",
+"OO OO OO OO OO",
+"O            O",
+"O O        O  ",
+"   OOOOOOOO  O",
+"O  O======O  O",
+"O  O......O   ",
+"   O......O  O",
+"O  O......O  O",
+"O  OOOOOOOO   ",
+"  O        O O",
+"O            O",
+"OO OO OO OO OO",
+"              ",
+};

@@ -1,0 +1,21 @@
+/* XPM */
+static char * mini_news_xpm[] = {
+"14 14 4 1",
+"       c None",
+".      c black",
+"X      c white",
+"o      c gray", 
+"         ...  ",
+"       ..XX.. ",
+"    ...Xo...X.",
+"  ..oXX..XXoX.",
+" .XXoo.XXoXXX.",
+".XX...XXoXXoX.",
+".Xo.XXo ooXXo.",
+".XX.o.XXXooXX.",
+" .X..ooXoXXX..",
+" .Xo..oXXo..  ",
+" .XX.ooX..    ",
+" .Xoo...      ",
+"  .X..        ",
+"  ..          "};

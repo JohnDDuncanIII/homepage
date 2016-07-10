@@ -1,0 +1,30 @@
+/* XPM */
+static char * mini_desktop_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"14 14 9 1",
+/* colors */
+" 	s None	m None	c None",
+".	c #008080",
+"X	c black",
+"o	c #00ffff",
+"O	c #808080",
+"+	c #c0c0c0",
+"@	c white",
+"#	c #808000",
+"$	c #ffff00",
+/* pixels */
+"       .X     ",
+"       ..XX   ",
+"       ..X XX ",
+"      .o..X  X",
+"     XXXXXXX X",
+"             X",
+"            X ",
+"  OOOOOOOOOOX ",
+"  O+O@@X##++XX",
+" O+O@@@X#$##XX",
+" O+O@@X#$$$$XX",
+"O+XXXX+XXXXXOX",
+"O@@@@@@@@@@@X ",
+"XXXXXXXXXXXXX ",
+};

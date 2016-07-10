@@ -1,0 +1,42 @@
+/* XPM */
+static char *sparc[] = {
+/* width height ncolors chars_per_pixel */
+"32 32 3 1",
+/* colors */
+"` c red",
+"a c white",
+"b c blue",
+/* pixels */
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+"aabbbaabbbbaaabbaaaabbbbaaabbbaa",
+"aabbbaabbbbaaabbaaaabbbbaaabbbaa",
+"aabbbbabbbbaaabbaaaabbbbaaabbbba",
+"aabbbbabbbbaaabbaaaabbbbaaabbbba",
+"abaaababaaabaababaaabaaababbaaaa",
+"abaaababaaabaababaaabaaababbaaaa",
+"abaaaaabaaabaababaaabaaababaaaaa",
+"abaaaaabaaabaababaaabaaababaaaaa",
+"aabbbaabaaababaabbaabaaababaaaaa",
+"aabbbaabaaababaabbaabaaababaaaaa",
+"aabbbaabbbbaabaabbaabbbbaabaaaaa",
+"aabbbaabbbbaabaabbaabbbbaabaaaaa",
+"aaaaababbbbaabaaabaabbbbaabaaaaa",
+"aaaaababbbbaabaaabaabbbbaabaaaaa",
+"abaaababaaaaabaaabaabaabaabbaaaa",
+"abaaababaaaaabaaabaabaabaabbaaaa",
+"abbbbaabaaaabaaaaababaaabaabbbba",
+"abbbbaabaaaabaaaaababaaabaabbbba",
+"aabbbaabaaaaba````babaaabaabbbba",
+"aabbbaabaaaaba````babaaabaabbbba",
+"aaaaaaaaaaaaaaa```aaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaa```aaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa``aaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa``aaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa``aaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa``aaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaa`aaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaa`aaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+};

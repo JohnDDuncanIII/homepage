@@ -1,22 +1,21 @@
-.footer-text img[src*="seal"] {   
-    text-align: center;    
-    bottom: 5px; 
+.footer-text img[src*="seal"] {
+    text-align: center;
+    bottom: 5px;
     right:5px;
     z-index:1;
     image-rendering: auto !important;
-}  
+}
 .footer-text {
-    text-align: center;    
+    text-align: center;
     bottom: 5px;
     width:100%;
     z-index:0;
     padding-bottom: 5px;
-    
 }
 .img-with-text-weather-block {
     text-align: center;
     vertical-align: top;
-    display: block; 
+    display: block;
     margin-right:2px;
 }
 .img-with-text-weather-table {
@@ -47,13 +46,12 @@
 }
 .img-with-text:hover {
     background-color:rgba(245, 215, 215, 0.6);
-    
 }
 .img-with-text:active {
     background-color:rgba(161, 192, 163, 0.6);
 }
-.header-box a:hover, .header-box a:visited, 
-.header-box a:link, .header-box a:active 
+.header-box a:hover, .header-box a:visited,
+.header-box a:link, .header-box a:active
 /* hack to disable a pesky webkit bug*/ {
     text-decoration: none;
 }
@@ -69,7 +67,7 @@
     background-color: #A1C0A3;
     background-image: url(data:image/png;base64,R0lGODdhAwADAIACAPn5+f39/SwAAAAAAwADAAACA0SMVwA7);
     /*font-size:18px;
-      font-family: eWorldTight_18;*/ 
+      font-family: eWorldTight_18;*/
     /* hopefully this will work in firefox some day */
 }
 #content { /* primary page content */
@@ -96,7 +94,7 @@
     display: table-cell; /* ensure that this element stretches to fill parent*/
 }
 #border { /* border to hold the pattern image */
-    padding-right: 50px; 
+    padding-right: 50px;
     padding-left: 50px;
     background-color:#E6E6E6;
     padding-top: 40px;
@@ -105,7 +103,6 @@
 body { /* site-wide custom cursor */
     margin: 0 !important;
     cursor: url(../images/cursors/cursor.png), default;
-   
 }
 a:link:active, a:link:active > img {
      cursor: url(../images/cursors/pointer_active.png), pointer;
@@ -117,16 +114,22 @@ img { /* when an image is not a link, ensure it is a standard cursor*/
    cursor: url(../images/cursors/cursor.png), default;
 }
 /* text I-bar cursor where necessary */
-input, p, blockquote, h1, h2, h3, h4, h5, h6, td {
+input, p, blockquote, h1, h2, h3, h4, h5, h6, td, dt, dd {
     cursor: url(../images/cursors/text.png), text;
 }
 
+h1 {
+    display:table;
+    border-bottom: 1px dotted #1b1b1b;
+}
+
 hr { /* modern-ish style for hr */
-    border: 0; 
-    height: 1px; 
-    background: #333; 
+    /*border: 0;
+    height: 1px;
+    background: #333;
     background-image: linear-gradient(to right, #6a6a6a, #1b1b1b, #6a6a6a);
-    /*margin-right: 4px;*/
+   */
+    border:1px dotted #1b1b1b;
 }
 
 blockquote { /* modern-ish style for blockquotes */

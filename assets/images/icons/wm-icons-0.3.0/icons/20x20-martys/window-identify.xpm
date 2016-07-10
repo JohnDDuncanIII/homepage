@@ -1,0 +1,30 @@
+/* XPM */
+static char *qu_mico[] = {
+/* width height num_colors chars_per_pixel */
+"    20    20        3            1",
+/* colors */
+". c #000000",
+"# c #ffff00",
+"a c none",
+/* pixels */
+"aaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaa.....aaaaaaa",
+"aaaaaaa.#####.aaaaaa",
+"aaaaaa......##.aaaaa",
+"aaaaa.######.##.aaaa",
+"aaaa.########.##.aaa",
+"aaaa.###..###.##.aaa",
+"aaaa.##.aa.###.#.aaa",
+"aaaa.##.aa.###.#.aaa",
+"aaaa....aa.###.#.aaa",
+"aaaaaaaaa.###.#.aaaa",
+"aaaaaaaa.###.#.aaaaa",
+"aaaaaaaa.##.#.aaaaaa",
+"aaaaaaaa.##.#.aaaaaa",
+"aaaaaaaa.##...aaaaaa",
+"aaaaaaaa....#.aaaaaa",
+"aaaaaaaa.##.#.aaaaaa",
+"aaaaaaaa.##..aaaaaaa",
+"aaaaaaaa....aaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaa",
+};

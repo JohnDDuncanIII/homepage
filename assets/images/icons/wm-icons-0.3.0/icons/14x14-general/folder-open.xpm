@@ -1,0 +1,27 @@
+/* XPM */
+static char *folder-open[] = {
+/* width height num_colors chars_per_pixel */
+"    14    14       6            1",
+/* colors */
+"  c None s None",
+". c black",
+"# c #808080",
+"g c white",
+"h c #c0c0c0",
+"j c yellow",
+/* pixels */
+"              ",
+"   #####      ",
+"  #ggggg#     ",
+" #ghjhjhg#####",
+" #gjhjhjhgggg#",
+" #ghjhjhjhhjh#",
+"############j#",
+"#ggggggggg#.h#",
+"#ghjhjhjhjj.##",
+" #ghjhjhjhh#.#",
+" #gjhjhjhjjh.#",
+"  #gjhjhjhhj#.",
+"  ###########.",
+"   ...........",
+};

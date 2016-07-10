@@ -1,0 +1,32 @@
+/* XPM */
+static char *cnq_mico[] = {
+/* width height num_colors chars_per_pixel */
+"    20    20        5            1",
+/* colors */
+". c #000000",
+"# c #0000ff",
+"a c #c6c6c6",
+"b c none",
+"c c #008000",
+/* pixels */
+"bbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbb....bbbbbbbb",
+"bbbbbb..####..bbbbbb",
+"bbbb..########..bbbb",
+"bb..#########.##..bb",
+"b.###########.####.b",
+"b.###########.####.b",
+"b.######........##.b",
+"b.#......aaaaaa.##.b",
+"b.#................b",
+"b.#####.aaaaaaaaa..b",
+"b.####.aaaaaaaa..#.b",
+"b.#####.a.aa.a.###.b",
+"b..................b",
+"bb.cccccccccccccc.bb",
+"bbb..cccccccccc..bbb",
+"bbbbb.cccccccc.bbbbb",
+"bbbbbb..cccc..bbbbbb",
+"bbbbbbbb....bbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbb",
+};

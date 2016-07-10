@@ -1,0 +1,22 @@
+/* XPM */
+static char * mail16_xpm[] = {
+"16 16 3 1",
+" 	c white",
+".	c black",
+"X	c pale turquoise",
+"                ",
+"                ",
+"                ",
+"................",
+"..XXXXXXXXXXXX..",
+".X.XXXXXXXXXX.X.",
+".XX.XXXXXXXX.XX.",
+".XXX.XXXXXX.XXX.",
+".XXX..XXXX..XXX.",
+".XX.XX....XX.XX.",
+".X.XXXXXXXXXX.X.",
+"..XXXXXXXXXXXX..",
+"................",
+"                ",
+"                ",
+"                "};

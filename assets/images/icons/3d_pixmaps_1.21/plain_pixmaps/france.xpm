@@ -1,0 +1,43 @@
+/* XPM */
+static char *france_xpm[] = {
+/* width height ncolors chars_per_pixel */
+"32 32 4 1",
+/* colors */
+"` c black",
+"a c red",
+"b c white",
+"c c blue",
+/* pixels */
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"````````````````````````````````",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"ccccccccccbbbbbbbbbbbaaaaaaaaaaa",
+"````````````````````````````````",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+};
