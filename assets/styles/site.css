@@ -96,7 +96,7 @@
 #border { /* border to hold the pattern image */
     padding-right: 50px;
     padding-left: 50px;
-    background-color:#E6E6E6;
+    /*background-color:#E6E6E6;*/
     padding-top: 40px;
     padding-bottom: 40px;
 }

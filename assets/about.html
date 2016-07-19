@@ -23,7 +23,7 @@
   <body>
     <div id="border">
       <div id="content">
-	<div id="header" style="height: 215px;"> <a href="images/about/me.jpg"> <img src="images/about/me.jpg" alt="" border="0" align="left" height="210" width="210"></a>
+	<div id="header" style="height: 215px;"> <a href="images/about/me-dithered.gif"> <img src="images/about/me.jpg" onmouseover="this.src='images/about/me-dithered.gif'" onmouseout="this.src='images/about/me.jpg'" alt="" border="0" align="left" height="210" width="210"></a>
 	   <!--<b> <font size="+3"> <font size="+2">&nbsp;John Duncan<br>
           </font></font></b><font size="-1">&nbsp;duncjo01@gettysburg.edu<br>
             <br>
@@ -64,7 +64,7 @@
       </div>
     </div>
     <script>
-      var num = Math.floor(Math.random() * (288));
+      var num = Math.floor(Math.random() * (385));
       var border = document.getElementById("border");
       document.body.style.backgroundImage = "url(images/patterns/"+num+".gif)";
       border.style.backgroundImage = "url(images/patterns/"+num+".gif)";
