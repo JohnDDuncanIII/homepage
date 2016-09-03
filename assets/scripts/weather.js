@@ -45,7 +45,7 @@ map[" Light Rain Fog/Mist"] = "rainyfoggy";
 map["Decreasing Clouds"] = "partlycloudy";
 map["Showers and Patchy Fog"] = "rainyfoggy";
 map["Chance Showers and Patchy Fog"] = "mayberainyfoggy";
-map["Showers Likely and Patchy Fog"] = "rainyfoggy"; 
+map["Showers Likely and Patchy Fog"] = "rainyfoggy";
 map["Gradual Clearing"] = "partlysunny";
 map["Isolated Showers"] = "drizzly";
 map["Mostly Sunny and Windy"] = "sunnywindy";
@@ -78,7 +78,7 @@ map["Lt Rain Shwr"] = "drizzly";
 map["Rain/Snow Likely"] = "rainysnowy";
 map["Chance Rain/Snow"] = "mayberainysnowy";
 map["Scattered Snow Showers"] = "snowy";
-map["Mixed Prcp"] = "sleety"; 
+map["Mixed Prcp"] = "sleety";
 map["Rain/Snow and Breezy"] = "rainysnowybreezy";
 map["Chance Snow"] = "maybesnowy";
 map["Rain/Snow Likely and Breezy"] = "rainysnowybreezy";
@@ -129,6 +129,8 @@ map["Windy. Isolated Showers"] = "rainywindy";
 map["Windy. Mostly Clear"] = "sunnywindy";
 map["Chance T-storms and Patchy Fog"] = "stormyfoggy";
 map["Fair and Windy"] = "sunnywindy";
+map[" Thunderstorm"] = "stormy";
+map["Scattered T-storms and Patchy Fog"] = "stormybreezy";
 map[""] = true;
 map["NA"] = true;
 
@@ -154,7 +156,7 @@ var loc = location.toString();
 var tLat = window.localStorage.getItem("latitude");
 var tLong = window.localStorage.getItem("longitude");
 
-if(loc.includes("=")) { 
+if(loc.includes("=")) {
     address = loc.substring(loc.indexOf("=")+1, loc.length);
     address = address.replace(/%20/g, " ");
 }
@@ -163,7 +165,7 @@ function computeLocation() {
 	if (status == google.maps.GeocoderStatus.OK) {
 	    LATITUDE = results[0].geometry.location.lat();
 	    LONGITUDE = results[0].geometry.location.lng();
-	} 
+	}
      });
 }
 
@@ -179,7 +181,7 @@ function fetchJSONFile(path, callback) {
         }
     };
     httpRequest.open('GET', path);
-    httpRequest.send(); 
+    httpRequest.send();
 }
 
 function weather() {
@@ -203,6 +205,19 @@ function weather() {
 
 	var toAdd = document.createElement("br");
 	weatherBox.appendChild(toAdd);
+
+
+        //toAdd = document.createElement("img");
+       /* var link = document.createElement("a");
+        link.href = "assets/weather/weather.html";
+        var t = document.createTextNode("Maps");
+        //toAdd.src = "assets/images/header/weather.gif";
+        link.appendChild(t);
+	weatherBox.appendChild(link);
+
+        toAdd = document.createElement("br");
+	weatherBox.appendChild(toAdd);
+       */
     }
 
     // add "Today" image
@@ -212,15 +227,14 @@ function weather() {
     toAdd.setAttribute('src', "assets/weather/day/today/face.gif");
     weatherBox.appendChild(toAdd);
 
-    // this requests the file and executes a 
+    // this requests the file and executes a
     //    callback with the parsed result once it is available
     fetchJSONFile('http://forecast.weather.gov/MapClick.php?lat='+
 		  LATITUDE+'&lon='+
-		  LONGITUDE+'&FcstType=json', 
+		  LONGITUDE+'&FcstType=json',
 		  function(data) {
 		      var showDate = true;
 		      helper(data.currentobservation.Temp, data.currentobservation.Relh ,data.currentobservation.Weather, showDate, data.currentobservation.Weather);
-		     
 		      var tempArray = data.data.temperature;
 		      var forecastArray = data.data.weather;
 		      var precipArray = data.data.pop;
@@ -235,7 +249,6 @@ function weather() {
 			  helper(tempArray[j], precipArray[j], forecastArray[j], afternoon, text[j]);
 			  j++;
 			  afternoon = true;
-			  
 		      }
 
 		      if(data.time.startPeriodName[0]=="Today") {
@@ -243,7 +256,6 @@ function weather() {
 			  helper(tempArray[j], precipArray[j], forecastArray[j], today, text[j]);
 			  j++;
 		      }
-		     
 		      if(data.time.startPeriodName[0]=="Tonight" ||
 			data.time.startPeriodName[1]=="Tonight") {
 			  // add "Tonight" image
@@ -254,12 +266,10 @@ function weather() {
 			  weatherBox.appendChild(toAdd);
 			  var br = document.createElement("br");
 			  weatherBox.appendChild(br);
-			  
 			  tonight = true;
 			  helper(tempArray[j], precipArray[j], forecastArray[j], false, text[j]);
-			  j++; 
+			  j++;
 		      }
-		     	      
 		      for(j; j < tempArray.length; j++) {
 			  if(j==1 && tonight || (j==2 && tonight) && (afternoon || today)) {
 			      var toAdd = document.createElement("hr");

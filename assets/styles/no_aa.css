@@ -20,10 +20,10 @@ body { /* site-wide custom cursor */
     /*margin: 0 !important;*/
     cursor: url(../images/cursors/cursor.png), default;
 }
-a:link:active, a:link:active > img {
+a:link:active, a:link:active > img{
      cursor: url(../images/cursors/pointer_active.png), pointer;
 }
-a:link, a:link > img { /* only match links and links with images */
+a:link, a:link > img{ /* only match links and links with images */
      cursor: url(../images/cursors/pointer.png), pointer;
 }
 img { /* when an image is not a link, ensure it is a standard cursor*/

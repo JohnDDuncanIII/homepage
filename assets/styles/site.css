@@ -77,6 +77,7 @@ body {
     /* hopefully this will work in firefox some day */
 }
 #content { /* primary page content */
+    position: relative;
     background-image: url(data:image/gif;base64,R0lGODdhAwADAIACAPn5+f39/SwAAAAAAwADAAACA0RuWAA7) !important;
     background-color: transparent ;
     background-repeat: repeat;
