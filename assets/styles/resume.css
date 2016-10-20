@@ -30,6 +30,11 @@ body {
   }
 }
 
+hr {
+    border:1px dotted #1b1b1b;
+}
+
+
 h1 {
   text-align: center;
   background-color: #FEB;
@@ -77,6 +82,9 @@ div.toc {
   border:1px solid #000;
   padding:5px;
   font-family:sans-serif
+}
+ul {
+    list-style-image: url("../images/about/bullet.gif");
 }
 
 div.toc ul { margin-top:0px; margin-bottom:0px; margin-left:1em; padding:0 }

@@ -30,6 +30,6 @@ img { /* when an image is not a link, ensure it is a standard cursor*/
    cursor: url(../images/cursors/cursor.png), default;
 }
 /* text I-bar cursor where necessary */
-input, p, blockquote, h1, h2, h3, h4, h5, h6, td, dt, dd {
+input, p, blockquote, h1, h2, h3, h4, h5, h6, td, dt, dd, li, date {
     cursor: url(../images/cursors/text.png), text;
 }

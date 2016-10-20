@@ -1,12 +1,23 @@
+::selection {
+    background: #d8d8dc; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    background: #d8d8dc; /* Gecko Browsers */
+}
+img{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 body {
     padding-right: 50px;
     padding-left: 50px;
     padding-top: 40px;
     padding-bottom: 40px;
+    background-attachment: fixed !important;
 }
 .footer-text img[src*="seal"] {
-    text-align: center;
-    bottom: 5px;
     right:5px;
     z-index:1;
     image-rendering: auto !important;
@@ -50,6 +61,7 @@ body {
     border-right:none;
     margin-right: 0px;
 }
+
 .img-with-text:hover {
     background-color:rgba(245, 215, 215, 0.6);
 }
@@ -72,7 +84,7 @@ body {
     padding-bottom: 5px;
     background-color: #A1C0A3;
     background-image: url(data:image/png;base64,R0lGODdhAwADAIACAPn5+f39/SwAAAAAAwADAAACA0SMVwA7);
-    /*font-size:18px;
+/*font-size:18px;
       font-family: eWorldTight_18;*/
     /* hopefully this will work in firefox some day */
 }
@@ -85,7 +97,8 @@ body {
     padding-left: 5px;
     padding-right: 5px;
     border: 1px solid #4a4a4a;
-    box-shadow:  0 0 0 6px #F4F4F4, 0 0 0 8px #1b1b1b;
+    box-shadow:  0 0 0 6px #FCFCFC, 0 0 0 8px #1b1b1b;
+    display:inline-block;
 }
 .written-content { /* for written pieces */
     padding-left: 50px !important;
@@ -100,33 +113,29 @@ body {
     border-right: 1px solid #2a2a2a;
     display: table-cell; /* ensure that this element stretches to fill parent*/
 }
+.primary-content-bw-image>img, .primary-content-bw-image a {
+    -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+}
 #border { /* border to hold the pattern image */
     padding-right: 50px;
     padding-left: 50px;
-    /*background-color:#E6E6E6;*/
     padding-top: 40px;
     padding-bottom: 40px;
 }
-
 
 h1 {
     display:table;
     border-bottom: 1px dotted #1b1b1b;
 }
 
-hr { /* modern-ish style for hr */
-    /*border: 0;
-    height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #6a6a6a, #1b1b1b, #6a6a6a);
-   */
+hr {
     border:1px dotted #1b1b1b;
 }
 
-blockquote { /* modern-ish style for blockquotes */
-  padding-left: 15px;
-  border-left: 2px solid #ccc;
-  color: LimeGreen;
+blockquote {
+    border: 1px solid; margin: auto; padding: 1em; background: #66FF66;
+    max-width: 32em;
 }
 
 table, th, td { /* add border to table and table elements */
@@ -136,8 +145,90 @@ table { /* center table on page */
     margin: 0 auto;
 }
 
- pre, code {
-     margin-left: 4em;
-     margin-right: 4em;
-     /* font-family: 'Inconsolata', monospace; */
-  }
+pre, code {
+    margin-left: 4em;
+    margin-right: 4em;
+    /* font-family: 'Inconsolata', monospace; */
+}
+
+aside {
+    border: 1px solid; margin: auto; padding: 1em; background: #FF6;
+    max-width: 32em;
+}
+
+cite {
+    text-align:right;
+}
+
+li {
+    list-style-image: url("../images/about/bullet.gif");
+}
+
+/**
+ * CSS bar graph (SO)
+ */
+.graph {
+    width: 263px;
+    height: 51px;
+    border: 1px solid #aeaeae;
+    background-color: #fbfbfb;
+    text-align:right;
+    margin: 0 auto;
+    border-bottom: none;
+    background-image: url(data:image/gif;base64,R0lGODlhAQAKAKECAO3t7f///zRTXTRTXSH5BAEKAAIALAAAAAABAAoAAAIEhB2ZBQA7);
+    position: relative;
+}
+.graphLeft {
+    text-align:left;
+}
+.text{
+    width: 263px;
+    height: 8px;
+    border: 1px solid #aeaeae;
+    text-align:right;
+    margin: 0 auto;
+}
+.bar {
+    width: 5px;
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+}
+.bar-precip {
+    background-color: #0000ff;
+    border-top: 1px solid #0000aa;
+}
+.bar-temp {
+    margin-right: 1px;
+    background-color: #ff0000;
+    border-top: 1px solid #aa0000;
+}
+.bar-humidity {
+    background-color: #00ff00;
+    border-top: 1px solid #00aa00;
+}
+.bar-cloud {
+    margin-right: 1px;
+    background-color: #FFFF00;
+    /*FF00FF*/
+    border-top: 1px solid #AAAA00;
+}
+.bar:hover {
+     outline: 1px dotted black;
+     z-index:1;
+}
+.bar-text {
+    width: 10px;
+    margin-right: 1px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin-top: -6px;
+}
+.bar-temp:last-child, .bar-text:last-child, .bar-humidity:last-child, .bar-cloud:last-child{
+margin-right:0px;
+}
+.bar-hidden {
+    visibility: hidden;
+    margin-left: -5px;
+}
