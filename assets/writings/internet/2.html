@@ -1,86 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <title></title>
-        <link rel="icon" href="/~duncjo01/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" href="../../styles/no_aa.css" charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="../../styles/site.css" charset="utf-8">
-        <style>
-            #next{
-            position:fixed;
-            bottom:5px;
-            right:5px;
-            border: 1px solid; margin: auto; padding: 1em; background: #FF6;
-            max-width: 32em;
-            }
-            #prev{
-            position:fixed;
-            bottom:5px;
-            left:5px;
-            border: 1px solid; margin: auto; padding: 1em; background: #FF6;
-            max-width: 32em;
-            }
-            p, li{
-            font-size:30px;
-            }
-            li{
-            border: 1px dotted black;
-            }
-        </style>
+        <meta charset="UTF-8">
+        <title>INTERNET - 2</title>
+        <link rel="icon" href="/~duncjo01/favicon.ico">
+        <script type="text/javascript" src="../../scripts/border.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../styles/no_aa.css">
+        <link rel="stylesheet" type="text/css" href="../../styles/site.css">
+        <link rel="stylesheet" type="text/css" href="internet.css">
         <script>
             document.onkeydown = checkKey;
-
             function checkKey(e) {
-
             e = e || window.event;
-
-            if (e.keyCode == '38') {
-            // up arrow
-            }
-            else if (e.keyCode == '40') {
-            // down arrow
-            }
-            else if (e.keyCode == '37') {
-            document.location.href = "1.html";
-            }
-            else if (e.keyCode == '39') {
-            document.location.href = "3.html";
-            }
+            if (e.keyCode == '38') {}
+            else if (e.keyCode == '40') {}
+            else if (e.keyCode == '37') { document.location.href = "1.html"; }
+            else if (e.keyCode == '39') { document.location.href = "3.html"; }
             }
         </script>
     </head>
-    <body bgcolor="white" alink="#1b1b1b" link="#1b1b1b" text="#000000" vlink="purple">
-        <script type="text/javascript" src="../../scripts/border.js"></script>
-        <div id="content" class="written-content">
-            <a id="prev" href="0.html">prev</a>
+    <body class="written-content">
+            <a id="prev" href="1.html">prev</a>
             <a id="next" href="3.html">next</a>
             <center>
                 <h1>The <b>INTERNET</b></h1>
-                <h4>1966-1965</h4>
+                <h4></h4>
             </center>
             <article>
-                <ul><img src="http://blog.dreamhardware.com/wp-content/uploads/2014/09/Arpanet.geographic_map_September_1973.jpg"  align="left" style="padding-right:35px;"> <!-- https://upload.wikimedia.org/wikipedia/commons/6/6f/Intel_GreenDoor.jpg-->
-                    <li> late 1966 Roberts went to DARPA to develop the computer network concept and quickly put together his plan for the "ARPANET"
-                    <li> The RAND group had written a paper on packet switching networks for secure voice in the military in 1964.
-                    <li> happened that the work at MIT (1961-1967), at RAND (1962-1965), and at NPL (1964-1967) had all proceeded in parallel without any of the researchers knowing about the other work.
-                    <li> packet switching - variable bit rate. circuit switch - pre-allocates dedicated network bandwidth specifically for each communication session
-                    <li> first message was sent over the ARPANET from computer science Professor Leonard Kleinrock's laboratory at University of California, Los Angeles (UCLA) to the second network node at Stanford Research Institute (SRI).
-                    <li> a myriad of networks, such as ARPANET, NPL network, CYCLADES, Merit Network, Tymnet, and Telenet, were developed in the late 1960s and early 1970s using a variety of communications protocols.
-                </ul>
+                <ul> <img src="http://www.slate.com/content/dam/slate/blogs/the_vault/2015/03/16/LgTelephoneMap.jpg" align="left"  style="padding:1px 35px 0px 1px;" width="50%" height="50%">
+                <li> Bell Telephone company connects US together by laying copper phone wire
+		<li> 56 kbit/s data transfer rate
+		<li> Circuit switched
+		<li> Bell first company to be added to the public switched telephone network (PSTN, aggregate of the world's circuit-switched telephone networks that are operated by national, regional, or local telephony operators)
+	      </ul>
             </article>
-
-	    <div id="footer-text" class="footer-text">
-	        <hr>
-	        <a href="../../about.html">about</a> <BR>
-	        You are visitor number <a href="https://stuff.mit.edu/doc/counter-howto.html"><img src="http://www.mit.edu/cgi/counter/jduncan" style="vertical-align:middle"></a> <BR>
-	        <i> <a href="mailto:duncanjdiii@gmail.com?Subject=I would like to speak to your manager">  © 2016 John D. Duncan, III <br> <img src="../../images/mail.gif"></a> <BR> </i>
-                <a href="http://vanilla-js.com/"> <img src="http://vanilla-js.com/assets/button.png"></a>
-                <br>
-                <a href="https://www.anybrowser.org/campaign/index.html"> <img id="anyBrowser"></a>
-	    </div>
-        </div>
-        <script type="text/javascript" src="../../scripts/anybrowser.js"></script>
     </body>
 </html>
 
