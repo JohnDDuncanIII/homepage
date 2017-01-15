@@ -5,13 +5,14 @@ var messagefaces = document.getElementById("messagefaces");
 var browsers = document.getElementById("browsers");
 var clipart = document.getElementById("clipart");
 var writings = document.getElementById("writings");
+var guestbook = document.getElementById("guestbook");
 var headerVals = [document.getElementById("cards"),
                   document.getElementById("books"), document.getElementById("faces"),
                   document.getElementById("portfolio"), document.getElementById("weather"),
                   document.getElementById("berlinblue"), browsers, clipart, writings,
                   document.getElementById("soundcloud"), document.getElementById("mozilla"),
                   document.getElementById("facebook"), document.getElementById("twitter"),
-                  document.getElementById("youtube")];
+                  document.getElementById("youtube"), document.getElementById("guestbook")];
 var images = document.getElementById("images");
 var mail = document.getElementById("mail");
 var vanilla = document.getElementById("vanilla");
@@ -31,7 +32,7 @@ function blw() {
     mail.src = mail.src.substring(0, mail.src.lastIndexOf('.'))+"_bw.gif"
     vanilla.src = vanilla.src.substring(0, vanilla.src.lastIndexOf('.'))+"_bw.gif";
     seal.src = seal.src.substring(0, seal.src.lastIndexOf('.'))+"_bw.gif"
-    images.classList.add('primary-content-bw-image');
+    images.classList.add('content-bw-image');
     www.src="assets/images/index/www_std.gif";
     messagefaces.onmouseover=function() {this.src='assets/images/header/mbox_bw.gif'}
     messagefaces.onclick= function() {this.src='assets/images/header/mbox-hover_bw.gif'; return this.href;}
@@ -41,6 +42,8 @@ function blw() {
     clipart.onmouseout=function() {this.src='assets/images/header/clip_bw.gif';}
     writings.onmouseover= function() {this.src='assets/images/header/writings-hover_bw.gif';}
     writings.onmouseout=function() {this.src='assets/images/header/writings_bw.gif';}
+    guestbook.onmouseover= function() {this.src='assets/images/header/guestbook-hover_bw.gif';}
+    guestbook.onmouseout=function() {this.src='assets/images/header/guestbook_bw.gif';}
 
     for(var i = 0; i < headerVals.length; i++) {
         headerVals[i].src = headerVals[i].src.substring(0, headerVals[i].src.lastIndexOf('.'))+"_bw.gif";
@@ -52,7 +55,7 @@ function clr() {
     vanilla.src = vanilla.src.substring(0, vanilla.src.lastIndexOf('_bw.gif'))+".gif";
     seal.src = seal.src.substring(0, seal.src.lastIndexOf('_bw.gif'))+".gif";
     //anybrowser.src = anybrowser.src.substring(0, anybrowser.src.lastIndexOf('_bw.gif'))+".gif";
-    images.classList.remove('primary-content-bw-image');
+    images.classList.remove('content-bw-image');
     www.src="assets/images/index/www_color.gif";
     messagefaces.onmouseover=function() {this.src='assets/images/header/mbox.gif'}
     messagefaces.onclick= function() {this.src='assets/images/header/mbox-hover.gif'; return this.href;}
@@ -62,6 +65,8 @@ function clr() {
     clipart.onmouseout=function() {this.src='assets/images/header/clip.gif';}
     writings.onmouseover= function() {this.src='assets/images/header/writings-hover.gif';}
     writings.onmouseout=function() {this.src='assets/images/header/writings.gif';}
+    guestbook.onmouseover= function() {this.src='assets/images/header/guestbook-hover.gif';}
+    guestbook.onmouseout=function() {this.src='assets/images/header/guestbook.gif';}
 
     for(var i = 0; i < headerVals.length; i++) {
         headerVals[i].src = headerVals[i].src.substring(0, headerVals[i].src.lastIndexOf('_bw.gif'))+".gif";
