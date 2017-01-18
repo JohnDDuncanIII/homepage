@@ -108,6 +108,9 @@ input[name="math"] {
   width:auto;
   padding:10px;
   min-width: 300px;
+  overflow: hidden;
+  position: relative;
+  margin-top: -10px;
   *font:normal normal 11px/1.4 Tahoma,Verdana,Arial,Sans-Serif;
 }
 

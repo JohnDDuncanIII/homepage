@@ -15,7 +15,8 @@ html {
     font-weight: normal;
     font-style: normal;
 }
-body { /* site-wide custom cursor */ cursor: url(../images/cursors/cursor.png); default}
+html { /* site-wide custom cursor */ cursor: url(../images/cursors/cursor.png), default; }
+/*html:hover { cursor: url(../images/cursors/pointer.png), pointer; }*/
 a:link:active, a:link:active > img{ cursor: url(../images/cursors/pointer_active.png), pointer; }
 a:link, a:link > img{ /* only match links and links with images */ cursor: url(../images/cursors/pointer.png), pointer; }
 img { /* when an image is not a link, ensure it is a standard cursor*/ cursor: url(../images/cursors/cursor.png), default; }

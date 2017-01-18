@@ -1,4 +1,6 @@
 	<div class="guestbook" id="guestbook">
+	    <hr style=";position: absolute; height: 100%; right:0px; top:0px;" width="1">
+	    <hr style=";position: absolute; height: 100%; left:0px; top:0px;" width="1">
 	    <div class="guest-messages" id="guest-messages">
 
 <?php
@@ -24,6 +26,11 @@ $messages = array(
     'max_length_message' => 'Maximum character length for guest message is ' . $max_length_message,
     'no_content' => 'No content.'
 );
+$aascii = array(
+     '?', '"', ':', '', ';', '8', '/', '', '&', '0', '%', '', '\'', '!', '', '', '', '', '+', "\n", '1', '>', '', '', '.', '$', '', ',', '', '', '3', '*');
+/*\foreach ($aascii as $value) {
+    echo ord($value) . "<br>";
+}*/
 // END CONFIGURATION
 
 // Set default timezone to adjust the timestamp.
@@ -179,27 +186,39 @@ if($x - $y > 0) {
     $math = $x . ' + ' . $y;
     $_SESSION['math'] = $x + $y;
 }
-    // Testing...
-    //echo $_SESSION['math'];
+            // Testing...
+            //echo $_SESSION['math'];
 
-    echo "
+echo "
     <script>
      var iching = document.getElementById('ichingcoins');
-     var origNum = ". $_SESSION['math'] . ";
-     if(origNum%2==0){origNum--;}
-     var inputNum = Math.round((origNum-1)/2);
-     origNum = ". $_SESSION['math'] . ";
-     var n = (String.charCodeAt(aascii[inputNum]));
-     var strBin='';
-     for (i = 0; i <= 5; i++) {
-	 if(origNum%2!=0){
-	     iching.innerHTML += \"<img src='images/iching/iching_\" + String((n>>i)&1) + \".gif'>\";
-	 } else {
-             iching.innerHTML += \"<img src='images/iching/iching_\" + String(((n>>5)%2==n%2)&((n>>4)%2==(n>>1)%2)&((n>>3)%2==(n>>2)%2)?1^(n>>i)&1:(n>>(5-i))&1)+ \".gif'>\";
-	 }
+     if(localStorage.getItem('pat') == 'bw') {
+	 iching.style.backgroundImage = 'url(\'images/iching/iching_background_bw.gif\')';
      }
     </script>
-    ";
+";
+$origNum = $_SESSION['math'];
+if ($origNum%2 == 0) {
+    $origNum--;
+}
+$inputNum = round(($origNum-1)/2);
+$origNum = $_SESSION['math'];
+$n = ord($aascii[$inputNum]);
+$strBin='';
+$toOutput = '';
+for ($i = 0; $i <= 5; $i++) {
+    if($origNum & 1){
+            $toOutput .= ($n>>$i)&1;
+    } else {
+            $toOutput .= (($n>>5)%2==$n%2)&(($n>>4)%2==($n>>1)%2)&(($n>>3)%2==($n>>2)%2)?1^($n>>$i)&1:($n>>(5-$i))&1;
+    }
+}
+echo "<script>
+var bin=\"".$toOutput."\";
+for (i = 0; i <= 5; i++) {
+	     iching.innerHTML += \"<img src='images/iching/iching_\" + String(bin[i]) + \".gif'>\";
+}
+</script>";
 /**
  * Show the existing data.
  */

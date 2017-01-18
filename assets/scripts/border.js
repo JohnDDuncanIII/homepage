@@ -1,6 +1,6 @@
 var colors = ["#E0E8FF", "#FDC", "#EEE", "#f7e0ff", "#e0fdff", "#ffc"];
 var NUM_PATS_BW = 430;
-var NUM_PATS= 148;
+var NUM_PATS= 117;
 
 if (window.localStorage) {
     if(localStorage.getItem("pat") == "bw") {
@@ -23,7 +23,7 @@ if (window.localStorage) {
             home.src = "/~duncjo01/assets/images/house.gif";
         }
     } else if (localStorage.getItem("pat") == "clr"){
-        var num = Math.floor(Math.random() * (148)+1);
+        var num = Math.floor(Math.random() * (NUM_PATS)+1);
         document.documentElement.style.background = "url(/~duncjo01/assets/images/patterns/"+num+".gif)";
         document.addEventListener('click', function(event) {
             if(event.target.tagName === "HTML"){
@@ -33,10 +33,19 @@ if (window.localStorage) {
         });
     }
     else if (localStorage.getItem("pat") == "none") {
-        document.documentElement.style.background = colors[Math.floor(Math.random()*colors.length)];
+        /*document.documentElement.style.background = colors[Math.floor(Math.random()*colors.length)];
         document.addEventListener('click', function(event) {
             if(event.target.tagName === "HTML"){
                 document.documentElement.style.background = colors[Math.floor(Math.random()*colors.length)];
+		}
+		});
+	*/
+	var num = Math.floor(Math.random() * (13)+1);
+        document.documentElement.style.background = "url(/~duncjo01/assets/images/patterns/anim/"+num+".gif)";
+        document.addEventListener('click', function(event) {
+            if(event.target.tagName === "HTML"){
+                num = Math.floor(Math.random() * (13)+1);
+                document.documentElement.style.background = "url(/~duncjo01/assets/images/patterns/anim/"+num+".gif)";
             }
         });
     }
