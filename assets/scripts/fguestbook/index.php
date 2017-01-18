@@ -190,12 +190,11 @@ if($x - $y > 0) {
             //echo $_SESSION['math'];
 
 echo "
-    <script>
-     var iching = document.getElementById('ichingcoins');
-     if(localStorage.getItem('pat') == 'bw') {
-	 iching.style.backgroundImage = 'url(\'images/iching/iching_background_bw.gif\')';
-     }
-    </script>
+<script>
+var iching = document.getElementById('ichingcoins');
+if(localStorage.getItem('pat') == 'bw') {
+   iching.style.backgroundImage = 'url(\'images/iching/iching_background_bw.gif\')';
+}
 ";
 $origNum = $_SESSION['math'];
 if ($origNum%2 == 0) {
@@ -213,12 +212,12 @@ for ($i = 0; $i <= 5; $i++) {
             $toOutput .= (($n>>5)%2==$n%2)&(($n>>4)%2==($n>>1)%2)&(($n>>3)%2==($n>>2)%2)?1^($n>>$i)&1:($n>>(5-$i))&1;
     }
 }
-echo "<script>
+echo "
 var bin=\"".$toOutput."\";
 for (i = 0; i <= 5; i++) {
-	     iching.innerHTML += \"<img src='images/iching/iching_\" + String(bin[i]) + \".gif'>\";
+   iching.innerHTML += \"<img src='images/iching/iching_\" + String(bin[i]) + \".gif'>\";
 }
-</script>";
+</script>\n";
 /**
  * Show the existing data.
  */

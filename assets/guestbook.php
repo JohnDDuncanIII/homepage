@@ -12,9 +12,6 @@ session_save_path('/Accounts/turing/students/s17/duncjo01/session/'); session_st
 	<style>
 	 @media only screen and (min-width:1075px) { html { max-width: none; } }
 	</style>
-	<script>
-	 var aascii = ['?', '\"', ':', '', ';', '8', '/', '', '&', '0', '%', '', '\'', '!', '', '', '', '', '+', '\n', '1', '>', '', '', '.', '$', '', ',', '', '', '3', '*'];
-	</script>
     </head>
     <body class="content">
 	<div id="guestbook-content" style="overflow: hidden;position: relative;">
