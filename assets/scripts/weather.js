@@ -1,7 +1,7 @@
 if (!String.prototype.includes) { // indexof polyfill
     String.prototype.includes = function() {
-		'use strict';
-		return String.prototype.indexOf.apply(this, arguments) !== -1;
+	'use strict';
+	return String.prototype.indexOf.apply(this, arguments) !== -1;
     };
 }
 
@@ -14,9 +14,9 @@ function computeImage(forecast) {
     if(fc.includes("wintry mix")) { image+= "sleety"; }
     if(fc.includes("drizzle") || fc.includes("sprinkles")) { image+= "drizzly"; }
     if(fc.includes("rain") || fc.includes("showers") && !fc.includes("snow")){
-		if(fc.includes("lt") || fc.includes("scattered showers")) {
-			image += "drizzly";
-		} else { image+= "rainy"; }
+	if(fc.includes("lt") || fc.includes("scattered showers")) {
+	    image += "drizzly";
+	} else { image+= "rainy"; }
     }
     if(fc.includes("snow") || fc.includes("flurries")) { image+= "snowy"; }
     if(fc.includes("fog") || fc.includes("mist")) { image+= "foggy"; }
@@ -95,10 +95,10 @@ if(loc.includes("=")) {
 // translate from given name to lat/long location from a google geocoder
 function computeLocation() {
     geocoder.geocode( { 'address': address}, function(results, status) {
-		if (status == google.maps.GeocoderStatus.OK) {
-			LATITUDE = results[0].geometry.location.lat();
-			LONGITUDE = results[0].geometry.location.lng();
-		}
+	if (status == google.maps.GeocoderStatus.OK) {
+	    LATITUDE = results[0].geometry.location.lat();
+	    LONGITUDE = results[0].geometry.location.lng();
+	}
     });
 }
 
@@ -106,12 +106,12 @@ function computeLocation() {
 function fetchJSONFile(path, callback) {
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function() {
-		if (httpRequest.readyState === 4) {
-			if (httpRequest.status === 200) {
-				var data = JSON.parse(httpRequest.responseText);
-				if (callback) callback(data);
-			}
-		}
+	if (httpRequest.readyState === 4) {
+	    if (httpRequest.status === 200) {
+		var data = JSON.parse(httpRequest.responseText);
+		if (callback) callback(data);
+	    }
+	}
     };
     httpRequest.open('GET', path);
     httpRequest.send();
@@ -146,7 +146,7 @@ function reload(weatherBox, mapBox) {
     barCloudArray = [];
     bw = window.localStorage.getItem("pat") == "bw";
     while (weatherBox.hasChildNodes()) {
-		weatherBox.removeChild(weatherBox.lastChild);
+	weatherBox.removeChild(weatherBox.lastChild);
     }
 }
 
@@ -163,343 +163,345 @@ function weather() {
     // if we have a saved geolocation in local storage, allow the user to wipe it
     if((tLat != null) &&
        (tLong != null)) {
-		var buttonnode= document.createElement('input');
-		buttonnode.setAttribute('type','button');
-		buttonnode.setAttribute('name','geolocation');
-		buttonnode.setAttribute('value','Reset Geolocation Coordinates');
-		buttonnode.addEventListener("click", function(){
-			window.localStorage.removeItem("latitude");
-			window.localStorage.removeItem("longitude");
-			buttonnode.setAttribute('value','Geolocation Coordinates Reset!');
-		});
-		weatherBox.appendChild(buttonnode);
+	var buttonnode= document.createElement('input');
+	buttonnode.setAttribute('type','button');
+	buttonnode.setAttribute('name','geolocation');
+	buttonnode.setAttribute('value','Reset Geolocation Coordinates');
+	buttonnode.addEventListener("click", function(){
+	    window.localStorage.removeItem("latitude");
+	    window.localStorage.removeItem("longitude");
+	    buttonnode.setAttribute('value','Geolocation Coordinates Reset!');
+	});
+	weatherBox.appendChild(buttonnode);
 
-		var toAdd = document.createElement("br");
-		weatherBox.appendChild(toAdd);
+	var toAdd = document.createElement("br");
+	weatherBox.appendChild(toAdd);
     }
 
     /* this requests the file and executes a
        callback with the parsed result once it is available */
     fetchJSONFile('http://forecast.weather.gov/MapClick.php?lat='+
-				  LATITUDE+'&lon='+
-				  LONGITUDE+'&FcstType=json',
-				  function(data) {
-					  // fetches the XML file from weather.gov
-					  var x = new XMLHttpRequest();
-					  var urll = "http://forecast.weather.gov/MapClick.php?lat="+LATITUDE+"&lon="+LONGITUDE+"&FcstType=digitalDWML";
-					  x.open("GET", urll, true);
-					  // execute once we get the data
-					  x.onreadystatechange = function () {
-						  if (x.readyState == 4 && x.status == 200) {
-							  doc = x.responseXML;
-							  var br = document.createElement("br");
-							  weatherBox.appendChild(br);
-							  var br = document.createElement("br");
-							  weatherBox.appendChild(br);
+		  LATITUDE+'&lon='+
+		  LONGITUDE+'&FcstType=json',
+		  function(data) {
+		      // fetches the XML file from weather.gov
+		      var x = new XMLHttpRequest();
+		      var urll = "http://forecast.weather.gov/MapClick.php?lat="+LATITUDE+"&lon="+LONGITUDE+"&FcstType=digitalDWML";
+		      x.open("GET", urll, true);
+		      // execute once we get the data
+		      x.onreadystatechange = function () {
+			  if (x.readyState == 4 && x.status == 200) {
+			      doc = x.responseXML;
+			      var br = document.createElement("br");
+			      weatherBox.appendChild(br);
+			      var br = document.createElement("br");
+			      weatherBox.appendChild(br);
 
-							  // add the location name to the top
-							  var centerName = data.location.areaDescription.toLowerCase();
-							  var nameBox =  document.createElement("div");
-							  nameBox.setAttribute('id', "areaDescriptionBox");
-							  nameBox.setAttribute('style',"display: inline-block;");
-							  var tmpCounter = 0;
-							  for(var i = 0; i < centerName.length; i++) {
-								  if((tmpCounter >= 9 && centerName.charAt(i)==' ') || (centerName.charAt(i)==',')) {
-									  var brr = document.createElement("br");
-									  nameBox.appendChild(brr);
-									  tmpCounter=0;
-									  if(centerName.charAt(i)==','){
-										  i+=1;
-									  }
-								  } else {
-									  var toAdd = document.createElement("img");
-									  toAdd.setAttribute('id', "letter"+lCount);
-									  lCount++;
-									  letterArray.push(toAdd);
-									  if(centerName == "M" || centerName =="" || centerName ==null || centerName == "NA") {
-										  toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
-									  } else {
-										  if(bw) {
-											  toAdd.setAttribute('src', 'assets/weather/letters/'+centerName.charAt(i)+'_bw.gif');
-										  } else {
-											  toAdd.setAttribute('src', 'assets/weather/letters/'+centerName.charAt(i)+'.gif');
-										  }
-									  }
-									  nameBox.appendChild(toAdd);
-								  }
-								  tmpCounter++;
-							  }
-							  weatherBox.appendChild(nameBox);
-
-							  var toAdd = document.createElement("br");
-							  weatherBox.appendChild(toAdd);
-
-							  // add "Today" image
-							  var toAdd = document.createElement("img");
-							  toAdd.setAttribute('id', "today");
-							  toAdd.setAttribute('src', "assets/weather/day/today/face.gif");
-							  weatherBox.appendChild(toAdd);
-							  weatherBox.appendChild(br);
-
-							  // add the current observation location name
-							  var curOb = data.currentobservation.name.toLowerCase();
-							  var nameBox =  document.createElement("div");
-							  nameBox.setAttribute('id', "currentObservationBox");
-							  nameBox.setAttribute('style',"display: inline-block;");
-							  tmpCounter = 0;
-							  for(var i = 0; i < curOb.length; i++) {
-								  if((tmpCounter >= 7 && curOb.charAt(i)==' ')	|| (curOb.charAt(i)==',')) {
-									  var br = document.createElement("br");
-									  nameBox.appendChild(br);
-									  tmpCounter=0;
-									  if(curOb.charAt(i)==','){
-										  i+=1;
-									  }
-								  } else {
-									  var toAdd = document.createElement("img");
-									  toAdd.setAttribute('id', "letter"+lCount);
-									  lCount++;
-									  letterArray.push(toAdd);
-									  //toAdd.className = "img-with-text-weather-letter";
-									  if(centerName == "M" || centerName =="" || centerName ==null || centerName == "NA") {
-										  toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
-									  } else {
-										  if(bw) {
-											  toAdd.setAttribute('src', 'assets/weather/letters/'+curOb.charAt(i)+'_bw.gif');
-										  } else {
-											  toAdd.setAttribute('src', 'assets/weather/letters/'+curOb.charAt(i)+'.gif');
-										  }
-									  }
-									  nameBox.appendChild(toAdd);
-								  }
-								  tmpCounter++;
-							  }
-							  weatherBox.appendChild(nameBox);
-							  var toAdd = document.createElement("br");
-							  weatherBox.appendChild(toAdd);
-							  var toAdd = document.createElement("br");
-							  weatherBox.appendChild(toAdd);
-
-							  var showDate = true;
-							  // show the current conditions
-							  helper(data.currentobservation.Temp, data.currentobservation.Relh ,data.currentobservation.Weather, showDate, data.currentobservation.Weather);
-							  // break up the JSON data into separate vars
-							  var tempArray = data.data.temperature;
-							  var forecastArray = data.data.weather;
-							  var precipArray = data.data.pop;
-							  var text = data.data.text;
-							  var counter = d.getDay();
-							  var j = 0;
-							  var afternoon = false;
-							  var today = false;
-							  var tonight = true;
-							  LAST_DAY = forecastArray.length;
-
-							  // special circumstances
-							  if(data.time.startPeriodName[0]=="This Afternoon") {
-								  helper(tempArray[j], precipArray[j], forecastArray[j], afternoon, text[j]);
-								  j++;
-								  afternoon = true;
-							  }
-
-							  if(data.time.startPeriodName[0]=="Today") {
-								  today = true;
-								  helper(tempArray[j], precipArray[j], forecastArray[j], today, text[j]);
-								  j++;
-							  }
-
-							  // add the vertical legend
-							  /*var text_vert = document.createElement('div');
-								text_vert.className = 'text bar-text-vertical';
-								for(var i = 100; i >= 10; i=i-10){
-								var bar_text = document.createElement('div');
-								bar_text.className = 'bar-text-vert';
-								var strN = i.toString();
-								for(var c = 0; c < strN.length; c++){
-								var hour = document.createElement('img');
-								hour.src="assets/weather/nums_cure/"+ strN[c]+".gif";
-								bar_text.appendChild(hour);
-								text_vert.appendChild(bar_text);
-								}
-								}
-								var br = document.createElement('br');
-								weatherBox.appendChild(br);
-								weatherBox.appendChild(text_vert);
-							  */
-							  tmrw = true;
-							  // special circumstances
-							  if(data.time.startPeriodName[0]=="Tonight" ||
-								 data.time.startPeriodName[1]=="Tonight") {
-								  // add "Tonight" image
-								  var toAdd = document.createElement("img");
-								  toAdd.setAttribute('id', "tonight");
-								  //toAdd.className = "img-with-text-weather";
-								  toAdd.setAttribute('src', "assets/weather/day/tonight/face.gif");
-								  weatherBox.appendChild(toAdd);
-								  var br = document.createElement("br");
-								  weatherBox.appendChild(br);
-								  tonight = true;
-								  helper(tempArray[j], precipArray[j], forecastArray[j], false, text[j]);
-								  j++;
-							  }
-
-							  // reset the count and position if there is overnight information (so as to not double the current forecast w/ today's
-							  if(data.time.startPeriodName[0]=="Overnight"){
-								  var time = doc.getElementsByTagName("time-layout");
-								  var startTimeT = time[0].childNodes[2].firstChild.nodeValue;
-								  startTime = startTimeT.substring(startTimeT.indexOf('T')+1, startTimeT.indexOf(':'));
-								  if(startTime !== 23){
-									  count = 2;
-									  position = 0;
-									  counter--;
-								  }
-							  }
-
-							  for(j; j < tempArray.length; j++) {
-								  if(j==1 && tonight || (j==2 && tonight) && (afternoon || today)) {
-									  var toAdd = document.createElement("hr");
-									  weatherBox.appendChild(toAdd);
-
-									  var toAdd = document.createElement("div");
-									  toAdd.innerHTML = '(this space left blank)';
-									  toAdd.setAttribute("style", 'visibility: hidden;');
-									  weatherBox.appendChild(toAdd);
-									  counter++;
-									  if(counter==weekday.length) { counter =0;}
-									  n = weekday[counter];
-								  }
-								  var br = document.createElement("br");
-								  weatherBox.appendChild(br);
-								  helper(tempArray[j], precipArray[j], forecastArray[j], showDate, text[j]);
-
-								  if( (j == 0 && (!afternoon||!today)) ||
-									  (j==1 && (afternoon||today))) {
-									  var toAdd = document.createElement("hr");
-									  weatherBox.appendChild(toAdd);
-
-									  var toAdd = document.createElement("div");
-									  toAdd.innerHTML = '(this space left blank)';
-									  toAdd.setAttribute("style", 'visibility: hidden;');
-									  weatherBox.appendChild(toAdd);
-								  }
-
-								  if(afternoon || today) {
-									  if(j%2!=0) {
-										  if(j >= 1) {
-											  counter++;
-											  if(counter==weekday.length) { counter =0;}
-											  n = weekday[counter];
-											  var toAdd = document.createElement("hr");
-											  weatherBox.appendChild(toAdd);
-											  var br = document.createElement("br");
-											  weatherBox.appendChild(br);
-										  }
-										  showDate = true;
-									  } else {
-										  showDate = false;
-									  }
-								  }
-								  else {
-									  if(j%2==0) {
-										  if(j >= 2) {
-											  counter++;
-											  if(counter==weekday.length) { counter =0;}
-											  n = weekday[counter];
-											  var toAdd = document.createElement("hr");
-											  weatherBox.appendChild(toAdd);
-											  var br = document.createElement("br");
-											  weatherBox.appendChild(br);
-										  }
-										  showDate = true;
-									  } else {
-										  showDate = false;
-									  }
-								  }
-							  }
-							  var toAdd = document.createElement("hr");
-							  weatherBox.appendChild(toAdd);
-							  var lv = document.getElementById("lever");
-
-							  function lvr() {
-								  var getFavicon = function(){
-									  var favicon = undefined;
-									  var nodeList = document.getElementsByTagName("link");
-									  for (var i = 0; i < nodeList.length; i++) {
-										  if((nodeList[i].getAttribute("rel") == "icon")
-											 ||(nodeList[i].getAttribute("rel") == "shortcut icon")){
-											  favicon = nodeList[i];
-										  }
-									  }
-									  return favicon;
-								  }
-								  var fav = getFavicon();
-
-								  if(lv.src.indexOf("up") !== -1) {
-									  fav.href = fav.getAttribute("href").substring(0, fav.getAttribute("href").lastIndexOf('.'))+"_bw.gif"
-									  for(var i=0; i<piconArray.length;i++){
-										  piconArray[i].src=piconArray[i].src.substring(0, piconArray[i].src.lastIndexOf('.'))+"_bw.gif";
-									  }
-									  for(var i=0; i<dayArray.length;i++){
-										  dayArray[i].src=dayArray[i].src.substring(0, dayArray[i].src.lastIndexOf('.'))+"_bw.gif";
-									  }
-									  for(var i=0; i<thermArray.length;i++){
-										  thermArray[i].src=thermArray[i].src.substring(0, thermArray[i].src.lastIndexOf('.'))+"_bw.gif";
-									  }
-									  for(var i=0; i<letterArray.length;i++){
-										  letterArray[i].src=letterArray[i].src.substring(0, letterArray[i].src.lastIndexOf('.'))+"_bw.gif";
-									  }
-									  for(var i=0; i<barPrecipArray.length;i++){
-										  barPrecipArray[i].classList.add("bar-precip-bw");
-									  }
-									  for(var i=0; i<barTempArray.length;i++){
-										  barTempArray[i].classList.add("bar-temp-bw");
-									  }
-									  for(var i=0; i<barHumidArray.length;i++){
-										  barHumidArray[i].classList.add("bar-humid-bw");
-									  }
-									  for(var i=0; i<barCloudArray.length;i++){
-										  barCloudArray[i].classList.add("bar-cloud-bw");
-									  }
-								  } else if (lv.src.indexOf("down") !== -1) {
-									  fav.href = fav.getAttribute("href").substring(0, fav.getAttribute("href").lastIndexOf('_bw.gif'))+".gif";
-									  for(var i=0; i<piconArray.length;i++){
-										  piconArray[i].src=piconArray[i].src.substring(0, piconArray[i].src.lastIndexOf('_bw.gif'))+".gif";
-									  }
-									  for(var i=0; i<dayArray.length;i++){
-										  dayArray[i].src=dayArray[i].src.substring(0, dayArray[i].src.lastIndexOf('_bw.gif'))+".gif";
-									  }
-									  for(var i=0; i<thermArray.length;i++){
-										  thermArray[i].src=thermArray[i].src.substring(0, thermArray[i].src.lastIndexOf('_bw.gif'))+".gif";
-									  }
-									  for(var i=0; i<letterArray.length;i++){
-										  letterArray[i].src=letterArray[i].src.substring(0, letterArray[i].src.lastIndexOf('_bw.gif'))+".gif";
-									  }
-									  for(var i=0; i<barPrecipArray.length;i++){
-										  barPrecipArray[i].classList.remove("bar-precip-bw");
-									  }
-									  for(var i=0; i<barTempArray.length;i++){
-										  barTempArray[i].classList.remove("bar-temp-bw");
-									  }
-									  for(var i=0; i<barHumidArray.length;i++){
-										  barHumidArray[i].classList.remove("bar-humid-bw");
-									  }
-									  for(var i=0; i<barCloudArray.length;i++){
-										  barCloudArray[i].classList.remove("bar-cloud-bw");
-									  }
-								  }
-							  }
-							  if(!lvrInit) {
-								  lv.addEventListener('click', lvr, false);
-								  lvrInit = true;
-							  }
-						  }
-					  };
-					  x.send(null);
-					  var wbox = document.getElementById("weatherBox")
-					  wbox.style.width=wbox.offsetWidth;
-					  wbox.width=wbox.offsetWidth;
+			      // add the location name to the top
+			      var centerName = data.location.areaDescription.toLowerCase();
+			      var nameBox =  document.createElement("div");
+			      nameBox.setAttribute('id', "areaDescriptionBox");
+			      nameBox.setAttribute('style',"display: inline-block;");
+			      var tmpCounter = 0;
+			      for(var i = 0; i < centerName.length; i++) {
+				  if((tmpCounter >= 9 && centerName.charAt(i)==' ') || (centerName.charAt(i)==',')) {
+				      var brr = document.createElement("br");
+				      nameBox.appendChild(brr);
+				      tmpCounter=0;
+				      if(centerName.charAt(i)==','){
+					  i+=1;
+				      }
+				  } else {
+				      var toAdd = document.createElement("img");
+				      toAdd.setAttribute('id', "letter"+lCount);
+				      lCount++;
+				      letterArray.push(toAdd);
+				      if(centerName == "M" || centerName =="" || centerName ==null || centerName == "NA") {
+					  toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+				      } else {
+					  if(bw) {
+					      toAdd.setAttribute('src', 'assets/weather/letters/'+centerName.charAt(i)+'_bw.gif');
+					  } else {
+					      toAdd.setAttribute('src', 'assets/weather/letters/'+centerName.charAt(i)+'.gif');
+					  }
+				      }
+				      nameBox.appendChild(toAdd);
 				  }
-				 );
+				  tmpCounter++;
+			      }
+			      weatherBox.appendChild(nameBox);
+
+			      var toAdd = document.createElement("br");
+			      weatherBox.appendChild(toAdd);
+
+			      // add "Today" image
+			      var toAdd = document.createElement("img");
+			      toAdd.setAttribute('id', "today");
+			      toAdd.setAttribute('src', "assets/weather/day/today/face.gif");
+			      weatherBox.appendChild(toAdd);
+			      weatherBox.appendChild(br);
+
+			      // add the current observation location name
+			      var curOb = data.currentobservation.name.toLowerCase();
+			      var nameBox =  document.createElement("div");
+			      nameBox.setAttribute('id', "currentObservationBox");
+			      nameBox.setAttribute('style',"display: inline-block;");
+			      tmpCounter = 0;
+			      for(var i = 0; i < curOb.length; i++) {
+				  if((tmpCounter >= 7 && curOb.charAt(i)==' ')	|| (curOb.charAt(i)==',')) {
+				      var br = document.createElement("br");
+				      nameBox.appendChild(br);
+				      tmpCounter=0;
+				      if(curOb.charAt(i)==','){
+					  i+=1;
+				      }
+				  } else {
+				      var toAdd = document.createElement("img");
+				      toAdd.setAttribute('id', "letter"+lCount);
+				      lCount++;
+				      letterArray.push(toAdd);
+				      //toAdd.className = "img-with-text-weather-letter";
+				      if(centerName == "M" || centerName =="" || centerName ==null || centerName == "NA") {
+					  toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+				      } else {
+					  if(bw) {
+					      toAdd.setAttribute('src', 'assets/weather/letters/'+curOb.charAt(i)+'_bw.gif');
+					  } else {
+					      toAdd.setAttribute('src', 'assets/weather/letters/'+curOb.charAt(i)+'.gif');
+					  }
+				      }
+				      nameBox.appendChild(toAdd);
+				  }
+				  tmpCounter++;
+			      }
+			      weatherBox.appendChild(nameBox);
+			      var toAdd = document.createElement("br");
+			      weatherBox.appendChild(toAdd);
+			      var toAdd = document.createElement("br");
+			      weatherBox.appendChild(toAdd);
+
+			      var showDate = true;
+			      // show the current conditions
+			      helper(data.currentobservation.Temp, data.currentobservation.Relh ,data.currentobservation.Weather, showDate, data.currentobservation.Weather);
+			      // break up the JSON data into separate vars
+			      var tempArray = data.data.temperature;
+			      var forecastArray = data.data.weather;
+			      var precipArray = data.data.pop;
+			      var text = data.data.text;
+			      var counter = d.getDay();
+			      var j = 0;
+			      var afternoon = false;
+			      var today = false;
+			      var tonight = true;
+			      LAST_DAY = forecastArray.length;
+
+			      // special circumstances
+			      if(data.time.startPeriodName[0]=="This Afternoon") {
+				  helper(tempArray[j], precipArray[j], forecastArray[j], afternoon, text[j]);
+				  j++;
+				  afternoon = true;
+			      }
+
+			      if(data.time.startPeriodName[0]=="Today") {
+				  today = true;
+				  helper(tempArray[j], precipArray[j], forecastArray[j], today, text[j]);
+				  j++;
+			      }
+
+			      // add the vertical legend
+			      /*var text_vert = document.createElement('div');
+				text_vert.className = 'text bar-text-vertical';
+				for(var i = 100; i >= 10; i=i-10){
+				var bar_text = document.createElement('div');
+				bar_text.className = 'bar-text-vert';
+				var strN = i.toString();
+				for(var c = 0; c < strN.length; c++){
+				var hour = document.createElement('img');
+				hour.src="assets/weather/nums_cure/"+ strN[c]+".gif";
+				bar_text.appendChild(hour);
+				text_vert.appendChild(bar_text);
+				}
+				}
+				var br = document.createElement('br');
+				weatherBox.appendChild(br);
+				weatherBox.appendChild(text_vert);
+			      */
+			      tmrw = true;
+			      // special circumstances
+			      if(data.time.startPeriodName[0]=="Tonight" ||
+				 data.time.startPeriodName[1]=="Tonight") {
+				  // add "Tonight" image
+				  var toAdd = document.createElement("img");
+				  toAdd.setAttribute('id', "tonight");
+				  //toAdd.className = "img-with-text-weather";
+				  toAdd.setAttribute('src', "assets/weather/day/tonight/face.gif");
+				  weatherBox.appendChild(toAdd);
+				  var br = document.createElement("br");
+				  weatherBox.appendChild(br);
+				  tonight = true;
+				  helper(tempArray[j], precipArray[j], forecastArray[j], false, text[j]);
+				  j++;
+			      }
+
+			      // reset the count and position if there is overnight information (so as to not double the current forecast w/ today's
+			      if(data.time.startPeriodName[0]=="Overnight") {
+				  var time = doc.getElementsByTagName("time-layout");
+				  var startTimeT = time[0].childNodes[2].firstChild.nodeValue;
+				  startTime = startTimeT.substring(startTimeT.indexOf('T')+1, startTimeT.indexOf(':'));
+				  if(startTime != 23){
+				      count = 2;
+				      position = 0;
+				      counter--;
+				  } else {
+				      //tmrw = false;
+				  }
+			      }
+
+			      for(j; j < tempArray.length; j++) {
+				  if(j==1 && tonight || (j==2 && tonight) && (afternoon || today)) {
+				      var toAdd = document.createElement("hr");
+				      weatherBox.appendChild(toAdd);
+
+				      var toAdd = document.createElement("div");
+				      toAdd.innerHTML = '(this space left blank)';
+				      toAdd.setAttribute("style", 'visibility: hidden;');
+				      weatherBox.appendChild(toAdd);
+				      counter++;
+				      if(counter==weekday.length) { counter =0;}
+				      n = weekday[counter];
+				  }
+				  var br = document.createElement("br");
+				  weatherBox.appendChild(br);
+				  helper(tempArray[j], precipArray[j], forecastArray[j], showDate, text[j]);
+
+				  if( (j == 0 && (!afternoon||!today)) ||
+				      (j==1 && (afternoon||today))) {
+				      var toAdd = document.createElement("hr");
+				      weatherBox.appendChild(toAdd);
+
+				      var toAdd = document.createElement("div");
+				      toAdd.innerHTML = '(this space left blank)';
+				      toAdd.setAttribute("style", 'visibility: hidden;');
+				      weatherBox.appendChild(toAdd);
+				  }
+
+				  if(afternoon || today) {
+				      if(j%2!=0) {
+					  if(j >= 1) {
+					      counter++;
+					      if(counter==weekday.length) { counter =0;}
+					      n = weekday[counter];
+					      var toAdd = document.createElement("hr");
+					      weatherBox.appendChild(toAdd);
+					      var br = document.createElement("br");
+					      weatherBox.appendChild(br);
+					  }
+					  showDate = true;
+				      } else {
+					  showDate = false;
+				      }
+				  }
+				  else {
+				      if(j%2==0) {
+					  if(j >= 2) {
+					      counter++;
+					      if(counter==weekday.length) { counter =0;}
+					      n = weekday[counter];
+					      var toAdd = document.createElement("hr");
+					      weatherBox.appendChild(toAdd);
+					      var br = document.createElement("br");
+					      weatherBox.appendChild(br);
+					  }
+					  showDate = true;
+				      } else {
+					  showDate = false;
+				      }
+				  }
+			      }
+			      var toAdd = document.createElement("hr");
+			      weatherBox.appendChild(toAdd);
+			      var lv = document.getElementById("lever");
+
+			      function lvr() {
+				  var getFavicon = function(){
+				      var favicon = undefined;
+				      var nodeList = document.getElementsByTagName("link");
+				      for (var i = 0; i < nodeList.length; i++) {
+					  if((nodeList[i].getAttribute("rel") == "icon")
+					     ||(nodeList[i].getAttribute("rel") == "shortcut icon")){
+					      favicon = nodeList[i];
+					  }
+				      }
+				      return favicon;
+				  }
+				  var fav = getFavicon();
+
+				  if(lv.src.indexOf("up") !== -1) {
+				      fav.href = fav.getAttribute("href").substring(0, fav.getAttribute("href").lastIndexOf('.'))+"_bw.gif"
+				      for(var i=0; i<piconArray.length;i++){
+					  piconArray[i].src=piconArray[i].src.substring(0, piconArray[i].src.lastIndexOf('.'))+"_bw.gif";
+				      }
+				      for(var i=0; i<dayArray.length;i++){
+					  dayArray[i].src=dayArray[i].src.substring(0, dayArray[i].src.lastIndexOf('.'))+"_bw.gif";
+				      }
+				      for(var i=0; i<thermArray.length;i++){
+					  thermArray[i].src=thermArray[i].src.substring(0, thermArray[i].src.lastIndexOf('.'))+"_bw.gif";
+				      }
+				      for(var i=0; i<letterArray.length;i++){
+					  letterArray[i].src=letterArray[i].src.substring(0, letterArray[i].src.lastIndexOf('.'))+"_bw.gif";
+				      }
+				      for(var i=0; i<barPrecipArray.length;i++){
+					  barPrecipArray[i].classList.add("bar-precip-bw");
+				      }
+				      for(var i=0; i<barTempArray.length;i++){
+					  barTempArray[i].classList.add("bar-temp-bw");
+				      }
+				      for(var i=0; i<barHumidArray.length;i++){
+					  barHumidArray[i].classList.add("bar-humid-bw");
+				      }
+				      for(var i=0; i<barCloudArray.length;i++){
+					  barCloudArray[i].classList.add("bar-cloud-bw");
+				      }
+				  } else if (lv.src.indexOf("down") !== -1) {
+				      fav.href = fav.getAttribute("href").substring(0, fav.getAttribute("href").lastIndexOf('_bw.gif'))+".gif";
+				      for(var i=0; i<piconArray.length;i++){
+					  piconArray[i].src=piconArray[i].src.substring(0, piconArray[i].src.lastIndexOf('_bw.gif'))+".gif";
+				      }
+				      for(var i=0; i<dayArray.length;i++){
+					  dayArray[i].src=dayArray[i].src.substring(0, dayArray[i].src.lastIndexOf('_bw.gif'))+".gif";
+				      }
+				      for(var i=0; i<thermArray.length;i++){
+					  thermArray[i].src=thermArray[i].src.substring(0, thermArray[i].src.lastIndexOf('_bw.gif'))+".gif";
+				      }
+				      for(var i=0; i<letterArray.length;i++){
+					  letterArray[i].src=letterArray[i].src.substring(0, letterArray[i].src.lastIndexOf('_bw.gif'))+".gif";
+				      }
+				      for(var i=0; i<barPrecipArray.length;i++){
+					  barPrecipArray[i].classList.remove("bar-precip-bw");
+				      }
+				      for(var i=0; i<barTempArray.length;i++){
+					  barTempArray[i].classList.remove("bar-temp-bw");
+				      }
+				      for(var i=0; i<barHumidArray.length;i++){
+					  barHumidArray[i].classList.remove("bar-humid-bw");
+				      }
+				      for(var i=0; i<barCloudArray.length;i++){
+					  barCloudArray[i].classList.remove("bar-cloud-bw");
+				      }
+				  }
+			      }
+			      if(!lvrInit) {
+				  lv.addEventListener('click', lvr, false);
+				  lvrInit = true;
+			      }
+			  }
+		      };
+		      x.send(null);
+		      var wbox = document.getElementById("weatherBox")
+		      wbox.style.width=wbox.offsetWidth;
+		      wbox.width=wbox.offsetWidth;
+		  }
+		 );
 }
 // standard function to add general information for the rest of the week (next six days)
 function helper(curTemp, precip, forecast, showDate, text) {
@@ -515,41 +517,41 @@ function helper(curTemp, precip, forecast, showDate, text) {
     dayArray.push(toAdd);
     toAdd.className = "image-weather-table";
     if(bw){
-		toAdd.setAttribute('src', "assets/weather/day/"+n+"/face_bw.gif");
+	toAdd.setAttribute('src', "assets/weather/day/"+n+"/face_bw.gif");
     } else {
-		toAdd.setAttribute('src', "assets/weather/day/"+n+"/face.gif");
+	toAdd.setAttribute('src', "assets/weather/day/"+n+"/face.gif");
     }
     var d = new Date();
     // http://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date
     var monthNames = ["January", "February", "March",
-					  "April", "May", "June", "July",
-					  "August", "September", "October",
-					  "November", "December"];
+		      "April", "May", "June", "July",
+		      "August", "September", "October",
+		      "November", "December"];
     d.setDate(d.getDate() + odCount);
     d = weekd[d.getDay()] + " " + monthNames[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
     toAdd.setAttribute('title',d);
 
     if(!showDate) {
-		//if(n==weekday[d.getDay()] && !hasShownMoon) {
-		text = text.toLowerCase();
-		if(text.includes("cloudy")) {
-			if(bw){
-				toAdd.setAttribute('src', "assets/weather/sky/partlymoonny/face_bw.gif");
-			} else {
-				toAdd.setAttribute('src', "assets/weather/sky/partlymoonny/face.gif");
-			}
-		} else {
-			if(bw){
-				toAdd.setAttribute('src', "assets/weather/sky/moonny/face_bw.gif");
-			} else {
-				toAdd.setAttribute('src', "assets/weather/sky/moonny/face.gif");
-			}
-		}
-		/*hasShownMoon = true;
-		  } else {
-		  toAdd.style.visibility = 'hidden';
-		  }*/
-		odCount++;
+	//if(n==weekday[d.getDay()] && !hasShownMoon) {
+	text = text.toLowerCase();
+	if(text.includes("cloudy")) {
+	    if(bw){
+		toAdd.setAttribute('src', "assets/weather/sky/partlymoonny/face_bw.gif");
+	    } else {
+		toAdd.setAttribute('src', "assets/weather/sky/partlymoonny/face.gif");
+	    }
+	} else {
+	    if(bw){
+		toAdd.setAttribute('src', "assets/weather/sky/moonny/face_bw.gif");
+	    } else {
+		toAdd.setAttribute('src', "assets/weather/sky/moonny/face.gif");
+	    }
+	}
+	/*hasShownMoon = true;
+	  } else {
+	  toAdd.style.visibility = 'hidden';
+	  }*/
+	odCount++;
     }
     dayBox.appendChild(toAdd);
     weatherBox.appendChild(dayBox);
@@ -564,15 +566,15 @@ function helper(curTemp, precip, forecast, showDate, text) {
     eworldBox.setAttribute('style',"display: inline-block;");
 
     for(var i = 0; i < curTemp.length; i++) {
-		var toAdd = document.createElement("img");
-		toAdd.setAttribute('id', "temp"+i);
-		toAdd.className = "image-weather-letter";
-		if(curTemp == "M" || curTemp =="" || curTemp ==null || curTemp == "NA") {
-			toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
-		} else {
-			toAdd.setAttribute('src', 'assets/weather/nums/'+curTemp.charAt(i)+'.gif');
-		}
-		eworldBox.appendChild(toAdd);
+	var toAdd = document.createElement("img");
+	toAdd.setAttribute('id', "temp"+i);
+	toAdd.className = "image-weather-letter";
+	if(curTemp == "M" || curTemp =="" || curTemp ==null || curTemp == "NA") {
+	    toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+	} else {
+	    toAdd.setAttribute('src', 'assets/weather/nums/'+curTemp.charAt(i)+'.gif');
+	}
+	eworldBox.appendChild(toAdd);
     }
     var toAdd = document.createElement("img");
     toAdd.setAttribute('id', "tempDegree");
@@ -590,26 +592,26 @@ function helper(curTemp, precip, forecast, showDate, text) {
     /***** OLD PRECIP ******/
 
     if(curTemp != 'M' && curTemp != "" && curTemp != null && curTemp != "NA") {
-		weatherPath = curTemp;
-		while(weatherPath%5 != 0) { weatherPath--; } // decrement the value to a valid picon therm
-		if(weatherPath<100 && weatherPath>=0) {
-			if(weatherPath < 10) {
-				weatherPath = "p00" + weatherPath;
-			} else {
-				weatherPath = "p0" + weatherPath;
-			}
-		}
-		if(weatherPath < 0) {
-			weatherPath = weatherPath * -1;
-			weatherPath = "m0" + weatherPath;
-		}
-		if(weatherPath >= 100){
-			if(weatherPath >= 110) {
-				weatherPath = "p110";
-			} else {
-				weatherPath = "p" + weatherPath;
-			}
-		}
+	weatherPath = curTemp;
+	while(weatherPath%5 != 0) { weatherPath--; } // decrement the value to a valid picon therm
+	if(weatherPath<100 && weatherPath>=0) {
+	    if(weatherPath < 10) {
+		weatherPath = "p00" + weatherPath;
+	    } else {
+		weatherPath = "p0" + weatherPath;
+	    }
+	}
+	if(weatherPath < 0) {
+	    weatherPath = weatherPath * -1;
+	    weatherPath = "m0" + weatherPath;
+	}
+	if(weatherPath >= 100){
+	    if(weatherPath >= 110) {
+		weatherPath = "p110";
+	    } else {
+		weatherPath = "p" + weatherPath;
+	    }
+	}
     }
 
     var thermBox = document.createElement("div");
@@ -621,32 +623,32 @@ function helper(curTemp, precip, forecast, showDate, text) {
     thermArray.push(toAdd);
     toAdd.className = "image-weather-block";
     if(curTemp == "M" || curTemp =="" || curTemp ==null || curTemp == "NA") {
-		if(bw){
-			toAdd.setAttribute('src', "assets/weather/MISC/question/face_bw.gif");
-		} else {
-			toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
-		}
+	if(bw){
+	    toAdd.setAttribute('src', "assets/weather/MISC/question/face_bw.gif");
+	} else {
+	    toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+	}
 
     } else {
-		if(bw){
-			toAdd.setAttribute('src', "assets/weather/temp2/" + weatherPath + "/face_bw.gif");
-		} else {
-			toAdd.setAttribute('src', "assets/weather/temp2/" + weatherPath + "/face.gif");
-		}
+	if(bw){
+	    toAdd.setAttribute('src', "assets/weather/temp2/" + weatherPath + "/face_bw.gif");
+	} else {
+	    toAdd.setAttribute('src', "assets/weather/temp2/" + weatherPath + "/face.gif");
+	}
 
     }
     if(firstRun) {
-		var link = document.createElement('link');
-		link.type = 'image/x-icon';
-		link.rel = 'icon';
-		if(bw) {
-			link.href = ('assets/weather/temp/' + weatherPath + '/face_bw.gif');
-		} else {
-			link.href = ('assets/weather/temp/' + weatherPath + '/face.gif');
-		}
-		document.getElementsByTagName('head')[0].appendChild(link);
-		firstRun = false;
-		firstRunDay = n;
+	var link = document.createElement('link');
+	link.type = 'image/x-icon';
+	link.rel = 'icon';
+	if(bw) {
+	    link.href = ('assets/weather/temp/' + weatherPath + '/face_bw.gif');
+	} else {
+	    link.href = ('assets/weather/temp/' + weatherPath + '/face.gif');
+	}
+	document.getElementsByTagName('head')[0].appendChild(link);
+	firstRun = false;
+	firstRunDay = n;
     }
 
     thermBox.appendChild(toAdd);
@@ -657,148 +659,148 @@ function helper(curTemp, precip, forecast, showDate, text) {
     tableBox.className = "image-weather-table";
 
     if(forecast.includes("then")) {
-		var firstForecast = forecast.substring(0, forecast.indexOf("then")-1);
-		var secondForecast = forecast.substring(forecast.indexOf("then")+5, forecast.length);
+	var firstForecast = forecast.substring(0, forecast.indexOf("then")-1);
+	var secondForecast = forecast.substring(forecast.indexOf("then")+5, forecast.length);
 
+	var toAdd = document.createElement("img");
+	toAdd.setAttribute('id', "picon"+pCount);
+	pCount++;
+	piconArray.push(toAdd);
+	toAdd.setAttribute('title', text);
+	toAdd.onclick=function(){this.setAttribute('title', firstForecast);};
+	//toAdd.setAttribute('title', firstForecast);
+	toAdd.className = "image-weather-table";
+	var pth = computeImage(firstForecast);
+	if(pth == true) {
+	    if(bw){
+		toAdd.setAttribute('src', "assets/weather/MISC/question/face_bw.gif");
+	    } else {
+		toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+	    }
+	} else {
+	    if(bw) {
+		toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face_bw.gif");
+	    } else {
+		toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face.gif");
+	    }
+	}
+
+	tableBox.appendChild(toAdd);
+	weatherBox.appendChild(tableBox);
+
+	/*NEW PRECIP*/
+	if(precip != null) {
+	    var br = document.createElement("br");
+	    var precipBox =  document.createElement("div");
+	    precipBox.className = "image-weather-table";
+	    precipBox.setAttribute('id', "precipBox");
+	    precipBox.setAttribute('style',"display: block; padding-top:5px;");
+
+	    for(var i = 0; i < precip.length; i++) {
 		var toAdd = document.createElement("img");
-		toAdd.setAttribute('id', "picon"+pCount);
-		pCount++;
-		piconArray.push(toAdd);
-		toAdd.setAttribute('title', text);
-		toAdd.onclick=function(){this.setAttribute('title', firstForecast);};
-		//toAdd.setAttribute('title', firstForecast);
-		toAdd.className = "image-weather-table";
-		var pth = computeImage(firstForecast);
-		if(pth == true) {
-			if(bw){
-				toAdd.setAttribute('src', "assets/weather/MISC/question/face_bw.gif");
-			} else {
-				toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
-			}
+		toAdd.setAttribute('id', "precip"+i);
+		toAdd.className = "image-weather-letter";
+		if(curTemp == "M" || curTemp =="" || precip=="NA") {
+		    toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+		    precipBox.appendChild(toAdd);
+		    break;
 		} else {
-			if(bw) {
-				toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face_bw.gif");
-			} else {
-				toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face.gif");
-			}
+		    toAdd.setAttribute('src', 'assets/weather/nums/'+precip.charAt(i)+'.gif');
 		}
-
-		tableBox.appendChild(toAdd);
-		weatherBox.appendChild(tableBox);
-
-		/*NEW PRECIP*/
-		if(precip != null) {
-			var br = document.createElement("br");
-			var precipBox =  document.createElement("div");
-			precipBox.className = "image-weather-table";
-			precipBox.setAttribute('id', "precipBox");
-			precipBox.setAttribute('style',"display: block; padding-top:5px;");
-
-			for(var i = 0; i < precip.length; i++) {
-				var toAdd = document.createElement("img");
-				toAdd.setAttribute('id', "precip"+i);
-				toAdd.className = "image-weather-letter";
-				if(curTemp == "M" || curTemp =="" || precip=="NA") {
-					toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
-					precipBox.appendChild(toAdd);
-					break;
-				} else {
-					toAdd.setAttribute('src', 'assets/weather/nums/'+precip.charAt(i)+'.gif');
-				}
-				precipBox.appendChild(toAdd);
-			}
-			if(curTemp != "M" && curTemp !="" && precip!="NA") {
-				var toAdd = document.createElement("img");
-				toAdd.setAttribute('id', "percent");
-				toAdd.className = "image-weather-letter";
-				toAdd.setAttribute('src', 'assets/weather/nums/percent.gif');
-				precipBox.appendChild(toAdd);
-			}
-			tableBox.appendChild(precipBox);
-		}
-
-		var tableBox = document.createElement("div");
-		tableBox.className = "image-weather-table";
+		precipBox.appendChild(toAdd);
+	    }
+	    if(curTemp != "M" && curTemp !="" && precip!="NA") {
 		var toAdd = document.createElement("img");
-		toAdd.setAttribute('id', "picon"+pCount);
-		pCount++;
-		piconArray.push(toAdd);
-		toAdd.setAttribute('title', text);
-		toAdd.onclick=function(){this.setAttribute('title', secondForecast);};
-		toAdd.className = "image-weather-table";
-		var pth = computeImage(secondForecast);
-		if(pth == true) {
-			if(bw){
-				toAdd.setAttribute('src', "assets/weather/MISC/question/face_bw.gif");
-			} else {
-				toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
-			}
-		} else {
-			if(bw){
-				toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face_bw.gif");
-			} else {
-				toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face.gif");
-			}
-		}
-		tableBox.appendChild(toAdd);
-		weatherBox.appendChild(tableBox);
+		toAdd.setAttribute('id', "percent");
+		toAdd.className = "image-weather-letter";
+		toAdd.setAttribute('src', 'assets/weather/nums/percent.gif');
+		precipBox.appendChild(toAdd);
+	    }
+	    tableBox.appendChild(precipBox);
+	}
+
+	var tableBox = document.createElement("div");
+	tableBox.className = "image-weather-table";
+	var toAdd = document.createElement("img");
+	toAdd.setAttribute('id', "picon"+pCount);
+	pCount++;
+	piconArray.push(toAdd);
+	toAdd.setAttribute('title', text);
+	toAdd.onclick=function(){this.setAttribute('title', secondForecast);};
+	toAdd.className = "image-weather-table";
+	var pth = computeImage(secondForecast);
+	if(pth == true) {
+	    if(bw){
+		toAdd.setAttribute('src', "assets/weather/MISC/question/face_bw.gif");
+	    } else {
+		toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+	    }
+	} else {
+	    if(bw){
+		toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face_bw.gif");
+	    } else {
+		toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face.gif");
+	    }
+	}
+	tableBox.appendChild(toAdd);
+	weatherBox.appendChild(tableBox);
     } else {
+	var toAdd = document.createElement("img");
+	toAdd.setAttribute('id', "picon"+pCount);
+	pCount++;
+	piconArray.push(toAdd);
+	toAdd.setAttribute('title', text);
+	toAdd.onclick=function(){this.setAttribute('title', forecast);};
+	toAdd.className = "image-weather-table";
+	var pth = computeImage(forecast);
+	if(pth == true) {
+	    if(bw){
+		toAdd.setAttribute('src', "assets/weather/MISC/question/face_bw.gif");
+	    } else {
+		toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+	    }
+	} else {
+	    if(bw){
+		toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face_bw.gif");
+	    } else {
+		toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face.gif");
+	    }
+	}
+
+	tableBox.appendChild(toAdd);
+	weatherBox.appendChild(tableBox);
+
+	/*NEWPRECIP*/
+	if(precip != null) {
+	    var br = document.createElement("br");
+	    var precipBox =  document.createElement("div");
+	    precipBox.className = "image-weather-table";
+	    precipBox.setAttribute('id', "precipBox");
+	    precipBox.setAttribute('style',"display: block; padding-top:5px;");
+
+	    for(var i = 0; i < precip.length; i++) {
 		var toAdd = document.createElement("img");
-		toAdd.setAttribute('id', "picon"+pCount);
-		pCount++;
-		piconArray.push(toAdd);
-		toAdd.setAttribute('title', text);
-		toAdd.onclick=function(){this.setAttribute('title', forecast);};
-		toAdd.className = "image-weather-table";
-		var pth = computeImage(forecast);
-		if(pth == true) {
-			if(bw){
-				toAdd.setAttribute('src', "assets/weather/MISC/question/face_bw.gif");
-			} else {
-				toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
-			}
+		toAdd.setAttribute('id', "precip"+i);
+		toAdd.className = "image-weather-letter";
+		if(curTemp == "M" || curTemp =="" || precip=="NA") {
+		    toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
+		    precipBox.appendChild(toAdd);
+		    break;
 		} else {
-			if(bw){
-				toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face_bw.gif");
-			} else {
-				toAdd.setAttribute('src', "assets/weather/sky/"+pth+"/face.gif");
-			}
+		    toAdd.setAttribute('src', 'assets/weather/nums/'+precip.charAt(i)+'.gif');
 		}
 
-		tableBox.appendChild(toAdd);
-		weatherBox.appendChild(tableBox);
-
-		/*NEWPRECIP*/
-		if(precip != null) {
-			var br = document.createElement("br");
-			var precipBox =  document.createElement("div");
-			precipBox.className = "image-weather-table";
-			precipBox.setAttribute('id', "precipBox");
-			precipBox.setAttribute('style',"display: block; padding-top:5px;");
-
-			for(var i = 0; i < precip.length; i++) {
-				var toAdd = document.createElement("img");
-				toAdd.setAttribute('id', "precip"+i);
-				toAdd.className = "image-weather-letter";
-				if(curTemp == "M" || curTemp =="" || precip=="NA") {
-					toAdd.setAttribute('src', "assets/weather/MISC/question/face.gif");
-					precipBox.appendChild(toAdd);
-					break;
-				} else {
-					toAdd.setAttribute('src', 'assets/weather/nums/'+precip.charAt(i)+'.gif');
-				}
-
-				precipBox.appendChild(toAdd);
-			}
-			if(curTemp != "M" && curTemp !="" && precip!="NA") {
-				var addPercent = document.createElement("img");
-				addPercent.setAttribute('id', "percent");
-				addPercent.className = "image-weather-letter";
-				addPercent.setAttribute('src', 'assets/weather/nums/percent.gif');
-				precipBox.appendChild(addPercent);
-			}
-			tableBox.appendChild(precipBox);
-		}
+		precipBox.appendChild(toAdd);
+	    }
+	    if(curTemp != "M" && curTemp !="" && precip!="NA") {
+		var addPercent = document.createElement("img");
+		addPercent.setAttribute('id', "percent");
+		addPercent.className = "image-weather-letter";
+		addPercent.setAttribute('src', 'assets/weather/nums/percent.gif');
+		precipBox.appendChild(addPercent);
+	    }
+	    tableBox.appendChild(precipBox);
+	}
     }
 
     var br = document.createElement("br");
@@ -807,146 +809,174 @@ function helper(curTemp, precip, forecast, showDate, text) {
     //alert("Last day: " + LAST_DAY + " dCount: " + dCount);
     //if(tmrw && !showDate || ((dCount == LAST_DAY || dCount == LAST_DAY+1) && d.getHours() != 0)){
     if((!showDate && tmrw) || ((dCount == LAST_DAY || dCount == LAST_DAY+1) && d.getHours() != 0)){
-		var precipProb = doc.getElementsByTagName("probability-of-precipitation");
-		var time =  doc.getElementsByTagName("time-layout");
-		var weatherProb =  doc.getElementsByTagName("weather");
-		var tempProb = doc.querySelectorAll('[type=hourly]');
-		var humidityProb =  doc.getElementsByTagName("humidity");
-		var cloudProb =	 doc.getElementsByTagName("cloud-amount");
+	var precipProb = doc.getElementsByTagName("probability-of-precipitation");
+	var time =  doc.getElementsByTagName("time-layout");
+	var weatherProb =  doc.getElementsByTagName("weather");
+	var tempProb = doc.querySelectorAll('[type=hourly]');
+	var windChillProb = doc.querySelectorAll('[type*=chill]');
+	var humidityProb =  doc.getElementsByTagName("humidity");
+	var cloudProb =	 doc.getElementsByTagName("cloud-amount");
 
-		var graph = document.createElement('div');
-		graph.id = 'graph'+gCount;
-		gCount++;
-		graph.className = 'graph';
+	var graph = document.createElement('div');
+	graph.id = 'graph'+gCount;
+	gCount++;
+	graph.className = 'graph';
 
-		var bar = document.createElement('div');
-		bar.className = 'bar bar-precip bar-hidden';
-		bar.setAttribute("style","height:"+"50px;")
-		graph.appendChild(bar);
+	var baseline = document.createElement('div');
+	baseline.id = 'baseline'+gCount;
+	baseline.className = 'baseline';
 
-		var graph2 = document.createElement('div');
-		graph2.id = 'graph'+gCount;
-		gCount++;
-		graph2.className = 'graph';
-		var bar = document.createElement('div');
-		bar.className = 'bar bar-precip bar-hidden';
-		bar.setAttribute("style","height:"+"50px;")
-		graph2.appendChild(bar);
+	/*var bar = document.createElement('div');
+	  bar.className = 'bar bar-precip bar-hidden';
+	  bar.setAttribute("style","height:"+"50px;")
+	  graph.appendChild(bar);*/
 
-		var time =  doc.getElementsByTagName("time-layout");
-		var tCount = 0;
-		for (var i = position; i < weatherProb[0].childNodes.length; i++) {
-			var cur =  weatherProb[0].childNodes[i].childNodes[0];
-			if(i==0){
-				var startTimeT = time[0].childNodes[count].firstChild.nodeValue;
-				startTime = startTimeT.substring(startTimeT.indexOf('T')+1, startTimeT.indexOf(':'));
-			}
-			var curTime = time[0].childNodes[count].firstChild.nodeValue;
-			var simpTime = curTime.substring(curTime.indexOf('T')+1, curTime.indexOf(':'));
+	var graph2 = document.createElement('div');
+	graph2.id = 'graph'+gCount;
+	gCount++;
+	graph2.className = 'graph';
 
-			var bar = document.createElement('div');
+	var baseline2 = document.createElement('div');
+	baseline2.id = 'baseline'+gCount;
+	baseline2.className = 'baseline';
 
-			bar.className = 'bar bar-precip';
-			if(bw) {
-				bar.classList.add("bar-precip-bw");
-			}
+	/*var bar = document.createElement('div');
+	  bar.className = 'bar bar-precip bar-hidden';
+	  bar.setAttribute("style","height:"+"50px;")
+	  graph2.appendChild(bar);*/
 
-			bar.id = 'bar'+bCount;
-			bCount++;
-			barPrecipArray.push(bar);
-			bar.setAttribute("style","height:"+(precipProb[0].childNodes[i].textContent/2)+"px;")
-			if(!precipProb[0].childNodes[i].textContent){
-				bar.setAttribute("style","visibility: hidden");
-			}
-			graph.appendChild(bar);
-			var fCast = '';
-			if(cur != undefined){
-				fCast = cur.getAttribute("coverage") + " " + cur.getAttribute("weather-type");
-			}
-			bar.setAttribute('title', precipProb[0].childNodes[i].textContent+"% " + fCast);
-			if(fCast.indexOf("snow") !== -1){
-				bar.classList.add("bar-precip-snow");
-			} else if (fCast.indexOf("freezing rain") !== -1) {
-				bar.classList.add("bar-precip-freezing");
-			}
+	var time =  doc.getElementsByTagName("time-layout");
+	var tCount = 0;
+	for (var i = position; i < weatherProb[0].childNodes.length; i++) {
+	    var cur =  weatherProb[0].childNodes[i].childNodes[0];
+	    if(i==0){
+		var startTimeT = time[0].childNodes[count].firstChild.nodeValue;
+		startTime = startTimeT.substring(startTimeT.indexOf('T')+1, startTimeT.indexOf(':'));
+	    }
+	    var curTime = time[0].childNodes[count].firstChild.nodeValue;
+	    var simpTime = curTime.substring(curTime.indexOf('T')+1, curTime.indexOf(':'));
 
-			var bar = document.createElement('div');
-			bar.className = 'bar bar-temp';
-			if(bw) {
-				bar.classList.add("bar-temp-bw");
-			}
-			bar.id = 'bar'+bCount;
-			bCount++;
-			barTempArray.push(bar);
-			bar.setAttribute("style","height:"+(tempProb[0].childNodes[i].textContent/2)+"px;");
-			if(!tempProb[0].childNodes[i].textContent){
-				bar.setAttribute("style","visibility: hidden");
-			}
-			graph.appendChild(bar);
-			bar.setAttribute('title', tempProb[0].childNodes[i].textContent+"F");
+	    var bar = document.createElement('div');
 
-			var bar = document.createElement('div');
-			bar.className = 'bar bar-humidity';
-			if(bw) {
-				bar.classList.add("bar-humid-bw");
-			}
-			bar.id = 'bar'+bCount;
-			bCount++;
-			barHumidArray.push(bar);
-			bar.setAttribute("style","height:"+(humidityProb[0].childNodes[i].textContent/2)+"px;");
-			if(!humidityProb[0].childNodes[i].textContent){
-				bar.setAttribute("style","visibility: hidden");
-			}
-			graph2.appendChild(bar);
-			bar.setAttribute('title', humidityProb[0].childNodes[i].textContent+"%");
+	    bar.className = 'bar bar-precip';
+	    if(bw) {
+		bar.classList.add("bar-precip-bw");
+	    }
 
-			var bar = document.createElement('div');
-			bar.className = 'bar bar-cloud';
-			if(bw) {
-				bar.classList.add("bar-cloud-bw");
-			}
-			bar.id = 'bar'+bCount;
-			bCount++;
-			barCloudArray.push(bar);
-			bar.setAttribute("style","height:"+(cloudProb[0].childNodes[i].textContent/2)+"px;");
-			if(!cloudProb[0].childNodes[i].textContent){
-				bar.setAttribute("style","visibility: hidden");
-			}
-			graph2.appendChild(bar);
-			bar.setAttribute('title', cloudProb[0].childNodes[i].textContent+"%");
+	    bar.id = 'bar'+bCount;
+	    bCount++;
+	    barPrecipArray.push(bar);
+	    bar.setAttribute("style","height:"+(precipProb[0].childNodes[i].textContent/2)+"px;")
+	    if(!precipProb[0].childNodes[i].textContent){
+		bar.setAttribute("style","visibility: hidden");
+	    }
+	    baseline.appendChild(bar);
+	    var fCast = '';
+	    if(cur != undefined){
+		fCast = cur.getAttribute("coverage") + " " + cur.getAttribute("weather-type");
+	    }
+	    bar.setAttribute('title', precipProb[0].childNodes[i].textContent+"% " + fCast);
+	    if(fCast.indexOf("snow") !== -1){
+		bar.classList.add("bar-precip-snow");
+	    } else if (fCast.indexOf("freezing rain") !== -1) {
+		bar.classList.add("bar-precip-freezing");
+	    }
 
-			count += 4;
-			tCount++;
-			if(simpTime == 23) { position = i+1; break;}
-		}
+	    var bar = document.createElement('div');
+	    bar.className = 'bar bar-temp';
+	    if(bw) {
+		bar.classList.add("bar-temp-bw");
+	    }
+	    bar.id = 'bar'+bCount;
+	    bCount++;
+	    barTempArray.push(bar);
+	    bar.setAttribute("style","height:"+(tempProb[0].childNodes[i].textContent/2)+"px;");
+	    if(!tempProb[0].childNodes[i].textContent){
+		bar.setAttribute("style","visibility: hidden");
+	    }
+	    baseline.appendChild(bar);
+	    bar.setAttribute('title', tempProb[0].childNodes[i].textContent+"F");
 
-		weatherBox.appendChild(graph);
-		weatherBox.appendChild(graph2);
+	    var subBar = document.createElement('div');
+	    subBar.className = 'bar bar-windchill';
+	    if(bw) {
+		subBar.classList.add("bar-windchill-bw");
+	    }
+	    subBar.id = 'bar'+bCount;
+	    bCount++;
+	    barTempArray.push(subBar);
+	    subBar.setAttribute("style","height:"+(windChillProb[0].childNodes[i].textContent/2)+"px;");
+	    if(!tempProb[0].childNodes[i].textContent){
+		subBar.setAttribute("style","visibility: hidden");
+	    }
+	    bar.appendChild(subBar);
+	    subBar.setAttribute('title', "Wind Chill: " + windChillProb[0].childNodes[i].textContent+"F");
 
-		var textt = document.createElement('div');
-		textt.className = 'text';
+	    var bar = document.createElement('div');
+	    bar.className = 'bar bar-humidity';
+	    if(bw) {
+		bar.classList.add("bar-humid-bw");
+	    }
+	    bar.id = 'bar'+bCount;
+	    bCount++;
+	    barHumidArray.push(bar);
+	    bar.setAttribute("style","height:"+(humidityProb[0].childNodes[i].textContent/2)+"px;");
+	    if(!humidityProb[0].childNodes[i].textContent){
+		bar.setAttribute("style","visibility: hidden");
+	    }
+	    baseline2.appendChild(bar);
+	    bar.setAttribute('title', "Humidity: " + humidityProb[0].childNodes[i].textContent+"%");
 
-		for(var i = startTime; i < (Number(startTime) + tCount); i++){
-			var bar_text = document.createElement('div');
-			bar_text.className = 'bar-text';
-			if(i > 12) {
-				bar_text.setAttribute('title', i-12 + " pm");
-			}
-			var strN = i.toString();
-			for(var j = 0; j < strN.length; j++){
-				var hour = document.createElement('img');
-				hour.src="assets/weather/nums_cure/"+ strN[j]+".gif";
-				bar_text.appendChild(hour);
-				textt.appendChild(bar_text);
-			}
-		}
-		if(dCount == LAST_DAY+1){
-			graph.className += ' graphLeft';
-			graph2.className += ' graphLeft';
-			textt.className += ' textLeft';
-		}
-		weatherBox.appendChild(textt);
-		startTime = 0;
+	    var bar = document.createElement('div');
+	    bar.className = 'bar bar-cloud';
+	    if(bw) {
+		bar.classList.add("bar-cloud-bw");
+	    }
+	    bar.id = 'bar'+bCount;
+	    bCount++;
+	    barCloudArray.push(bar);
+	    bar.setAttribute("style","height:"+(cloudProb[0].childNodes[i].textContent/2)+"px;");
+	    if(!cloudProb[0].childNodes[i].textContent){
+		bar.setAttribute("style","visibility: hidden");
+	    }
+	    baseline2.appendChild(bar);
+	    bar.setAttribute('title', "Cloud Cover: " + cloudProb[0].childNodes[i].textContent+"%");
+
+	    count += 4;
+	    tCount++;
+	    if(simpTime == 23) { position = i+1; break;}
+	}
+	graph.appendChild(baseline);
+	graph2.appendChild(baseline2);
+	weatherBox.appendChild(graph);
+	weatherBox.appendChild(graph2);
+
+	var textt = document.createElement('div');
+	textt.className = 'text';
+
+	for(var i = startTime; i < (Number(startTime) + tCount); i++){
+	    var bar_text = document.createElement('div');
+	    bar_text.className = 'bar-text';
+	    if(i > 12) {
+		bar_text.setAttribute('title', i-12 + " pm");
+	    }
+	    var strN = i.toString();
+	    for(var j = 0; j < strN.length; j++){
+		var hour = document.createElement('img');
+		hour.src="assets/weather/nums_cure/"+ strN[j]+".gif";
+		bar_text.appendChild(hour);
+		textt.appendChild(bar_text);
+	    }
+	}
+	if(dCount == LAST_DAY+1){
+	    //graph.className += ' graphLeft';
+	    //graph2.className += ' graphLeft';
+	    baseline.className += ' baselineLeft';
+	    baseline2.className += ' baselineLeft';
+	    textt.className += ' textLeft';
+	}
+	weatherBox.appendChild(textt);
+	startTime = 0;
     }
 }
 
@@ -959,35 +989,35 @@ if((tLat != null) &&
 } else {
     // first, we try to get the location by HTML5 geolocation
     if ("geolocation" in navigator) {
-		navigator.geolocation.getCurrentPosition(
-			function(position) {
-				LATITUDE = position.coords.latitude;
-				LONGITUDE = position.coords.longitude;
-				window.localStorage.setItem("latitude", LATITUDE);
-				window.localStorage.setItem("longitude", LONGITUDE);
-				weather();
-				setInterval(weather, 1800000);
-			},
-			function (error) { // if not, just load the weather w/ default lat & long
-				if (error.code == error.PERMISSION_DENIED) {
-					geocoder.geocode( { 'address': address}, function(results, status) {
-						if (status == google.maps.GeocoderStatus.OK) {
-							LATITUDE = results[0].geometry.location.lat();
-							LONGITUDE = results[0].geometry.location.lng();
-							weather();
-							setInterval(weather, 1800000);
-						}
-					});
-				}
-			});
-    } else {
-		geocoder.geocode( { 'address': address}, function(results, status) {
+	navigator.geolocation.getCurrentPosition(
+	    function(position) {
+		LATITUDE = position.coords.latitude;
+		LONGITUDE = position.coords.longitude;
+		window.localStorage.setItem("latitude", LATITUDE);
+		window.localStorage.setItem("longitude", LONGITUDE);
+		weather();
+		setInterval(weather, 1800000);
+	    },
+	    function (error) { // if not, just load the weather w/ default lat & long
+		if (error.code == error.PERMISSION_DENIED) {
+		    geocoder.geocode( { 'address': address}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
-				LATITUDE = results[0].geometry.location.lat();
-				LONGITUDE = results[0].geometry.location.lng();
-				weather(); // if no geolocation, just load the weather stuff on pageload
-				setInterval(weather, 1800000);
+			    LATITUDE = results[0].geometry.location.lat();
+			    LONGITUDE = results[0].geometry.location.lng();
+			    weather();
+			    setInterval(weather, 1800000);
 			}
-		});
+		    });
+		}
+	    });
+    } else {
+	geocoder.geocode( { 'address': address}, function(results, status) {
+	    if (status == google.maps.GeocoderStatus.OK) {
+		LATITUDE = results[0].geometry.location.lat();
+		LONGITUDE = results[0].geometry.location.lng();
+		weather(); // if no geolocation, just load the weather stuff on pageload
+		setInterval(weather, 1800000);
+	    }
+	});
     }
 }

@@ -1,6 +1,5 @@
 html {
     background-attachment: fixed !important;
-    /*background-color: #CCFFDD;*/
     image-rendering: optimizeSpeed;		/* STOP SMOOTHING, GIVE ME SPEED */
     image-rendering: -moz-crisp-edges;		/* Firefox*/
     image-rendering: -o-crisp-edges;		/* Opera */
@@ -9,7 +8,8 @@ html {
     image-rendering: optimize-contrast;		/* CSS3 Proposed */
     -ms-interpolation-mode: nearest-neighbor;	/* IE8+ */
     image-rendering: crisp-edges;
-	cursor: url(../images/cursors/cursor.png), default;
+    cursor: url(../images/cursors/cursor.png), default;
+    margin: 0 auto;
 }
 body {
     position: relative;
@@ -20,8 +20,8 @@ body {
     padding-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    *border: 1px solid black;
-	border: double black 3px;
+    /*border: 1px solid black;*/
+    border: double black 3px;
     box-shadow:	 0 0 0 3px white, 0 0 0 4px black;
     display: inline-block;
 }
@@ -33,7 +33,7 @@ img { /* when an image is not a link, ensure it is a standard cursor*/ cursor: u
 input, p, blockquote, h1, h2, h3, h4, h5, h6, td, dt, dd, li, date { cursor: url(../images/cursors/text.png), text; }
 
 /*@font-face{
-    	font-family: 'eWorldTight_18';
+	font-family: 'eWorldTight_18';
 	src: url('eWorldTight_18.ttf') format('truetype');
 	src: url('eWorldTight_18.woff') format('woff');
 	font-weight: normal;
@@ -41,10 +41,10 @@ input, p, blockquote, h1, h2, h3, h4, h5, h6, td, dt, dd, li, date { cursor: url
 }*/
 
 ::selection {
-    background: Gainsboro; /* WebKit/Blink Browsers */
+    background: AliceBlue; /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-    background: Gainsboro; /* Gecko Browsers */
+    background: AliceBlue; /* Gecko Browsers */
 }
 
 img{
@@ -140,25 +140,28 @@ ol ol ol {
 }
 
 .graph {
-    width: 263px;
-    height: 51px;
+    position: relative;
+    height: 50px;
     border: 1px solid #aeaeae;
     background-color: #fbfbfb;
-    text-align:right;
-    margin: 0 auto;
     border-bottom: none;
     background-image: url(data:image/gif;base64,R0lGODlhAQAKAKECAO3t7f///zRTXTRTXSH5BAEKAAIALAAAAAABAAoAAAIEhB2ZBQA7);
-    position: relative;
-    display: inline-block;
-    vertical-align:top;
 }
-.graphLeft {
-    text-align:left;
+
+.baseline {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
+.baselineLeft {
+    left: 0;
+    right: auto;
+}
+
 .bar {
-    width: 5px;
-    display: inline-block;
     position: relative;
+    display: inline-block;
+    width: 5px;
     vertical-align: bottom;
     z-index: 0;
 }
@@ -215,6 +218,13 @@ ol ol ol {
     border-right: 1px solid #000;
     border-top: 1px solid #000;
 }
+.bar-windchill {
+    background-color: darkred;
+    border-top: 1px solid #550000;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
 .bar:hover {
     outline: 1px dotted black;
     z-index:1;
@@ -223,22 +233,22 @@ ol ol ol {
     width: 263px;
     border: 1px solid #aeaeae;
     text-align:right;
-    margin: 0 auto;
     line-height: 0;
 }
 .textLeft {
     text-align:left;
 }
+
 .bar-text {
+    display: inline-block;
     width: 10px;
     margin-right: 1px;
-    display: inline-block;
     text-align: center;
     margin-top: 1px;
     margin-bottom: 1px;
 }
 .bar-text-vertical {
-    height: 51px;
+    height: 50px;
     width: 15px;
     display: inline-block;
     vertical-align:top;
@@ -273,8 +283,8 @@ ol ol ol {
 	padding-left:2pt;
 	padding-right:2pt;
     }
-	.content {
-		padding-right: 15px;
-		padding-left: 15px;
-	}
+    .content {
+	padding-right: 15px;
+	padding-left: 15px;
+    }
 }
