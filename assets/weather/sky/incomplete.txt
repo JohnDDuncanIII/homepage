@@ -1,0 +1,26 @@
+sunnywindy
+stormywindy
+stormyfoggy - DONE
+smokey - DONE
+rainywindy
+rainysnowywindy
+rainysnowy - DONE
+rainyfoggy - DONE
+partlysunnywindy
+partlycloudywindy
+maybestormywindy
+maybestormyfoggy - DONE
+maybesleety - DONE
+mayberainywindy
+mayberainysnowywindy
+mayberainysnowy - DONE
+mayberainyfoggy - DONE
+cloudywindy
+
+check again:
+heavystormy - DONE
+heavyrainyfoggy - DONE
+heavyrainy - DONE
+dusty - SORT OF
+
+TODO: make windy images not ugly

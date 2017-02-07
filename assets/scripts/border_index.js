@@ -74,6 +74,9 @@ function clr() {
 }
 
 if (window.localStorage) {
+     if(!localStorage.getItem("pat")) {
+	 localStorage.setItem("pat", "clr");
+     }
     if(localStorage.getItem("pat") == "bw") {
         lev.src = "assets/images/index/lever_up.gif";
         blw();

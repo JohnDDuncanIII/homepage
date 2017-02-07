@@ -57,7 +57,7 @@ var firstRun = true;
 var firstRunDay;
 var LATITUDE = 0.0;
 var LONGITUDE = 0.0;
-var geocoder = new google.maps.Geocoder();
+//var geocoder = new google.maps.Geocoder();
 var address = "Truth or Consequences";
 var loc = location.toString();
 var tLat = window.localStorage.getItem("latitude");
@@ -93,14 +93,14 @@ if(loc.includes("=")) {
     address = address.replace(/%20/g, " ");
 }
 // translate from given name to lat/long location from a google geocoder
-function computeLocation() {
+/*function computeLocation() {
     geocoder.geocode( { 'address': address}, function(results, status) {
 	if (status == google.maps.GeocoderStatus.OK) {
 	    LATITUDE = results[0].geometry.location.lat();
 	    LONGITUDE = results[0].geometry.location.lng();
 	}
     });
-}
+}*/
 
 // fetches the json file from weather.gov
 function fetchJSONFile(path, callback) {
@@ -814,6 +814,8 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	var weatherProb =  doc.getElementsByTagName("weather");
 	var tempProb = doc.querySelectorAll('[type=hourly]');
 	var windChillProb = doc.querySelectorAll('[type*=chill]');
+	var dewPointProb = doc.querySelectorAll('[type*=dew]');
+	var windGustProb = doc.querySelectorAll('[type*=gust]');
 	var humidityProb =  doc.getElementsByTagName("humidity");
 	var cloudProb =	 doc.getElementsByTagName("cloud-amount");
 
@@ -906,7 +908,7 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	    bCount++;
 	    barTempArray.push(subBar);
 	    subBar.setAttribute("style","height:"+(windChillProb[0].childNodes[i].textContent/2)+"px;");
-	    if(!tempProb[0].childNodes[i].textContent){
+	    if(!windChillProb[0].childNodes[i].textContent) {
 		subBar.setAttribute("style","visibility: hidden");
 	    }
 	    bar.appendChild(subBar);
@@ -927,6 +929,21 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	    baseline2.appendChild(bar);
 	    bar.setAttribute('title', "Humidity: " + humidityProb[0].childNodes[i].textContent+"%");
 
+	    var subBar = document.createElement('div');
+	    subBar.className = 'bar bar-dewpoint';
+	    if(bw) {
+		subBar.classList.add("bar-dewpoint-bw");
+	    }
+	    subBar.id = 'bar'+bCount;
+	    bCount++;
+	    barTempArray.push(subBar);
+	    subBar.setAttribute("style","height:"+(dewPointProb[0].childNodes[i].textContent/2)+"px;");
+	    if(!dewPointProb[0].childNodes[i].textContent) {
+		subBar.setAttribute("style","visibility: hidden");
+	    }
+	    bar.appendChild(subBar);
+	    subBar.setAttribute('title', "Dew Point: " + dewPointProb[0].childNodes[i].textContent+"F");
+
 	    var bar = document.createElement('div');
 	    bar.className = 'bar bar-cloud';
 	    if(bw) {
@@ -941,6 +958,21 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	    }
 	    baseline2.appendChild(bar);
 	    bar.setAttribute('title', "Cloud Cover: " + cloudProb[0].childNodes[i].textContent+"%");
+
+	    var subBar = document.createElement('div');
+	    subBar.className = 'bar bar-windgust';
+	    if(bw) {
+		subBar.classList.add("bar-windgust-bw");
+	    }
+	    subBar.id = 'bar'+bCount;
+	    bCount++;
+	    barTempArray.push(subBar);
+	    subBar.setAttribute("style","height:"+(windGustProb[0].childNodes[i].textContent/2)+"px;");
+	    if(!windGustProb[0].childNodes[i].textContent) {
+		subBar.setAttribute("style","visibility: hidden");
+	    }
+	    bar.appendChild(subBar);
+	    subBar.setAttribute('title', "Wind Gust: " + windGustProb[0].childNodes[i].textContent+"MPH");
 
 	    count += 4;
 	    tCount++;
@@ -997,7 +1029,7 @@ if((tLat != null) &&
 		window.localStorage.setItem("longitude", LONGITUDE);
 		weather();
 		setInterval(weather, 1800000);
-	    },
+	    }/*,
 	    function (error) { // if not, just load the weather w/ default lat & long
 		if (error.code == error.PERMISSION_DENIED) {
 		    geocoder.geocode( { 'address': address}, function(results, status) {
@@ -1009,15 +1041,19 @@ if((tLat != null) &&
 			}
 		    });
 		}
-	    });
+	    }*/);
     } else {
-	geocoder.geocode( { 'address': address}, function(results, status) {
+	/*geocoder.geocode( { 'address': address}, function(results, status) {
 	    if (status == google.maps.GeocoderStatus.OK) {
 		LATITUDE = results[0].geometry.location.lat();
 		LONGITUDE = results[0].geometry.location.lng();
 		weather(); // if no geolocation, just load the weather stuff on pageload
 		setInterval(weather, 1800000);
 	    }
-	});
+	});*/
     }
+    /*
+      forecast.weather.gov/zipcity.php?inputstring=Gettysburg,+PA
+      http://forecast.weather.gov/MapClick.php?CityName=Gettysburg&state=PA
+     */
 }

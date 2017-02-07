@@ -3,6 +3,9 @@ var NUM_PATS_BW = 430;
 var NUM_PATS= 117;
 
 if (window.localStorage) {
+    if(!localStorage.getItem("pat")) {
+	localStorage.setItem("pat", "clr");
+    }
     if(localStorage.getItem("pat") == "bw") {
         var num = Math.floor(Math.random() * (NUM_PATS_BW)+1);
         document.documentElement.style.background = "url(/~duncjo01/assets/images/patterns_bw/"+num+".gif)";

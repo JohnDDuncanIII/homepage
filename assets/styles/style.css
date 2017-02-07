@@ -8,7 +8,7 @@ html {
     image-rendering: optimize-contrast;		/* CSS3 Proposed */
     -ms-interpolation-mode: nearest-neighbor;	/* IE8+ */
     image-rendering: crisp-edges;
-    cursor: url(../images/cursors/cursor.png), default;
+    cursor: url(../images/cursors/pointer.png), default;
     margin: 0 auto;
 }
 body {
@@ -24,6 +24,7 @@ body {
     border: double black 3px;
     box-shadow:	 0 0 0 3px white, 0 0 0 4px black;
     display: inline-block;
+    cursor: url(../images/cursors/cursor.png), default;
 }
 
 a:link:active, a:link:active > img{ cursor: url(../images/cursors/pointer_active.png), pointer; }
@@ -221,6 +222,23 @@ ol ol ol {
 .bar-windchill {
     background-color: darkred;
     border-top: 1px solid #550000;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 3px;
+}
+.bar-dewpoint {
+    background-color: lime;
+    border-top: 1px solid green;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.bar-windgust {
+    width: 3px;
+    /*background-color: #a020f0;*/
+    background-color: yellow;
+    border-top: 1px solid LemonChiffon;
     position: absolute;
     left: 0;
     bottom: 0;
