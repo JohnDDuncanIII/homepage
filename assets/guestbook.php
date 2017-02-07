@@ -7,8 +7,8 @@ session_save_path('/Accounts/turing/students/s17/duncjo01/session/'); session_st
         <meta charset="UTF-8">
         <title>Guestbook</title>
         <link rel="icon" href="/~duncjo01/favicon.ico">
-      	<link rel="stylesheet" type="text/css" href="/~duncjo01/assets/styles/style.css">
-	<link rel="stylesheet" type="text/css" href="/~duncjo01/assets/scripts/fguestbook/style.css">
+      	<link rel="stylesheet" href="/~duncjo01/assets/styles/style.css">
+	<link rel="stylesheet" href="/~duncjo01/assets/scripts/fguestbook/style.css">
 	<style>
 	 @media only screen and (min-width:1075px) { html { max-width: none; } }
 	</style>
@@ -30,8 +30,8 @@ session_save_path('/Accounts/turing/students/s17/duncjo01/session/'); session_st
             <br>
             <a href="https://www.anybrowser.org/campaign/index.html"> <img id="anyBrowser"></a>
 	</div>
-        <script type="text/javascript" src="/~duncjo01/assets/scripts/anybrowser.js"></script>
-	<script type="text/javascript" src="/~duncjo01/assets/scripts/border.js"></script>
+        <script src="/~duncjo01/assets/scripts/anybrowser.js"></script>
+	<script src="/~duncjo01/assets/scripts/border.js"></script>
 	</div>
     </body>
 </html>
