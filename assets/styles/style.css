@@ -10,6 +10,7 @@ html {
     image-rendering: crisp-edges;
     cursor: url(../images/cursors/pointer.png), default;
     margin: 0 auto;
+    text-align: center;
 }
 body {
     position: relative;
@@ -25,6 +26,7 @@ body {
     box-shadow:	 0 0 0 3px white, 0 0 0 4px black;
     display: inline-block;
     cursor: url(../images/cursors/cursor.png), default;
+    text-align: left;
 }
 
 a:link:active, a:link:active > img{ cursor: url(../images/cursors/pointer_active.png), pointer; }

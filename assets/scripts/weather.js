@@ -28,7 +28,7 @@ function computeImage(forecast) {
     if(fc.includes("breez") || fc.includes("wind") || fc.includes("blust")) { image+= "windy"; }
     if(fc.includes("smoke")) { image = "smokey"; }
     if(fc == "sunny") { image = "sunny"; }
-    if(fc == "" || fc == "na") { image = true; }
+    if(fc == "" || fc == "na" || fc.includes("unknown")) { image = true; }
     return image;
 }
 
@@ -1028,7 +1028,7 @@ if((tLat != null) &&
 		window.localStorage.setItem("latitude", LATITUDE);
 		window.localStorage.setItem("longitude", LONGITUDE);
 		weather();
-		setInterval(weather, 1800000);
+		setInterval(weather, 3600000);
 	    }/*,
 	    function (error) { // if not, just load the weather w/ default lat & long
 		if (error.code == error.PERMISSION_DENIED) {
