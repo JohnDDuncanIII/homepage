@@ -4,9 +4,6 @@
 
 # But not these files...
 !.gitignore
-!index.html
-!counter.php
-!/assets/
-!/berlinblue/
-!/MessageFaces/
 !favicon.ico
+!index.html
+!/assets/
