@@ -25,7 +25,7 @@ function computeImage(forecast) {
     if(fc.includes("clear") || fc.includes("fair")) { image+= "sunny"; }
     if(fc.includes("hot")) { image+= "hot"; }
     if(fc.includes("cloud") || fc.includes("overcast")) { image+= "cloudy"; }
-    if(fc.includes("breez") || fc.includes("wind") || fc.includes("blust")) { image+= "windy"; }
+    //if(fc.includes("breez") || fc.includes("wind") || fc.includes("blust")) { image+= "windy"; }
     if(fc.includes("smoke")) { image = "smokey"; }
     if(fc == "sunny") { image = "sunny"; }
     if(fc == "" || fc == "na" || fc.includes("unknown")) { image = true; }

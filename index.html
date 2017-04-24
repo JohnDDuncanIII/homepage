@@ -1,498 +1,487 @@
 <!DOCTYPE html>
 <!--
-    _________	  ______	      ________					___	       ___	 __    ______	     __________
-    ______  /________  /________      ___  __ \___  ____________________ ________( )_______    __ |	/ /_______  /___________(_)_  /_____
-    ___ _  /_  __ \_  __ \_  __ \     __  / / /	 / / /_	 __ \  ___/  __ `/_  __ \|/__  ___/    __ | /| / /_  _ \_  __ \_  ___/_	 /_  __/  _ \
-    / /_/ / / /_/ /  / / /  / / /     _	 /_/ // /_/ /_	/ / / /__ / /_/ /_  / / /  _(__	 )     __ |/ |/ / /  __/  /_/ /(__  )_	/ / /_ /  __/
-    \____/  \____//_/ /_//_/ /_/      /_____/ \__,_/ /_/ /_/\___/ \__,_/ /_/ /_/   /____/      ____/|__/  \___//_.___//____/ /_/  \__/ \___/
-  -->
+______  /________  /________      ___  __ \___  ____________________ ________( )_______    __ |     / /_______  /___________(_)_  /_____ 
+___ _  /_  __ \_  __ \_  __ \     __  / / /  / / /_  __ \  ___/  __ `/_  __ \|/__  ___/    __ | /| / /_  _ \_  __ \_  ___/_  /_  __/  _ \
+/ /_/ / / /_/ /  / / /  / / /     _  /_/ // /_/ /_  / / / /__ / /_/ /_  / / /  _(__  )     __ |/ |/ / /  __/  /_/ /(__  )_  / / /_ /  __/
+\____/  \____//_/ /_//_/ /_/      /_____/ \__,_/ /_/ /_/\___/ \__,_/ /_/ /_/   /____/      ____/|__/  \___//_.___//____/ /_/  \__/ \___/     
+-->
 <html>
-    <head>
-	<meta charset="utf-8">
-	<meta name="description" content="concept engineering for the year 00">
-	<meta name="keywords" content="Ccru, cybernetic culture research unit, abstract culture, cyberpunk, occultural investigation,
-				       sadie plant, nick land, y2k, millenium bug, kode9, katasonix, kodwo eshun, simon reynolds, i-D,
-				       the Wire, mark fisher, suzanne livingstone, steve metcalf, luciana parisi, anna greenspan, steve goodman,
-				       rob heath, manual de landa, deleuze, guattari, deterritorialization, hypernormalisation,	 virilio, baudrillard, 
-				       irigaray, I ching, novelty theory, mathematics, bob neveritt dobbs, cypherpunk, defcon, chaos computer club,
-				       occult, applied ballardianism, paramedia ecology, speculative futurism, dark materialism, dark glamor, singapore
-				       gabriel catren, jean-jacques lecercle, uberty, wilfrid sellars society, aleister crowley, thelema, 
-				       McLuhan, debord, sun ra, fiore, heidegger, david tibet, clockocracy, hermeneutics, mimetics, adam curtis, 
-				       jack parsons, marjorie cameron, logocentrism, schizoanalysis, derrida, nooscope, linklater, rosicrucianism,
-				       bussard, farnsworth, polywell, Space-time crystals, Allan H. Frey, V2K, voice to skull, psychotronics, vinton, CROM, koenig, 
-				       oberst, Baudrillard, turchin, reich, orgone, gallo, kay sage, Renée French, greenbaum,  shadow government, deep state,
-				       hypernormalization, albert-kahn, ligotti, zuboff, mudge, von Foerster, kenneth anger, beausoleil, cyberdelia, emmanuel goldstein,
-				       xanadu, ted nelson, McAfee, cryptophon, phrack, 2600, enochian magic, theurgy, holy trinosophia, antikythera, Myron Kreuger
-				       comte saint germain, de sade, Göbekli, Aten, manly hall, Ted Gunderson, jeffrey epstein, gricar, dutroux, 
-				       NWO, miscavige, nazca, phaistos disc, rongorongo, shugborough, voynich, belizean grove, bohemian club,
-				       lazar, cabinet noir, panopticon, foucault, cândido godói, nazi, bin laden, Mark Lombardi, prescott bush,
-				       Alan Greenspan, Donald Rumsfeld, dyatlov pass, council on foreign relations, Madoff, Kushner, Murdoch, Volker, Paulson, Bernanke,
-				       Geitner, Cheney, Bilzerian, decopunk delta, templexity, neotraditionalism, Omega Capitalism, Chronophysics, chaos math,
-				       Oulanem, Darkcore, neo-futurism, posadism, technomancer communist cybercult, legkiy spirit, occult kropotkinism,
-				       neoliberalism, cutler-twining, MJ12, conet, UVB-76, cloudbusting, HAARP, In-Q-Tel, inslaw, Дуга radar, newton,
-				       john birch, licio gelli, francoism, ludlow, frey effect, interferometric holography, MKUTRA, nayirah,
-				       CHAOS, Charly, Condor, Cyclone, Dormouse, Freakout, Gladio, Himmler, Menu, Midnight Climax, Mincemeat,
-				       Mockingbird, Northwoods, Paperclip, PBFORTUNE, Sea-Spray, Snow White, Washtub, phoebus cartel,
-				       phoenix program, dulce, PNAC, ARTICHOKE, Azorian, CHATTER, FUBELT, MERRIMAC, MINARET, MKDELTA,
-				       MKNAOMI, MKOFTEN, MKUltra, Pluto, SHAMROCK, West Ford, reichstag fire, 641a, rothschild, rockefeller, trilateral,
-				       alexander galloway, spengler, mckenna, kabbalah, hermeticism, ludibrium, occult finance, bilderberg, rothschild
-				       numerology, numogrammatic, computers, architecture, jungle, rhythm, drum'n'bass, breakbeat culture, 2 step, garage, principia cybernetica
-				       darkside, meltdown, drugs, cia, nato, turbulence, concept engineering, afrofuturism, sinofuturism, indofuturism, applied ballardianism
-				       syzygy, orphan drift, lovecraft, crowley, hyper-C, professor barker, miskatonic university, Turchin, Goethe, Lichtenberg
-				       Qwernomics, lemurian polyculture, digital hyperstition, mechanomics, schizonumerics, numbo-jumbo, ciani,
-				       weber, bilderberg, hermetic order, golden dawn, Ipsissimus, shuruppak, qabalah, adorno, russel, kieslowski
-				       joyce, menippean satire, voltaire, huxley, pynchon, john perry barlow, hunter thompson, jamie zawinski,
-				       stirner, ritchie, knuth, phillip k. dick, zappa, diogones, spaceglenda, kubrick, feynman, wilde, SICP, Abelson,
-				       Rimbaud, jung, Baudelaire, Beckett, Rilke, spinoza, cole, monet, kafka, ouroboros, engelbart, Isaac Asimov, David Lynch,
-				       Leopold von Sacher-Masoch, Jean-Luc Godard, Don DeLillo, Jim Jarmusch, J.G. Ballard
-				       xisuthros, atrahasis, utnapishtim, enoch, axsys-format, crypt-compatibility, picturephon, blit, moog, urielism, berlin blue research
-				       diagrammatic component, Echidna Stillwell, Chaim Horovitz, Daniel Barker, Mu-Archive, Tibet Horovitz, decimal qabbala, late-Muvian,
-				       Iain Hamilton Grant, Ray Brassier, Reza Negarestani; Mark Fisher,  Kodwo Eshun, Robin Mackay, Luciana Parisi, pollstergeist
-				       Maggie Roberts, Ranu Mukherjee, rabid nihilism, deleuzian thatcherism, cybergothic, right-accelerationism,
-				       Nietzsche, Bataille, Artaud, Trakl, Cioran, Barker, cyclonopedia, beksiński, doré, lanier, eureka, babel, lain, smedley butler,
-				       Matthew Fuller, Hyperdub, Steve Goodman, Hari Kunzru, Jake/Dinos Chapman, gibson, sussman, McKenna
-				       Gnostic Arithmetic, tic-systemic, lemuria, diagrammatic tokens, intensive thresholds, cosmic coincidences,
-				       hyperstitional influences, unlife, numogram, debord, wark, GURPS, repin, skull & bones, Dompé, naggum,
-				       Heaven's Gate, Heaven's Gate, Heaven's Gate, Heaven's Gate, Heaven's Gate, Heaven's Gate,
-				       ufo, ufo, ufo, ufo, ufo, ufo, space alien, space alien, space alien, space alien, space alien, space alien,
-				       extraterrestrial, extraterrestrial, extraterrestrial, extraterrestrial, extraterrestrial, extraterrestrial,
-				       millennium, millennium, millennium,millennium, millennium, millennium, millennium,
-				       misinformation, misinformation, misinformation, misinformation, misinformation, misinformation,
-				       freedom, freedom, freedom, freedom, freedom, freedom, second coming, second coming, second coming,
-				       second coming, second coming, second coming, angels, angels, angels, angels, angels, angels,
-				       end times, end times, end times, end times, end times, end times, Jesus, Jesus, Jesus, Jesus, Jesus, Jesus,
-				       God, God, God, God, God, God, Abduct, Abduction, Abduction Research, Abductee, Alien, Aliens, Alien Abduction,
-				       Alien Baby, Alien Book, Alien Contact, Alien Encounter, Alien Experience, Alien Eyes, Alien Hybrid, Alien Mate, Alien Name,
-				       Alien Phenomen, Alien Photo,  Alien Research, Alien Universe, Apocalypse, Apparition, Arcturian, Ball of Light, Big Foot,
-				       Bigfoot, Biological Entity, Black Hole, Contactee, Cryptoid, Cryptozoology, Cynocephali, Disc, Cynocephalis, Dogman, ESP, E.S.P., Experiencer,
-				       ET, E.T., Extraterrestrial, Extra-Terrestrial, Extraterest, Flying Saucer, Ghost, Ghosthunter, Ghost Hunter, Gray, Grays, Grey,
-				       Greys, Haunted, Haunting, Haunts, Healing, Hybrid, Interdimension, Lycanthropes, Mars, Orb, Orbs, Outer Space, Parallel Universe, Paranormal,
-				       Phenomena, Phenomenon, Photo, Planet, Pleiades, Pleiadian, Project Blue Book, Psychic, Psychic Ability, Psychic Abilities, Psychic Phenomena,
-				       Psychokinesis, Reptilian, Reptoid, Space, Space Age, Space Craft, Space Man, Space Program, Space Travel, Spirit, Squatch, Starchild,
-				       Star Child, Star Children, Time Travel, Transform, Triangular, Unidentified Flying Object, Unidentified Object,
-				       UFO, UFOS, U.F.O., U.F.O.'s, Universe, UFOS, CUFOS, Roswell, UFO education, UFO articles, UFO FAQ,
-				       International UFO Reporter, alien abductions, aliens, Hynek, alien, alien abduction, UFO abduction, UFO, abductees,
-				       whitley,anne,strieber,communion,alien,visitors,close encounters,ufo,climate change,superstorm,grays,greys,health,conspiracy,
-				       nwo,terrorism,critical mass,nuclear,hybrids,abduction,cabin,transformation,breakthrough,secret school,2012,maya,
-				       day after tomorrow,confirmation,nature's end,crop circles,atlantis,jfk,assassination,911,orbs,implant,
-				       arzoo dance theater, I/O/D, mind control, iod, i-o-d, i-od, speculative software, the web stalker, webstalker, web stalker,
-				       hacking, backspace, free software, shareware, pron, freeware, computer science, net.art, net art, art, web art, webart,
-				       browsers, netscape, explorer, navigator, mozilla, microsoft, escape, free money, cyberculture, netcritique, nettime, jodi, matthew fuller,
-				       simon pope, colin green, laurie anderson, meltdown, words for window, words, escape, Escape, interactive media,	I/O/D, iod, i.o.d,
-				       net art, net.art, art, web, digital art, electronic art, isea, ars electronica, steirischer herbst, frieze, art monthly,
-				       art/text, text zur kunst, parkett, artforum, leonardo, flash art, untitled, expo destructo, post media pressure,
-				       README, ascii culture, search engines, intelligent agents, cultural studies, science studies, theory, deleuze, guattari, kittler,
-				       bataille, marx, general intellect, lazzaratto, foucault, software engineering, hacking, steven johnson, interface culture,
-				       computer studies, computer science, interface design HCI CHI human computer interface, computer human interface,
-				       ACM, IEEE, human interface guidelines, media theory, AI artificial intelligence, cybernetics, connectionism, neural networks,
-				       artificial life, geert lovink, belinda barnet, tilman baumgaertel, alex galloway, rhizome, nettime, software as culture,
-				       brenda laurel, apple, WIMP interface, matthew fuller, search engines, gordon matta-clark, web stalker,
-				       mute, mute-magazine, culture, Technology, magazine, Digital Media, art, reviews, media theory, world cup, 0 to 1, 1 to n,
-				       technoscience, free-subscription, E-zine, metamute, cybordelics, ocosi, ocosi home page, task, darkwave, experimental beats,
-				       ambient, remixes, drones, darkhop, experimental beats, ambience/drones, breakbeats/broken beats, uk based, pat cadigan,
-				       techno,dance music,rave,jungle,electronica,drum&bass,drum and bass,gabba,Simon Reynolds,ecstacy,drugs,Energy Flash,
-				       Generation EcstasyFatboy Slim,Skint,Big Beat,ardkore,krautrock,blissed out, speed garage,Joy Press,rock criticism,Bliss Out,
-				       techno,dance music,rave,electronica,jungle,gabba,ecstacy,Generation Ecstasy, ecstasy,MDMA,E,drugs,Simon Reynolds,
-				       electronic dance music,Fatboy Slim,Big Beat,hardcore,ardkore,krautrock,blissed out, Bliss Out,Joy Press,Energy Flash,Irvine Welsh,
-				       Sadie Plant,britpop,kodwo eshun,modulations,techno,dance music,rave,electronica,jungle,gabba,Simon Reynolds,ecstacy,drugs,
-				       Big Beat,hardcore,krautrock,blissed out, Bliss Out,Joy Press,Energy Flash,Generation Ecstasy,Irvine Welsh, Mark Dery,
-				       Donna Gaines, The Face,Mojo,Muzik, nanotechnology introduction, molecular nanotechnology introduction, safety guidelines,
-				       future technology, future medicine, nanomedicine, future manufacturing, next industrial revolution, molecular manufacturing,
-				       nanotechnology applications, nanotechnology information, space development, environmental protection, molecular machines, culture,
-				       politics, arts, music, theory, cinema, MP3s, punk, UK, cyber, cyber punk, rants, polemic, diskontent, gothic, cyber gothic,
-				       uneasy listening, tech/sonikulture, john foxx,ultravox, numan, ferry/roxy, annie anxiety, joy division, g.jones, visage,
-				       siouxsie/ banshees, h.devoto/ magazine, barry adamson, slits, japan, billy currie, cabaret voltaire, m.stewart/pop group,
-				       arkham armitage azathoth al azif abdul alhazred azathoth carcosa dan clore cthulhu dee derleth dunwich elder sign fhtagn grimoire
-				       hali hastur al-hazred irem kadath kutulu leng liber logaeth howard phillips lovecraft magick mi-go miskatonic mythos
-				       necromicon necronomicon nyarlathotep occultism old ones pnakotic r'lyeh satanism schacabao shoggoth shub-niggurath simon
-				       tsathoggua voynich whateley olaus wormius yog-sothoth yuggoth,Arkham, Cthulhu, H.P., Howard, Lovecraft, Necronomicon,
-				       Phillips, Miskatonic University, Arkham, Massachusetts, Miskatonic College, Pickman Art Institute, Orne College of Languages,
-				       Arkham Medical College, Crawford College of Science, Sadburns Theological College, magic, magick, aleister crowley, therion,
-				       baphomet, thelema, hermeticism, occult, enochian, qabalah, goetia, egc, achad, charles stansfeld jones, sabazius,
-				       paradoxalpha, tau polyphilus, hakim bey, peter lamborn wilson, ben rowe, benjamin rowe, austin osman spare, Liber Al,
-				       book of the law, the rites of eleusis, ecclesia gnostic catholica, secret society, Enoch, Henoch, apocryphal literature,
-				       Extropian transcendentalism, technopaganism, Bible, biblical, Ethiopian, Ethiopic, Ordo Templi Orientis, Ordo Templi, 
-				       Orientis Phenomenon, Aleister Crowley, Rudolf Steiner, Occultism, David Bowie, O.T.O., OTO, copyrights, Golden Dawn, 
-				       David Bowie, Aleister Crowley, OTO, Theodor Reuss, Carl Kellner, Oscar Schlag, Arnoldo, Krumm-Heller, Marcelo Ramos Motta, 
-				       Freemasonry, Cerneau, Memphis-Misraim, OTOA, Michael Bertiaux, Karl Germer, Memphis-Mizraim, CESNUR, Societas Rosicruciana, 
-				       Fraternitas Rosicruciana Antiqua, Anthroposophy, Order of Illuminati, Illuminaten Orden, Adam Weishaupt, 
-				       alternative emergent and new religious movements and communities, AMORC, marginalised religious groups, spirituality, 
-				       interdisciplinary study of alternative religions, world's religious cultures, religious pluralism, Theosophy, rituals, 
-				       Franz Hartmann, McDonaldisation, Baphomet, Voodoo, Rosicrucians, Abramelin, Franz Bardon, Lanz von Liebenfels, Fraternitas Saturni, 
-				       Tantrism, cults, new religious movements alternative religions, religious studies, theology, religion, Paganism, post-modern religion, 
-				       sociology of religion, history of religion, cultural studies, LAM, psychology of religion, Gnosticism, Gnosis, Gnostic, OTO, 
-				       History of Ordo Templi Orientis, occult culture, occultism, David Bowie, Golden Dawn, cult controversies, brainwashing, 
-				       religious liberty, mind control, mystical experience, ONT, Ordo Templi Orientis Antiqua, Argenteum Astrum, Silver Star, 
-				       Thelema, Equinox, Elixir of Life, To Mega Therion, 666, The Great Beast, Peregrinus, Paragranus, Saturnus, Kenneth Grant, 
-				       Amrita, field research on occultism, egregor, Satan, Satanism, Satanists, Sheitan, Society Ordo Templi Orientis, SOTO, 
-				       homeopathy, alternative medicine, psychosocial manipulation, basal paradigms, reality engineering, planetary evolution, 
-				       implications of the Brain research tools, New Age inability to differentiate between a real and induced reality structure, 
-				       New Age reliance on external devices to attain altered states, chakra structures, protofascism, misogynism,textiles,
-				       prehistoric civilizations, Annunaki, Axsys Feeds, cthulhu, geotraumatics, planetworks, cyber, electronic, music, internet publishing,
-				       Public Netbase, internet, politics, culture, technology, society, media, theory, art, activism, 
-				       multimedia, hypermedia, hyper, tourism, pilgrim, cybergnosis, paranirvana, travel, voodoo, autonomous agents,
-				       webguide, SUBTERRANEAN, WARFARE, BLACK HOLE, FALLING, ALLIGATORS, HOLLOW PLANET, SECRETS, BUTTER, DOG , SEA, 
-				       drowned,washed away,rising sea levels,glacial flooding,agriculture,population,hand tools,traps,spears,Neanderthals,
-				       Cro-Magnons,Ice Age,Bering land bridge, the theosophical society, theosophy, annie besant, blavatsky, col.Olcott, william quan judge,
-				       leadbeater, masters, reincarnation, karma, universal brotherhood , adyar, chennai, india, theosophist, spirituality,
-				       divine wisdom, occultism, religion, society, science, metaphysics, black magic, book of shadows, grimoire, grimoires,
-				       sorcery, spells, witchcraft, Enochian, Hermeticism, magic, magick, Hermetic, Trithemius, esoteric, esoterica,
-				       ritual magic, ceremonial magic, Solomon, kabbalah, renaissance, angels, spirits, demons, devils, conjuring, Giordano Bruno, John Dee, wicca
-				       Horology, clock,	 clocks, watch, watches, time, timekeepers, timekeeper, timepiece, timepieces, clockmaker, horological, maerki,
-				       Bruce Sterling, Jon Lebkowsky,cyberpunk,postmodern,culture theory,computer crime,chaos,science fiction,viridian,dead media,
-				       Uhr, Uhren, maerki, clocks, watches, collection Armbanduhr, Taschenuhr, Standuhr, Zeit, Zeitmessung, Uhrmacher, Sammler,
-				       Sammlung, montre, horloge, horlogerie, horlogiste, pendule, pendulier, temps, chronometer, orloggi, museum, school, library,
-				       magazine, journal, book, publishing, periodical, internet, www, restore, repair, collect, trade, organisation, association, maerki,
-				       horologist, horological, buy, sell, trade, tool, tools, history, science, design, standards, pendulum, Pendel, escapement, Unruh,
-				       dial, Zifferblatt, buying, selling,  retail, kauf, verkauf, Handel, Herstellung,	 wholesale, supplier, manufacturerer, hour, minute,
-				       Stunde, Minute, heur, index, database, grandfather clock,  Harrison, Tompion, Uhren, Uhr, Zeit, Zeitmessung, orlogi, montres,
-				       montres, pendules, horloges, horloge, horlogerie, Uhrmacher, horloger, pendulier, index, lists, resources, links, global, worldwide,
-				       international, horological, pendulum, Pendel, balance, wheel, Unruh, verge, foliot, gear, gears, chronometer, chronograph, Drugs, Digital-Cities,
-				       Blavatsky,Theosophy,Madame Blavatsky,Elements, Will Parfitt, Royal Road, Stephan A. Hoeller,  Kabalistic, Meditations, Tarot,
-				       Encyclopedia Judaica, Magical,  Ritual, Pefumes, Tarot, Key, Wisdom of the Ages, Paul Foster Case, maulger, Veil,  Divination,
-				       L.W. de Lawrence, self discovery, solace, friendship, home, love, beauty, severity, justice, foundation, earth, victory, splendor,
-				       sephirot, sephiroth, Qabala / Kabala / Kabbala / Cabala / Caballa / Kaballah / Caballah,astrology, zodiac, aries, taurus,
-				       gemini, cancer, leo, virgo, libra, scorpio, sagittarius,capricorn, aquarius, pisces,
-				       Mesopotamia, Mesopotamian Religion, Mesopotamian Mythology, Mythology, Babylonia, Assyria, Sumer, Sumerian, Akkad,
-				       Aggad, Akkadian, Babylonian, Mesopotamian Magic, Mesopotamian Magick, Inanna, Ishtar, Lilith, Ninurta, Enlil, Enki, Ninhursag,
-				       Gilgamesh, Nabu, Enkidu, Anzu, Nergal, Ninlil, Damu, Dumuzi, Ereshkigal, Lahar, Ashnan, Enheduanna, Uttu, Utu, Shamash, Enten, Emesh
-				       David Jacobs, David M. Jacobs, ICAR, abduction research, hypnosis, memory collection, hypnotic regression,
-				       Secret Life, The Threat, straight talk, Dr. Mack, Dr. John Mack, Dr. John E. Mack, john mack, professor mack,
-				       Abduction Human Encounters with Aliens, Passport to the Cosmos human transformation and alien encounters, PEER Perspectives,
-				       Harvard University, Harvard Medical School, doctor, alien abduction, experiencer, NOVA, Budd Hopkins, UFO, gray alien visitor,
-				       aliens, greys, hybrid, Carl Jung, flying saucer, sleep paralysis, false memory syndrome, China, ecology, ecopsychology, hypnosis,
-				       transpersonal psychology, hypnotherapy, interview, nonprofit, non-profit, scientific research, psychiatrist, psychologist,
-				       shaman, book, first contact, COMETA, MIT, Joe Firmage, touched by an alien, laurel chiten, space, SETI, Steven Spielberg, Taken
-				       library of babel, Jorge Luis Borges, universal library, literature,
-				       conceptual art, aleatoric, literary theory, west view pa., slime, property rights, epitaph, civil liberties,
-				       sidewalk obstruction, selective enforcement, nepotism, patronage, constitution ,autocrat, one party rule,
-				       bully, grandfathered, preferential treatment, kangaroo court, police chief, flag disrespect, constitutional guarantees,
-				       parking, puppets, grand fathered, confiscate, ludicrous, baloney, hogwash, parking tickets, harass, absurd, harassment,
-				       constitutional guarantees, lying, citation, insane, crazy, irrational, property confiscation, virtual zoo, dictator, dogpound,
-				       pittsburgh, westview, cartoons, parking citations, john titor, titor, timetravel_00, time travel, black hole, C204, 5100,
-				       I am from 2036, 2036, civil war, art bell, titer, time travel,singularity,black hole,nuclear,nuclear war,nuclear survival,
-				       radioactive,radiation,radioactivity,war,terrorism,plutonium,uranium,potassium iodide,KI,megadeath,disease,starvation,
-				       police state,civil war,George Bush,Bush Administration,corruption,death,war,destruction,national security,election,
-				       YouTube,177, Tempus, Edax, Rerum, Good Luck, John, John Titor Foundation, Posts, 2001Mar12, 2001, March, 12,
-				       Four corner day, Antipodes/opposites, Zero existence, Singular/singularity, Educated stupid, Conspiracy and persecution">
-	<!-- Hey Stacie, I know you don't know me but I wanted you to know that you're the most beautiful girl I've ever seen. I think about you all day. I know it's crazy ⌫ -->
-	<title>John D. Duncan III's Home Page</title>
-	<link rel="icon" href="/~duncjo01/favicon.ico">
-	<link rel="stylesheet" href="assets/styles/style.css">
-	<link rel="stylesheet" href="assets/styles/index.css">
-	<link rel="stylesheet" href="assets/styles/hacks.css">
-	<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
-	<script src="assets/scripts/status.js"></script>
-    </head>
-    <body>
-	<img src="assets/images/index/site.png" alt="">
-	<a href="#"><img id="lever" src="assets/images/index/lever_down.gif" style="vertical-align: top; margin-left:1em;" alt=""></a><br>
-	<hr>
-	<div style="text-align:center; margin-left:auto; margin-right:auto">
-	    <div id="header-box" class="header-box">
-		<div class="image">
-		    <a href="assets/sites/PlayingCards/">
-			<img id="cards" src="assets/images/header/cards.gif" alt=""> <BR>
-			<img src="assets/images/header/text/playing_cards.png" alt="">
-		    </a>
-		</div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="concept engineering for the year 00">
+    <meta name="keywords" content="Ccru, cybernetic culture research unit, abstract culture, cyberpunk, occultural investigation,
+				   sadie plant, nick land, y2k, millenium bug, kode9, katasonix, kodwo eshun, simon reynolds, i-D,
+				   the Wire, mark fisher, suzanne livingstone, steve metcalf, luciana parisi, anna greenspan, steve goodman,
+				   rob heath, manual de landa, deleuze, guattari, deterritorialization, hypernormalisation,	 virilio, baudrillard, 
+				   irigaray, I ching, novelty theory, mathematics, bob neveritt dobbs, cypherpunk, defcon, chaos computer club,
+				   occult, applied ballardianism, paramedia ecology, speculative futurism, dark materialism, dark glamor, singapore
+				   gabriel catren, jean-jacques lecercle, uberty, wilfrid sellars society, aleister crowley, thelema, 
+				   McLuhan, debord, sun ra, fiore, heidegger, david tibet, clockocracy, hermeneutics, mimetics, adam curtis, 
+				   jack parsons, marjorie cameron, logocentrism, schizoanalysis, derrida, nooscope, linklater, rosicrucianism,
+				   bussard, farnsworth, polywell, Space-time crystals, Allan H. Frey, V2K, voice to skull, psychotronics, vinton, CROM, koenig, 
+				   oberst, Baudrillard, turchin, reich, orgone, gallo, kay sage, Renée French, greenbaum,  shadow government, deep state,
+				   hypernormalization, albert-kahn, ligotti, zuboff, mudge, von Foerster, kenneth anger, beausoleil, cyberdelia, emmanuel goldstein,
+				   xanadu, ted nelson, McAfee, cryptophon, phrack, 2600, enochian magic, theurgy, holy trinosophia, antikythera, Myron Kreuger
+				   comte saint germain, de sade, Göbekli, Aten, manly hall, Ted Gunderson, jeffrey epstein, gricar, dutroux, 
+				   NWO, miscavige, nazca, phaistos disc, rongorongo, shugborough, voynich, belizean grove, bohemian club,
+				   lazar, cabinet noir, panopticon, foucault, cândido godói, nazi, bin laden, Mark Lombardi, prescott bush,
+				   Alan Greenspan, Donald Rumsfeld, dyatlov pass, council on foreign relations, Madoff, Kushner, Murdoch, Volker, Paulson, Bernanke,
+				   Geitner, Cheney, Bilzerian, decopunk delta, templexity, neotraditionalism, Omega Capitalism, Chronophysics, chaos math,
+				   Oulanem, Darkcore, neo-futurism, posadism, technomancer communist cybercult, legkiy spirit, occult kropotkinism,
+				   neoliberalism, cutler-twining, MJ12, conet, UVB-76, cloudbusting, HAARP, In-Q-Tel, inslaw, Дуга radar, newton,
+				   john birch, licio gelli, francoism, ludlow, frey effect, interferometric holography, MKUTRA, nayirah,
+				   CHAOS, Charly, Condor, Cyclone, Dormouse, Freakout, Gladio, Himmler, Menu, Midnight Climax, Mincemeat,
+				   Mockingbird, Northwoods, Paperclip, PBFORTUNE, Sea-Spray, Snow White, Washtub, phoebus cartel,
+				   phoenix program, dulce, PNAC, ARTICHOKE, Azorian, CHATTER, FUBELT, MERRIMAC, MINARET, MKDELTA,
+				   MKNAOMI, MKOFTEN, MKUltra, Pluto, SHAMROCK, West Ford, reichstag fire, 641a, rothschild, rockefeller, trilateral,
+				   alexander galloway, spengler, mckenna, kabbalah, hermeticism, ludibrium, occult finance, bilderberg, rothschild
+				   numerology, numogrammatic, computers, architecture, jungle, rhythm, drum'n'bass, breakbeat culture, 2 step, garage, principia cybernetica
+				   darkside, meltdown, drugs, cia, nato, turbulence, concept engineering, afrofuturism, sinofuturism, indofuturism, applied ballardianism
+				   syzygy, orphan drift, lovecraft, crowley, hyper-C, professor barker, miskatonic university, Turchin, Goethe, Lichtenberg
+				   Qwernomics, lemurian polyculture, digital hyperstition, mechanomics, schizonumerics, numbo-jumbo, ciani,
+				   weber, bilderberg, hermetic order, golden dawn, Ipsissimus, shuruppak, qabalah, adorno, russel, kieslowski
+				   joyce, menippean satire, voltaire, huxley, pynchon, john perry barlow, hunter thompson, jamie zawinski,
+				   stirner, ritchie, knuth, phillip k. dick, zappa, diogones, spaceglenda, kubrick, feynman, wilde, SICP, Abelson,
+				   Rimbaud, jung, Baudelaire, Beckett, Rilke, spinoza, cole, monet, kafka, ouroboros, engelbart, Isaac Asimov, David Lynch,
+				   Leopold von Sacher-Masoch, Jean-Luc Godard, Don DeLillo, Jim Jarmusch, J.G. Ballard
+				   xisuthros, atrahasis, utnapishtim, enoch, axsys-format, crypt-compatibility, picturephon, blit, moog, urielism, berlin blue research
+				   diagrammatic component, Echidna Stillwell, Chaim Horovitz, Daniel Barker, Mu-Archive, Tibet Horovitz, decimal qabbala, late-Muvian,
+				   Iain Hamilton Grant, Ray Brassier, Reza Negarestani; Mark Fisher,  Kodwo Eshun, Robin Mackay, Luciana Parisi, pollstergeist
+				   Maggie Roberts, Ranu Mukherjee, rabid nihilism, deleuzian thatcherism, cybergothic, right-accelerationism,
+				   Nietzsche, Bataille, Artaud, Trakl, Cioran, Barker, cyclonopedia, beksiński, doré, lanier, eureka, babel, lain, smedley butler,
+				   Matthew Fuller, Hyperdub, Steve Goodman, Hari Kunzru, Jake/Dinos Chapman, gibson, sussman, McKenna
+				   Gnostic Arithmetic, tic-systemic, lemuria, diagrammatic tokens, intensive thresholds, cosmic coincidences,
+				   hyperstitional influences, unlife, numogram, debord, wark, GURPS, repin, skull & bones, Dompé, naggum,
+				   Heaven's Gate, Heaven's Gate, Heaven's Gate, Heaven's Gate, Heaven's Gate, Heaven's Gate,
+				   ufo, ufo, ufo, ufo, ufo, ufo, space alien, space alien, space alien, space alien, space alien, space alien,
+				   extraterrestrial, extraterrestrial, extraterrestrial, extraterrestrial, extraterrestrial, extraterrestrial,
+				   millennium, millennium, millennium,millennium, millennium, millennium, millennium,
+				   misinformation, misinformation, misinformation, misinformation, misinformation, misinformation,
+				   freedom, freedom, freedom, freedom, freedom, freedom, second coming, second coming, second coming,
+				   second coming, second coming, second coming, angels, angels, angels, angels, angels, angels,
+				   end times, end times, end times, end times, end times, end times, Jesus, Jesus, Jesus, Jesus, Jesus, Jesus,
+				   God, God, God, God, God, God, Abduct, Abduction, Abduction Research, Abductee, Alien, Aliens, Alien Abduction,
+				   Alien Baby, Alien Book, Alien Contact, Alien Encounter, Alien Experience, Alien Eyes, Alien Hybrid, Alien Mate, Alien Name,
+				   Alien Phenomen, Alien Photo,  Alien Research, Alien Universe, Apocalypse, Apparition, Arcturian, Ball of Light, Big Foot,
+				   Bigfoot, Biological Entity, Black Hole, Contactee, Cryptoid, Cryptozoology, Cynocephali, Disc, Cynocephalis, Dogman, ESP, E.S.P., Experiencer,
+				   ET, E.T., Extraterrestrial, Extra-Terrestrial, Extraterest, Flying Saucer, Ghost, Ghosthunter, Ghost Hunter, Gray, Grays, Grey,
+				   Greys, Haunted, Haunting, Haunts, Healing, Hybrid, Interdimension, Lycanthropes, Mars, Orb, Orbs, Outer Space, Parallel Universe, Paranormal,
+				   Phenomena, Phenomenon, Photo, Planet, Pleiades, Pleiadian, Project Blue Book, Psychic, Psychic Ability, Psychic Abilities, Psychic Phenomena,
+				   Psychokinesis, Reptilian, Reptoid, Space, Space Age, Space Craft, Space Man, Space Program, Space Travel, Spirit, Squatch, Starchild,
+				   Star Child, Star Children, Time Travel, Transform, Triangular, Unidentified Flying Object, Unidentified Object,
+				   UFO, UFOS, U.F.O., U.F.O.'s, Universe, UFOS, CUFOS, Roswell, UFO education, UFO articles, UFO FAQ,
+				   International UFO Reporter, alien abductions, aliens, Hynek, alien, alien abduction, UFO abduction, UFO, abductees,
+				   whitley,anne,strieber,communion,alien,visitors,close encounters,ufo,climate change,superstorm,grays,greys,health,conspiracy,
+				   nwo,terrorism,critical mass,nuclear,hybrids,abduction,cabin,transformation,breakthrough,secret school,2012,maya,
+				   day after tomorrow,confirmation,nature's end,crop circles,atlantis,jfk,assassination,911,orbs,implant,
+				   arzoo dance theater, I/O/D, mind control, iod, i-o-d, i-od, speculative software, the web stalker, webstalker, web stalker,
+				   hacking, backspace, free software, shareware, pron, freeware, computer science, net.art, net art, art, web art, webart,
+				   browsers, netscape, explorer, navigator, mozilla, microsoft, escape, free money, cyberculture, netcritique, nettime, jodi, matthew fuller,
+				   simon pope, colin green, laurie anderson, meltdown, words for window, words, escape, Escape, interactive media,	I/O/D, iod, i.o.d,
+				   net art, net.art, art, web, digital art, electronic art, isea, ars electronica, steirischer herbst, frieze, art monthly,
+				   art/text, text zur kunst, parkett, artforum, leonardo, flash art, untitled, expo destructo, post media pressure,
+				   README, ascii culture, search engines, intelligent agents, cultural studies, science studies, theory, deleuze, guattari, kittler,
+				   bataille, marx, general intellect, lazzaratto, foucault, software engineering, hacking, steven johnson, interface culture,
+				   computer studies, computer science, interface design HCI CHI human computer interface, computer human interface,
+				   ACM, IEEE, human interface guidelines, media theory, AI artificial intelligence, cybernetics, connectionism, neural networks,
+				   artificial life, geert lovink, belinda barnet, tilman baumgaertel, alex galloway, rhizome, nettime, software as culture,
+				   brenda laurel, apple, WIMP interface, matthew fuller, search engines, gordon matta-clark, web stalker,
+				   mute, mute-magazine, culture, Technology, magazine, Digital Media, art, reviews, media theory, world cup, 0 to 1, 1 to n,
+				   technoscience, free-subscription, E-zine, metamute, cybordelics, ocosi, ocosi home page, task, darkwave, experimental beats,
+				   ambient, remixes, drones, darkhop, experimental beats, ambience/drones, breakbeats/broken beats, uk based, pat cadigan,
+				   techno,dance music,rave,jungle,electronica,drum&bass,drum and bass,gabba,Simon Reynolds,ecstacy,drugs,Energy Flash,
+				   Generation EcstasyFatboy Slim,Skint,Big Beat,ardkore,krautrock,blissed out, speed garage,Joy Press,rock criticism,Bliss Out,
+				   techno,dance music,rave,electronica,jungle,gabba,ecstacy,Generation Ecstasy, ecstasy,MDMA,E,drugs,Simon Reynolds,
+				   electronic dance music,Fatboy Slim,Big Beat,hardcore,ardkore,krautrock,blissed out, Bliss Out,Joy Press,Energy Flash,Irvine Welsh,
+				   Sadie Plant,britpop,kodwo eshun,modulations,techno,dance music,rave,electronica,jungle,gabba,Simon Reynolds,ecstacy,drugs,
+				   Big Beat,hardcore,krautrock,blissed out, Bliss Out,Joy Press,Energy Flash,Generation Ecstasy,Irvine Welsh, Mark Dery,
+				   Donna Gaines, The Face,Mojo,Muzik, nanotechnology introduction, molecular nanotechnology introduction, safety guidelines,
+				   future technology, future medicine, nanomedicine, future manufacturing, next industrial revolution, molecular manufacturing,
+				   nanotechnology applications, nanotechnology information, space development, environmental protection, molecular machines, culture,
+				   politics, arts, music, theory, cinema, MP3s, punk, UK, cyber, cyber punk, rants, polemic, diskontent, gothic, cyber gothic,
+				   uneasy listening, tech/sonikulture, john foxx,ultravox, numan, ferry/roxy, annie anxiety, joy division, g.jones, visage,
+				   siouxsie/ banshees, h.devoto/ magazine, barry adamson, slits, japan, billy currie, cabaret voltaire, m.stewart/pop group,
+				   arkham armitage azathoth al azif abdul alhazred azathoth carcosa dan clore cthulhu dee derleth dunwich elder sign fhtagn grimoire
+				   hali hastur al-hazred irem kadath kutulu leng liber logaeth howard phillips lovecraft magick mi-go miskatonic mythos
+				   necromicon necronomicon nyarlathotep occultism old ones pnakotic r'lyeh satanism schacabao shoggoth shub-niggurath simon
+				   tsathoggua voynich whateley olaus wormius yog-sothoth yuggoth,Arkham, Cthulhu, H.P., Howard, Lovecraft, Necronomicon,
+				   Phillips, Miskatonic University, Arkham, Massachusetts, Miskatonic College, Pickman Art Institute, Orne College of Languages,
+				   Arkham Medical College, Crawford College of Science, Sadburns Theological College, magic, magick, aleister crowley, therion,
+				   baphomet, thelema, hermeticism, occult, enochian, qabalah, goetia, egc, achad, charles stansfeld jones, sabazius,
+				   paradoxalpha, tau polyphilus, hakim bey, peter lamborn wilson, ben rowe, benjamin rowe, austin osman spare, Liber Al,
+				   book of the law, the rites of eleusis, ecclesia gnostic catholica, secret society, Enoch, Henoch, apocryphal literature,
+				   Extropian transcendentalism, technopaganism, Bible, biblical, Ethiopian, Ethiopic, Ordo Templi Orientis, Ordo Templi, 
+				   Orientis Phenomenon, Aleister Crowley, Rudolf Steiner, Occultism, David Bowie, O.T.O., OTO, copyrights, Golden Dawn, 
+				   David Bowie, Aleister Crowley, OTO, Theodor Reuss, Carl Kellner, Oscar Schlag, Arnoldo, Krumm-Heller, Marcelo Ramos Motta, 
+				   Freemasonry, Cerneau, Memphis-Misraim, OTOA, Michael Bertiaux, Karl Germer, Memphis-Mizraim, CESNUR, Societas Rosicruciana, 
+				   Fraternitas Rosicruciana Antiqua, Anthroposophy, Order of Illuminati, Illuminaten Orden, Adam Weishaupt, 
+				   alternative emergent and new religious movements and communities, AMORC, marginalised religious groups, spirituality, 
+				   interdisciplinary study of alternative religions, world's religious cultures, religious pluralism, Theosophy, rituals, 
+				   Franz Hartmann, McDonaldisation, Baphomet, Voodoo, Rosicrucians, Abramelin, Franz Bardon, Lanz von Liebenfels, Fraternitas Saturni, 
+				   Tantrism, cults, new religious movements alternative religions, religious studies, theology, religion, Paganism, post-modern religion, 
+				   sociology of religion, history of religion, cultural studies, LAM, psychology of religion, Gnosticism, Gnosis, Gnostic, OTO, 
+				   History of Ordo Templi Orientis, occult culture, occultism, David Bowie, Golden Dawn, cult controversies, brainwashing, 
+				   religious liberty, mind control, mystical experience, ONT, Ordo Templi Orientis Antiqua, Argenteum Astrum, Silver Star, 
+				   Thelema, Equinox, Elixir of Life, To Mega Therion, 666, The Great Beast, Peregrinus, Paragranus, Saturnus, Kenneth Grant, 
+				   Amrita, field research on occultism, egregor, Satan, Satanism, Satanists, Sheitan, Society Ordo Templi Orientis, SOTO, 
+				   homeopathy, alternative medicine, psychosocial manipulation, basal paradigms, reality engineering, planetary evolution, 
+				   implications of the Brain research tools, New Age inability to differentiate between a real and induced reality structure, 
+				   New Age reliance on external devices to attain altered states, chakra structures, protofascism, misogynism,textiles,
+				   prehistoric civilizations, Annunaki, Axsys Feeds, cthulhu, geotraumatics, planetworks, cyber, electronic, music, internet publishing,
+				   Public Netbase, internet, politics, culture, technology, society, media, theory, art, activism, 
+				   multimedia, hypermedia, hyper, tourism, pilgrim, cybergnosis, paranirvana, travel, voodoo, autonomous agents,
+				   webguide, SUBTERRANEAN, WARFARE, BLACK HOLE, FALLING, ALLIGATORS, HOLLOW PLANET, SECRETS, BUTTER, DOG , SEA, 
+				   drowned,washed away,rising sea levels,glacial flooding,agriculture,population,hand tools,traps,spears,Neanderthals,
+				   Cro-Magnons,Ice Age,Bering land bridge, the theosophical society, theosophy, annie besant, blavatsky, col.Olcott, william quan judge,
+				   leadbeater, masters, reincarnation, karma, universal brotherhood , adyar, chennai, india, theosophist, spirituality,
+				   divine wisdom, occultism, religion, society, science, metaphysics, black magic, book of shadows, grimoire, grimoires,
+				   sorcery, spells, witchcraft, Enochian, Hermeticism, magic, magick, Hermetic, Trithemius, esoteric, esoterica,
+				   ritual magic, ceremonial magic, Solomon, kabbalah, renaissance, angels, spirits, demons, devils, conjuring, Giordano Bruno, John Dee, wicca
+				   Horology, clock,	 clocks, watch, watches, time, timekeepers, timekeeper, timepiece, timepieces, clockmaker, horological, maerki,
+				   Bruce Sterling, Jon Lebkowsky,cyberpunk,postmodern,culture theory,computer crime,chaos,science fiction,viridian,dead media,
+				   Uhr, Uhren, maerki, clocks, watches, collection Armbanduhr, Taschenuhr, Standuhr, Zeit, Zeitmessung, Uhrmacher, Sammler,
+				   Sammlung, montre, horloge, horlogerie, horlogiste, pendule, pendulier, temps, chronometer, orloggi, museum, school, library,
+				   magazine, journal, book, publishing, periodical, internet, www, restore, repair, collect, trade, organisation, association, maerki,
+				   horologist, horological, buy, sell, trade, tool, tools, history, science, design, standards, pendulum, Pendel, escapement, Unruh,
+				   dial, Zifferblatt, buying, selling,  retail, kauf, verkauf, Handel, Herstellung,	 wholesale, supplier, manufacturerer, hour, minute,
+				   Stunde, Minute, heur, index, database, grandfather clock,  Harrison, Tompion, Uhren, Uhr, Zeit, Zeitmessung, orlogi, montres,
+				   montres, pendules, horloges, horloge, horlogerie, Uhrmacher, horloger, pendulier, index, lists, resources, links, global, worldwide,
+				   international, horological, pendulum, Pendel, balance, wheel, Unruh, verge, foliot, gear, gears, chronometer, chronograph, Drugs, Digital-Cities,
+				   Blavatsky,Theosophy,Madame Blavatsky,Elements, Will Parfitt, Royal Road, Stephan A. Hoeller,  Kabalistic, Meditations, Tarot,
+				   Encyclopedia Judaica, Magical,  Ritual, Pefumes, Tarot, Key, Wisdom of the Ages, Paul Foster Case, maulger, Veil,  Divination,
+				   L.W. de Lawrence, self discovery, solace, friendship, home, love, beauty, severity, justice, foundation, earth, victory, splendor,
+				   sephirot, sephiroth, Qabala / Kabala / Kabbala / Cabala / Caballa / Kaballah / Caballah,astrology, zodiac, aries, taurus,
+				   gemini, cancer, leo, virgo, libra, scorpio, sagittarius,capricorn, aquarius, pisces,
+				   Mesopotamia, Mesopotamian Religion, Mesopotamian Mythology, Mythology, Babylonia, Assyria, Sumer, Sumerian, Akkad,
+				   Aggad, Akkadian, Babylonian, Mesopotamian Magic, Mesopotamian Magick, Inanna, Ishtar, Lilith, Ninurta, Enlil, Enki, Ninhursag,
+				   Gilgamesh, Nabu, Enkidu, Anzu, Nergal, Ninlil, Damu, Dumuzi, Ereshkigal, Lahar, Ashnan, Enheduanna, Uttu, Utu, Shamash, Enten, Emesh
+				   David Jacobs, David M. Jacobs, ICAR, abduction research, hypnosis, memory collection, hypnotic regression,
+				   Secret Life, The Threat, straight talk, Dr. Mack, Dr. John Mack, Dr. John E. Mack, john mack, professor mack,
+				   Abduction Human Encounters with Aliens, Passport to the Cosmos human transformation and alien encounters, PEER Perspectives,
+				   Harvard University, Harvard Medical School, doctor, alien abduction, experiencer, NOVA, Budd Hopkins, UFO, gray alien visitor,
+				   aliens, greys, hybrid, Carl Jung, flying saucer, sleep paralysis, false memory syndrome, China, ecology, ecopsychology, hypnosis,
+				   transpersonal psychology, hypnotherapy, interview, nonprofit, non-profit, scientific research, psychiatrist, psychologist,
+				   shaman, book, first contact, COMETA, MIT, Joe Firmage, touched by an alien, laurel chiten, space, SETI, Steven Spielberg, Taken
+				   library of babel, Jorge Luis Borges, universal library, literature,
+				   conceptual art, aleatoric, literary theory, west view pa., slime, property rights, epitaph, civil liberties,
+				   sidewalk obstruction, selective enforcement, nepotism, patronage, constitution ,autocrat, one party rule,
+				   bully, grandfathered, preferential treatment, kangaroo court, police chief, flag disrespect, constitutional guarantees,
+				   parking, puppets, grand fathered, confiscate, ludicrous, baloney, hogwash, parking tickets, harass, absurd, harassment,
+				   constitutional guarantees, lying, citation, insane, crazy, irrational, property confiscation, virtual zoo, dictator, dogpound,
+				   pittsburgh, westview, cartoons, parking citations, john titor, titor, timetravel_00, time travel, black hole, C204, 5100,
+				   I am from 2036, 2036, civil war, art bell, titer, time travel,singularity,black hole,nuclear,nuclear war,nuclear survival,
+				   radioactive,radiation,radioactivity,war,terrorism,plutonium,uranium,potassium iodide,KI,megadeath,disease,starvation,
+				   police state,civil war,George Bush,Bush Administration,corruption,death,war,destruction,national security,election,
+				   YouTube,177, Tempus, Edax, Rerum, Good Luck, John, John Titor Foundation, Posts, 2001Mar12, 2001, March, 12,
+				   Four corner day, Antipodes/opposites, Zero existence, Singular/singularity, Educated stupid, Conspiracy and persecution">
+    <!-- Hey Stacie, I know you don't know me but I wanted you to know that you're the most beautiful girl I've ever seen. I think about you all day. I know it's crazy ⌫ -->
+    <title>John D. Duncan III's Home Page</title>
+    <link rel="icon" href="/~duncjo01/favicon.ico">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/index.css">
+    <link rel="stylesheet" href="assets/styles/hacks.css">
+    <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
+    <script src="assets/scripts/status.js"></script>
+  </head>
+  <body>
+    <img src="assets/images/index/site.png" alt="">
+    <a href="#"><img id="lever" src="assets/images/index/lever_down.gif" style="vertical-align: top; margin-left:1em;" alt=""></a><br>
+    <hr>
+    <div style="text-align:center; margin-left:auto; margin-right:auto">
+      <div id="header-box" class="header-box">
+	
+	<a class="image" href="assets/sites/PlayingCards/">
+	  <img id="cards" src="assets/images/header/cards.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/playing_cards.png" alt="">
+	</a>
+	
+	<a class="image" href="assets/sites/MessageFaces/">
+	  <img id="messagefaces" src="assets/images/header/pjw.gif"
+	       onmouseover="this.src='assets/images/header/mbox.gif';"
+	       onmouseout="this.src='assets/images/header/pjw.gif';"
+	       onclick="this.src='assets/images/header/mbox-hover.gif'; return this.href;" alt=""> <BR>
+	  <img src="assets/images/header/text/message_faces.png" alt="">
+	</a>
 
-		<div class="image">
-		    <a href="assets/sites/MessageFaces/">
-			<img id="messagefaces" src="assets/images/header/pjw.gif"
-			     onmouseover="this.src='assets/images/header/mbox.gif';"
-			     onmouseout="this.src='assets/images/header/pjw.gif';"
-			     onclick="this.src='assets/images/header/mbox-hover.gif'; return this.href;" alt=""> <BR>
-			<img src="assets/images/header/text/message_faces.png" alt="">
-		    </a>
-		</div>
+	<a class="image" href="assets/sites/GettysburgMonumentsMap/">
+	  <img id="books" src="assets/images/header/books.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/gettysburg_monuments.png" alt="">
+	</a>
 
-		<div class="image">
-		    <a href="assets/sites/GettysburgMonumentsMap/">
-			<img id="books" src="assets/images/header/books.gif" alt=""> <BR>
-			<img src="assets/images/header/text/gettysburg_monuments.png" alt="">
-		    </a>
-		</div>
-		<div class="image">
-		    <a href="browsers">
-			<img id="browsers" src="assets/images/header/netscape.gif"
-			     onmouseover="this.src='assets/images/header/netscape-hover.gif';"
-			     onmouseout="this.src='assets/images/header/netscape.gif';" alt=""> <BR>
-			<img src="assets/images/header/text/mozilla_mosaic.png"	 alt="">
-		    </a>
-		</div>
+	<a class="image" href="browsers">
+	  <img id="browsers" src="assets/images/header/netscape.gif"
+	       onmouseover="this.src='assets/images/header/netscape-hover.gif';"
+	       onmouseout="this.src='assets/images/header/netscape.gif';" alt=""> <BR>
+	  <img src="assets/images/header/text/mozilla_mosaic.png"	 alt="">
+	</a>
 
-		<div class="image">
-		    <a href="archive/">
-			<img id="clipart" src="assets/images/header/clip.gif"
-			     onmouseover="this.src='assets/images/header/clip-hover.gif';"
-			     onmouseout="this.src='assets/images/header/clip.gif';" alt=""> <BR>
-			<img src="assets/images/header/text/clip_pats.png"  alt="">
-		    </a>
-		</div>
 
-		<div class="image">
-		    <a href="assets/writings/">
-			<img id="writings" src="assets/images/header/writings.gif"
-			     onmouseover="this.src='assets/images/header/writings-hover.gif';"
-			     onmouseout="this.src='assets/images/header/writings.gif';" alt=""> <BR>
-			<img src="assets/images/header/text/writings.png" alt="">
-		    </a>
-		</div>
 
-		<div class="image">
-		    <a href="assets/images/portfolio/faces/">
-			<img id="faces"	 src="assets/images/portfolio/faces/ll.mit.edu.gif" alt=""> <BR>
-			<img src="assets/images/header/text/picons.png" alt="">
-		    </a>
-		</div>
-		<div class="image">
-		    <a href="assets/about.html">
-			<img id="about"	 src="assets/images/header/xface.gif"
-			     onmouseover="this.src='assets/images/header/xface-hover.gif';"
-			     onmouseout="this.src='assets/images/header/xface.gif';" alt=""> <BR>
-			<img src="assets/images/header/text/about.png" alt="">
-		    </a>
-		</div>
-		<div class="image">
-		    <a href="assets/guestbook.php">
-			<img id="guestbook" src="assets/images/header/guestbook.gif"
-			     onmouseover="this.src='assets/images/header/guestbook-hover.gif';"
-			     onmouseout="this.src='assets/images/header/guestbook.gif';" alt=""> <BR>
-			<img src="assets/images/header/text/guestbook.gif" alt="">
-		    </a>
-		</div>
-		<div class="image">
-		    <a href="assets/portfolio.html">
-			<img id="portfolio" src="assets/images/header/portfolio.gif" alt=""> <BR>
-			<img src="assets/images/header/text/portfolio.png" alt="">
-		    </a>
-		</div>
-		<div class="image">
-		    <a href="assets/weather/weather.html">
-			<img id="weather"  src="assets/images/header/maps.gif" alt=""> <BR>
-			<img src="assets/images/header/text/maps.png" alt="">
-		    </a>
-		</div>
-		<div class="image">
-		    <a href="assets/sites/berlinblue/">
-			<img id="berlinblue" src="assets/images/header/berlinblue.gif" alt=""> <BR>
-			<img src="assets/images/header/text/berlinblue.png" alt="">
-		    </a>
-		</div>
-	    </div>
-	    <BR>
-	    <div id="header-box_bottom" class="header-box" style="margin-top:-4px !important;">
-		<div class="image">
-		    <a href="https://github.com/JohnDDuncanIII">
-			<img id="github" src="assets/images/portfolio/faces/github.com.gif" alt=""> <BR>
-			<img src="assets/images/header/text/git.png" alt="">
-		    </a>
-		</div>
-		<div class="image">
-		    <a href="https://soundcloud.com/johndduncan">
-			<img id="soundcloud" src="assets/images/portfolio/faces/soundcloud.com.gif" alt=""> <BR>
-			<img src="assets/images/header/text/soundcloud.png" alt="">
-		    </a>
-		</div>
-		<div class="image">
-		    <a href=" https://addons.mozilla.org/en-US/firefox/collections/JohnDuncan/favorites/">
-			<img id="mozilla" src="assets/images/portfolio/faces/mozilla.org.gif" alt=""> <BR>
-			<img src="assets/images/header/text/mozilla.png" alt="">
-		    </a>
-		</div>
-		<div class="image">
-		    <a href="https://www.facebook.com/JohnDeanDuncan3/likes">
-			<img id="facebook" src="assets/images/portfolio/faces/facebook.com.gif" alt=""> <BR>
-			<img src="assets/images/header/text/facebook.png" alt="">
-		    </a>
-		</div>
-		<div class="image">
-		    <a href="https://twitter.com/JohnDDuncan">
-			<img id="twitter" src="assets/images/portfolio/faces/twitter.com.gif" alt=""> <BR>
-			<img src="assets/images/header/text/twitter.png" alt="">
-		    </a>
-		</div>
-		<div class="image">
-		    <a href="https://www.youtube.com/user/frub3nz/playlists">
-			<img id="youtube" src="assets/images/portfolio/faces/youtube.com.gif" alt=""> <BR>
-			<img src="assets/images/header/text/youtube.png" alt="">
-		    </a>
-		</div>
-	    </div>
-	</div>
-	<span class="sparkle marching-ants">
-	    <img id="www" src="assets/images/index/www_color.gif" style="margin-right:-6px;" alt="">elcome to my homepage!</span> <blink>pull lever 2 go health goth</blink>
-	<div id="images" class="content">
-	    <img id="mapBox"
-		 src="http://sirocco.accuweather.com/nx_mosaic_640x480_public/sir/inmaSIRUS_.gif"
-		 onmouseover="this.src='http://sirocco.accuweather.com/adc_images2/english/current/svrwx/640x480/isvrwxus_.gif';"
-		 onmouseout="this.src='http://sirocco.accuweather.com/nx_mosaic_640x480_public/sir/inmaSIRUS_.gif';"
-		 onclick="this.src='https://icons.wxug.com/data/640x480/2xus_st_anim.gif'"
-		 title="" alt="">
-	    <br>
-	    <img src="assets/images/index/ideology.jpg" alt="">
-	    <br>
-	    <img src="http://www.world66.com/myworld66/visitedStates/statemap?visited=CACTDCDEFLMEMDMAMNNJNYNCORPAVAWVWI"><br/>
-	    <a href="http://www.world66.com/myworld66">create your own personalized map of the USA</a> or check out our <a href="http://www.world66.com/northamerica/unitedstates/california">California travel guide</a>
-	    <br>
-	    <img src="assets/images/index/worldstar_dfw.png" alt="">
-	    <br>
-	    <img src="assets/images/index/nuclear_boyscout.jpg" alt="">
-	    <br>
-	    <img src="assets/images/index/computer_lib.jpg" alt="">
-	    <br>
-	    <img src="assets/images/index/shape-shifting-lizard-people.jpg" alt="">
-	    <br>
-	    <div style="display:inline-block; vertical-align:top">
-		<img src="assets/images/banners/blurib_sm_bar.gif" alt=""><br>
-		<a href="https://www.eff.org/pages/blue-ribbon-campaign"><img src="assets/images/banners/rib_wh_brdr.gif" alt=""></a>
-	    </div>
-	    <div  style="display:inline-block; vertical-align:top">
-		<img src="assets/images/banners/gkey_sm_bar.gif" alt=""><br>
-		<a href="https://www.eff.org/effector/9/6"><img src="assets/images/banners/gkey_manilla_plain_lg.gif" alt=""></a>
-	    </div>
-	    <br>
-	    <p> I created the icons for the ``Playing Cards," ``Picons," ``About," ``Github," ``Soundcloud," ``Mozilla Add-ons," ``Facebook," ``Twitter," and ``Youtube" buttons as displayed in the header of this page. I also created a bunch of the weather picons that should be visible to the right of this div.</p>
-	    <div style="display: inline-block; text-align: left;">
-		<p> Here are some websites & people that inspire me: <br>
-		    <a href="http://info.cern.ch/"><img src="assets/images/index/welcome.gif" alt=""> http://info.cern.ch</a> <br>
-		    <a href="https://www.eff.org/">https://www.eff.org</a> <br>
-		    <a href="http://idlewords.com/talks/web_design_first_100_years.htm">http://idlewords.com</a> <br>
-		    <a href="http://wwwtxt.org/about">http://wwwtxt.org</a> <br>
-		    <a href="http://www.herpolhode.com/rob/">http://www.herpolhode.com/rob/</a> <br>
-		    <a href="http://cat-v.org/">http://cat-v.org</a> <br>
-		    <a href="http://9front.org/">http://9front.org</a> <br>
-		    <a href="https://www.openbsd.org/">https://www.openbsd.org/</a> <br>
-		    <a href="http://plan9.bell-labs.com/plan9/">http://plan9.bell-labs.com/plan9/</a> <br>
-		    <a href="http://suckless.org/">http://suckless.org/</a> <br>
-		    <a href="https://www.reactos.org/">https://www.reactos.org/</a> <br>
-		    <a href="https://www.winehq.org/">https://www.winehq.org/</a> <br>
-		    <a href="https://dataswamp.org/">https://dataswamp.org/</a> <br>
-		    <a href="http://www.mistys-internet.website/">http://www.mistys-internet.website</a> <br>
-		    <a href="http://www.macpaint.org/">http://www.macpaint.org</a> <br>
-		    <a href="http://fauux.neocities.org/">http://fauux.neocities.org</a> <br>
-		    <a href="http://flatassembler.net/">http://flatassembler.net</a> <br>
-		    <a href="http://csh.bz/stage/">http://csh.bz/stage</a> <br>
-		    <a href="http://kinzler.com/">http://kinzler.com</a> <br>
-		    <a href="http://web.archive.org/web/20071011002700/http://www.kare.com/portfolio.html">http://www.kare.com</a> <br>
-		    <a href="https://www.jwz.org/">https://www.jwz.org</a> <br>
-		    <a href="http://home.mcom.com/">http://home.mcom.com</a> <br>
-		    <a href="https://www.wikipedia.org/">https://www.wikipedia.org</a> <br>
-		    <a href="http://www.effectgames.com/demos/canvascycle/">http://www.effectgames.com/demos/canvascycle</a> <br>
-		    <a href="http://www.pouet.net/">http://www.pouet.net</a> <br>
-		    <a href="http://textfiles.com/">http://textfiles.com</a> <br>
-		    <a href="http://reneefrench.com/">http://reneefrench.com</a> <br>
-		    <a href="https://libraryofbabel.info/">https://libraryofbabel.info</a> <br>
-		    <a href="http://atomicbios.tripod.com/">http://atomicbios.tripod.com</a> <br>
-		    <a href="http://www.kreativekorp.com/">http://www.kreativekorp.com</a> <br>
-		    <a href="http://tiffanijonesbrown.com/">http://tiffanijonesbrown.com</a> <br>
-		    <a href="http://stephaniekwak.com/">http://stephaniekwak.com</a> <br>
-		    <a href="https://ptsteadman.com/">https://ptsteadman.com</a> <br>
-		    <a href="http://www.rossde.com/">http://www.rossde.com</a> <br>
-		    <a href="http://theandrogynborg.neocities.org/">http://theandrogynborg.neocities.org</a> <br>
-		    <a href="http://www-cs-faculty.stanford.edu/~uno/">http://www-cs-faculty.stanford.edu/~uno/</a> <br>
-		    <a href=" http://bisqwit.iki.fi/"> http://bisqwit.iki.fi</a> <br>
-		    <a href="http://kfarwell.org/">http://kfarwell.org</a> <br>
-		    <a href="http://lucacardelli.name/">http://lucacardelli.name</a> <br>
-		    <a href="https://stallman.org/">https://stallman.org</a> <br>
-		    <a href="https://swtch.com/~rsc/">https://swtch.com/~rsc/</a> <br>
-		    <a href="http://www.xteddy.org/">http://www.xteddy.org</a> <br>
-		    <a href="http://web.archive.org/web/20130609170018/http://lsub.org/who/nemo/index.html">http://lsub.org/who/nemo/</a> <br>
-		    (potentially nsfw): <a href="https://divinityinthee.com/">https://divinityinthee.com</a> <br>
-		    <a href="http://members.tripod.com/cpu_bios/">http://members.tripod.com/cpu_bios/</a> <br>
-		    <a href="http://wwwwwwwww.jodi.org/">http://wwwwwwwww.jodi.org</a> <br>
-		    <a href="http://www.heavensgate.com/">http://www.heavensgate.com</a> <br>
-		    <a href="http://www.westview.com/">http://www.westview.com</a> <br>
-		    <a href="http://web.archive.org/web/20160312104857/http://carles.buzz/">http://carles.buzz</a> <br>
-		    <a href="http://www.xanadu.com/">http://www.xanadu.com</a> <br>
-		    <a href="http://v2.nl/">http://v2.nl/</a><a href="http://web.archive.org/web/19970213134134/http://www.v2.nl/">(archive)</a> <br>
-		    <a href="https://justinjackson.ca/words.html">https://justinjackson.ca/words.html</a> <br>
-		    <a href="http://web.archive.org/web/20110417155249/http://j-walk.com/other/ossw/">http://j-walk.com/other/ossw/</a> <br>
-		    <a href="https://fun.irq.dk/funroll-loops.org/">https://funroll-loops.org</a> <br>
-		    <a href="http://adequacy.org/">http://adequacy.org</a> <br>
-		    <a href="http://fivebodied.com/">http://fivebodied.com/</a> <br>
-		    <a href="http://www.channer.tv/">http://www.channer.tv</a> <br>
-		    <a href="http://www.wisebrod.com/doom/">http://www.wisebrod.com/doom/</a> <br>
-		    <a href="http://ccru.net/">http://ccru.net</a> (note: I do not agree with Nick Land's current ideology) <br>
-		    <a href="http://www.bobbybeausoleil.com/">http://www.bobbybeausoleil.com</a> (note: I do not condone the actions of the Manson family) <br>
-		    <a href="http://lowtech.org/">http://lowtech.org</a><br>
-		    <a href="http://www.geocitiesforever.com/">http://www.geocitiesforever.com</a><br>
-		    <a href="http://charlottesartre.com/">http://charlottesartre.com</a> (probably nsfw) <br>
-		    <a href="http://www.johntitorfoundation.com">http://www.johntitorfoundation.com</a><br>
-		    <a href="http://associativemusic.com">http://associativemusic.com/</a><br>
-		    <a href="http://web.archive.org/web/20160102065528/http://www.timecube.com/">http://www.timecube.com/</a><br>
-		    <a href="http://www.bbc.co.uk/blogs/adamcurtis">http://www.bbc.co.uk/blogs/adamcurtis</a><br>
-		    <a href="http://www.teleportacia.org/war/">http://www.teleportacia.org/war/</a><br>
-		    <a href=" http://whitescreen.jeunecreation.org"> http://whitescreen.jeunecreation.org</a><br>
-		    <a href="http://aem1k.com">http://aem1k.com</a><br>
-		    <a href="http://numeral.com/appletsoftware/eicon.html">http://numeral.com/appletsoftware/eicon.html</a><br>
-		    <a href="http://cachemonet.com">http://cachemonet.com/</a><br>
-		    <a href="http://comeonandsl.am">http://comeonandsl.am/</a><br>
-		    <a href="http://tilde.club">http://tilde.club/</a><br>
-		    <a href="http://www.teleferique.org">http://www.teleferique.org/</a><br>
-		    <a href="http://0100101110101101.org">http://0100101110101101.org</a><br>
-		    <a href="http://heaven.internetarchaeology.org/heaven.html#bottom">http://heaven.internetarchaeology.org/heaven.html#bottom</a><br>
-		    <a href="http://heathersanimations.com/alien1.html">http://heathersanimations.com/alien1.html</a><br>
-		    <a href="http://one-gif.com/positions/">http://one-gif.com/positions/</a><br>
-		    <a href="http://www.reveries.fr/gifs/">http://www.reveries.fr/gifs/</a><br>
-		    <a href="http://retraite.chez.com/">http://retraite.chez.com/</a><br>
-		    <a href="http://www.lingscars.com/">http://www.lingscars.com/</a><br>
-		    <a href="http://web.archive.org/web/20100813142028/http://havenworks.com/">http://havenworks.com/</a><br>
-		    <a href="http://web.archive.org/web/20110718150425/http://yvettesbridalformal.com/">http://yvettesbridalformal.com/</a><br>
-		    <a href="http://www.constellation7.org">http://www.constellation7.org</a><br>
-		    <a href="http://www.galaxion.com/">http://www.galaxion.com/</a><br>
-		    <a href="http://www.zion-corp.net/">http://www.zion-corp.net/</a><br>
-		    <a href="http://www.spaceark.net/">http://www.spaceark.net/</a><br>
-		    <a href="http://www.milliondollarhomepage.com/">http://www.milliondollarhomepage.com/</a><br>
-		    <a href="http://www.worlds-worst-website.com/">http://www.worlds-worst-website.com/</a><br>
-		    <a href="http://www.arngren.net/">http://www.arngren.net/</a><br>
-		    <a href="http://www.dpgraph.com/">http://www.dpgraph.com/</a><br>
-		    <a href="http://www.ifindit.com/">http://www.ifindit.com/</a><br>
-		    <a href="http://www.webkinglasvegas.com/">http://www.webkinglasvegas.com/</a><br>
-		    <a href="http://toastytech.com/evil/">http://toastytech.com/evil/</a><br>
-		    <a href="http://www.fogcam.org/">http://www.fogcam.org/</a><br>
-		    <a href="http://www.fishcam.com/">http://www.fishcam.com/</a><br>
-		    <a href="https://web.archive.org/web/20111227233818/http://geocities.com/spunk1111/">http://geocities.com/spunk1111/</a><br>
-		    <a href="http://www.geocities.ws/search/local/">http://www.geocities.ws/search/local/</a><br>
-		    <a href="http://www.ibiblio.org/gio/iconbrowser/">http://www.ibiblio.org/gio/iconbrowser/</a><br>
-		    <a href="http://jankenpopp.com">http://jankenpopp.com</a><br>
-		    <a href="http://zombect.ro">http://zombect.ro</a><br>
-		    <a href="http://databit.me/">http://databit.me/</a><br>
-		    <a href="http://freesson.com/festilab/index.php">http://freesson.com/festilab/index.php</a><br>
-		    <a href="http://pespmc1.vub.ac.be/">http://pespmc1.vub.ac.be/</a><br>
-		    <a href="https://meaningness.com/">https://meaningness.com/</a><br>
-		    <a href="http://wiki.c2.com/">http://wiki.c2.com/</a><br>
-		    <a href="http://naggum.no">http://naggum.no</a><br>
-		    <a href="http://web.archive.org/web/20010805153517/http://www.unsafe.nu/">http://www.unsafe.nu</a><br>
-		    <a href="http://web.archive.org/web/20020606043516/http://www.metamute.com/">http://www.metamute.com</a><br>
-		    <a href="http://web.archive.org/web/20150421220504/http://www.orphandrift.com/">http://www.orphandrift.com</a><br>
-		    <a href="http://switch.sjsu.edu/web/v5n3/issue.html">http://switch.sjsu.edu</a><br>
-		    <a href="http://web.archive.org/web/20060311034602/http://www.techgnosis.com/">http://www.techgnosis.com</a><br>
-		    <a href="http://www.notbored.org/">http://www.notbored.org</a><br>
-		    <a href="http://nenadseo.com/blog/">http://nenadseo.com/blog</a><br>
-		    <a href="http://harkonnen.pudelrock.com/unsafe/">http://harkonnen.pudelrock.com/unsafe/</a>
-		</p>
-	    </div>
-	    <br><a href="http://hmpg.net/"><img src="assets/images/index/portal.png" alt=""></a><br>
-	    <br> (this space intentionally left blank) <br>
-	</div>
-	<div class="content" id="weatherBox"></div>
-	<div id="footer">
-	    <hr>
-	    <a href="http://www.gettysburg.edu/"> <img id="seal" src="assets/images/about/old_seal_trans.gif" height="96" width="96" title="alma mater" style="position: absolute; right: 5px; bottom: 5px;" alt=""> </a>
-	    <img id="illuminated" src="assets/images/index/john.gif" style="position: absolute; left: 5px; bottom: 5px;" alt="">
-	    <a href="assets/about.html">about</a> <BR>
-	    You are visitor number <a href="https://stuff.mit.edu/doc/counter-howto.html"><img src="http://www.mit.edu/cgi/counter/jduncan" style="vertical-align:middle" alt=""></a> <BR>
-	    <a href="mailto:duncanjdiii@gmail.com?Subject=I%20would%20like%20to%20speak%20to%20your%20manager">	 <i>© 2016 John D. Duncan, III </i></a><BR>
-	    <a href="https://www.anybrowser.org/campaign/index.html"> <img id="anyBrowser" src="#" alt=""></a> <BR>
-	    <a href="http://vanilla-js.com/"> <img id="vanilla" src="assets/images/banners/button.gif" alt=""></a> <BR>
-	    <img id="mail" src="assets/images/mail.gif" alt=""> <br>
-	    <a href="http://www.kopimi.com/kopimi/"><img id="kopimi" src="http://www.kopimi.com/kopimi/c_mini_7.gif" alt=""></a>
-	</div>
-	<script src="assets/scripts/weather.js"></script>
-	<script src="assets/scripts/anybrowser.js"></script>
-	<script src="assets/scripts/border_index.js"></script>
-	<script> timerONE=window.setTimeout('scrollit_r2l(100)',250); </script>
-    </body>
+	<a class="image" href="archive/">
+	  <img id="clipart" src="assets/images/header/clip.gif"
+	       onmouseover="this.src='assets/images/header/clip-hover.gif';"
+	       onmouseout="this.src='assets/images/header/clip.gif';" alt=""> <BR>
+	  <img src="assets/images/header/text/clip_pats.png"  alt="">
+	</a>
+
+
+
+	<a class="image" href="assets/writings/">
+	  <img id="writings" src="assets/images/header/writings.gif"
+	       onmouseover="this.src='assets/images/header/writings-hover.gif';"
+	       onmouseout="this.src='assets/images/header/writings.gif';" alt=""> <BR>
+	  <img src="assets/images/header/text/writings.png" alt="">
+	</a>
+
+
+
+	<a class="image" href="assets/images/portfolio/faces/">
+	  <img id="faces"	 src="assets/images/portfolio/faces/ll.mit.edu.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/picons.png" alt="">
+	</a>
+
+
+	<a class="image" href="assets/about.html">
+	  <img id="about"	 src="assets/images/header/xface.gif"
+	       onmouseover="this.src='assets/images/header/xface-hover.gif';"
+	       onmouseout="this.src='assets/images/header/xface.gif';" alt=""> <BR>
+	  <img src="assets/images/header/text/about.png" alt="">
+	</a>
+
+	<a class="image" href="assets/guestbook.php">
+	  <img id="guestbook" src="assets/images/header/guestbook.gif"
+	       onmouseover="this.src='assets/images/header/guestbook-hover.gif';"
+	       onmouseout="this.src='assets/images/header/guestbook.gif';" alt=""> <BR>
+	  <img src="assets/images/header/text/guestbook.gif" alt="">
+	</a>
+	<a class="image" href="assets/portfolio.html">
+	  <img id="portfolio" src="assets/images/header/portfolio.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/portfolio.png" alt="">
+	</a>
+	<a class="image" href="assets/weather/weather.html">
+	  <img id="weather"  src="assets/images/header/maps.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/maps.png" alt="">
+	</a>
+	<a class="image" href="assets/sites/berlinblue/">
+	  <img id="berlinblue" src="assets/images/header/berlinblue.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/berlinblue.png" alt="">
+	</a>
+      </div>
+      <BR>
+      <div id="header-box_bottom" class="header-box" style="margin-top:-4px !important;">
+	<a class="image" href="https://github.com/JohnDDuncanIII">
+	  <img id="github" src="assets/images/portfolio/faces/github.com.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/git.png" alt="">
+	</a>
+	<a class="image" href="https://soundcloud.com/johndduncan">
+	  <img id="soundcloud" src="assets/images/portfolio/faces/soundcloud.com.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/soundcloud.png" alt="">
+	</a>
+
+	<a class="image" href=" https://addons.mozilla.org/en-US/firefox/collections/JohnDuncan/favorites/">
+	  <img id="mozilla" src="assets/images/portfolio/faces/mozilla.org.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/mozilla.png" alt="">
+	</a>
+
+	<a class="image" href="https://www.facebook.com/JohnDeanDuncan3/likes">
+	  <img id="facebook" src="assets/images/portfolio/faces/facebook.com.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/facebook.png" alt="">
+	</a>
+
+	<a class="image" href="https://twitter.com/JohnDDuncan">
+	  <img id="twitter" src="assets/images/portfolio/faces/twitter.com.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/twitter.png" alt="">
+	</a>
+
+	<a class="image" href="https://www.youtube.com/user/frub3nz/playlists">
+	  <img id="youtube" src="assets/images/portfolio/faces/youtube.com.gif" alt=""> <BR>
+	  <img src="assets/images/header/text/youtube.png" alt="">
+	</a>
+
+      </div>
+    </div>
+    <span class="sparkle marching-ants">
+      <img id="www" src="assets/images/index/www_color.gif" style="margin-right:-6px;" alt="">elcome to my homepage!</span> <blink>pull lever 2 go health goth</blink>
+    <div id="images" class="content">
+      <img id="mapBox"
+	   src="http://sirocco.accuweather.com/nx_mosaic_640x480_public/sir/inmaSIRUS_.gif"
+	   onmouseover="this.src='http://sirocco.accuweather.com/adc_images2/english/current/svrwx/640x480/isvrwxus_.gif';"
+	   onmouseout="this.src='http://sirocco.accuweather.com/nx_mosaic_640x480_public/sir/inmaSIRUS_.gif';"
+	   onclick="this.src='https://icons.wxug.com/data/640x480/2xus_st_anim.gif'"
+	   title="" alt="">
+      <br>
+      <img src="assets/images/index/ideology.jpg" alt="">
+      <br>
+      <!-- <img src="http://www.world66.com/myworld66/visitedStates/statemap?visited=CACTDCDEFLMEMDMAMNNJNYNCORPAVAWVWI" alt="US Visited State Map"><br/> -->
+      <img src="assets/images/index/map.gif" alt="US Visited State Map"><br/>
+      <a href="http://www.world66.com/myworld66">create your own personalized map of the USA</a>
+      <br>
+      <img src="assets/images/index/worldstar_dfw.png" alt="">
+      <br>
+      <img src="assets/images/index/nuclear_boyscout.jpg" alt="">
+      <br>
+      <img src="assets/images/index/computer_lib.jpg" alt="">
+      <br>
+      <img src="assets/images/index/shape-shifting-lizard-people.jpg" alt="">
+      <br>
+      <div style="display:inline-block; vertical-align:top">
+	<img src="assets/images/banners/blurib_sm_bar.gif" alt=""><br>
+	<a href="https://www.eff.org/pages/blue-ribbon-campaign"><img src="assets/images/banners/rib_wh_brdr.gif" alt=""></a>
+      </div>
+      <div  style="display:inline-block; vertical-align:top">
+	<img src="assets/images/banners/gkey_sm_bar.gif" alt=""><br>
+	<a href="https://www.eff.org/effector/9/6"><img src="assets/images/banners/gkey_manilla_plain_lg.gif" alt=""></a>
+      </div>
+      <br>
+      <p> I created the icons for the ``Playing Cards," ``Picons," ``About," ``Github," ``Soundcloud," ``Mozilla Add-ons," ``Facebook," ``Twitter," and ``Youtube" buttons as displayed in the header of this page. I also created a bunch of the weather picons that should be visible to the right of this div.</p>
+      <div style="display: inline-block; text-align: left;">
+	<p> Here are some websites & people that inspire me: <br>
+	  <a href="http://info.cern.ch/"><img src="assets/images/index/welcome.gif" alt=""> http://info.cern.ch</a> <br>
+	  <a href="https://www.eff.org/">https://www.eff.org</a> <br>
+	  <a href="http://idlewords.com/talks/web_design_first_100_years.htm">http://idlewords.com</a> <br>
+	  <a href="http://wwwtxt.org/about">http://wwwtxt.org</a> <br>
+	  <a href="http://www.herpolhode.com/rob/">http://www.herpolhode.com/rob/</a> <br>
+	  <a href="http://cat-v.org/">http://cat-v.org</a> <br>
+	  <a href="http://9front.org/">http://9front.org</a> <br>
+	  <a href="https://www.openbsd.org/">https://www.openbsd.org/</a> <br>
+	  <a href="http://plan9.bell-labs.com/plan9/">http://plan9.bell-labs.com/plan9/</a> <br>
+	  <a href="http://suckless.org/">http://suckless.org/</a> <br>
+	  <a href="https://www.reactos.org/">https://www.reactos.org/</a> <br>
+	  <a href="https://www.winehq.org/">https://www.winehq.org/</a> <br>
+	  <a href="https://dataswamp.org/">https://dataswamp.org/</a> <br>
+	  <a href="http://www.mistys-internet.website/">http://www.mistys-internet.website</a> <br>
+	  <a href="http://www.macpaint.org/">http://www.macpaint.org</a> <br>
+	  <a href="http://fauux.neocities.org/">http://fauux.neocities.org</a> <br>
+	  <a href="http://flatassembler.net/">http://flatassembler.net</a> <br>
+	  <a href="http://csh.bz/stage/">http://csh.bz/stage</a> <br>
+	  <a href="http://kinzler.com/">http://kinzler.com</a> <br>
+	  <a href="http://web.archive.org/web/20071011002700/http://www.kare.com/portfolio.html">http://www.kare.com</a> <br>
+	  <a href="https://www.jwz.org/">https://www.jwz.org</a> <br>
+	  <a href="http://home.mcom.com/">http://home.mcom.com</a> <br>
+	  <a href="https://www.wikipedia.org/">https://www.wikipedia.org</a> <br>
+	  <a href="http://www.effectgames.com/demos/canvascycle/">http://www.effectgames.com/demos/canvascycle/</a> <br>
+	  <a href="http://www.effectgames.com/demos/worlds/">http://www.effectgames.com/demos/worlds/</a> <br>
+	  <a href="http://markferrari.com/art/">http://markferrari.com/art/</a> <br>
+	  <a href="http://www.pouet.net/">http://www.pouet.net</a> <br>
+	  <a href="http://textfiles.com/">http://textfiles.com</a> <br>
+	  <a href="http://reneefrench.com/">http://reneefrench.com</a> <br>
+	  <a href="https://libraryofbabel.info/">https://libraryofbabel.info</a> <br>
+	  <a href="http://atomicbios.tripod.com/">http://atomicbios.tripod.com</a> <br>
+	  <a href="http://www.kreativekorp.com/">http://www.kreativekorp.com</a> <br>
+	  <a href="http://tiffanijonesbrown.com/">http://tiffanijonesbrown.com</a> <br>
+	  <a href="http://stephaniekwak.com/">http://stephaniekwak.com</a> <br>
+	  <a href="https://ptsteadman.com/">https://ptsteadman.com</a> <br>
+	  <a href="http://www.rossde.com/">http://www.rossde.com</a> <br>
+	  <a href="http://theandrogynborg.neocities.org/">http://theandrogynborg.neocities.org</a> <br>
+	  <a href="http://www-cs-faculty.stanford.edu/~uno/">http://www-cs-faculty.stanford.edu/~uno/</a> <br>
+	  <a href="http://bisqwit.iki.fi/"> http://bisqwit.iki.fi</a> <br>
+	  <a href="http://kfarwell.org/">http://kfarwell.org</a> <br>
+	  <a href="http://lucacardelli.name/">http://lucacardelli.name</a> <br>
+	  <a href="https://stallman.org/">https://stallman.org</a> <br>
+	  <a href="https://swtch.com/~rsc/">https://swtch.com/~rsc/</a> <br>
+	  <a href="http://www.xteddy.org/">http://www.xteddy.org</a> <br>
+	  <a href="http://web.archive.org/web/20130609170018/http://lsub.org/who/nemo/index.html">http://lsub.org/who/nemo/</a> <br>
+	  (potentially nsfw): <a href="https://divinityinthee.com/">https://divinityinthee.com</a> <br>
+	  <a href="http://members.tripod.com/cpu_bios/">http://members.tripod.com/cpu_bios/</a> <br>
+	  <a href="http://wwwwwwwww.jodi.org/">http://wwwwwwwww.jodi.org</a> <br>
+	  <a href="http://www.heavensgate.com/">http://www.heavensgate.com</a> <br>
+	  <a href="http://www.westview.com/">http://www.westview.com</a> <br>
+	  <a href="http://web.archive.org/web/20160312104857/http://carles.buzz/">http://carles.buzz</a> <br>
+	  <a href="http://www.xanadu.com/">http://www.xanadu.com</a> <br>
+	  <a href="http://v2.nl/">http://v2.nl/</a><a href="http://web.archive.org/web/19970213134134/http://www.v2.nl/">(archive)</a> <br>
+	  <a href="https://justinjackson.ca/words.html">https://justinjackson.ca/words.html</a> <br>
+	  <a href="http://web.archive.org/web/20110417155249/http://j-walk.com/other/ossw/">http://j-walk.com/other/ossw/</a> <br>
+	  <a href="https://fun.irq.dk/funroll-loops.org/">https://funroll-loops.org</a> <br>
+	  <a href="http://adequacy.org/">http://adequacy.org</a> <br>
+	  <a href="http://fivebodied.com/">http://fivebodied.com/</a> <br>
+	  <a href="http://www.channer.tv/">http://www.channer.tv</a> <br>
+	  <a href="http://www.wisebrod.com/doom/">http://www.wisebrod.com/doom/</a> <br>
+	  <a href="http://ccru.net/">http://ccru.net</a> (note: I do not agree with Nick Land's current ideology) <br>
+	  <a href="http://www.bobbybeausoleil.com/">http://www.bobbybeausoleil.com</a> (note: I do not condone the actions of the Manson family) <br>
+	  <a href="http://lowtech.org/">http://lowtech.org</a><br>
+	  <a href="http://www.geocitiesforever.com/">http://www.geocitiesforever.com</a><br>
+	  <a href="http://charlottesartre.com/">http://charlottesartre.com</a> (probably nsfw) <br>
+	  <a href="http://www.johntitorfoundation.com">http://www.johntitorfoundation.com</a><br>
+	  <a href="http://associativemusic.com">http://associativemusic.com/</a><br>
+	  <a href="http://web.archive.org/web/20160102065528/http://www.timecube.com/">http://www.timecube.com/</a><br>
+	  <a href="http://www.bbc.co.uk/blogs/adamcurtis">http://www.bbc.co.uk/blogs/adamcurtis</a><br>
+	  <a href="http://www.teleportacia.org/war/">http://www.teleportacia.org/war/</a><br>
+	  <a href="http://whitescreen.jeunecreation.org"> http://whitescreen.jeunecreation.org</a><br>
+	  <a href="http://aem1k.com">http://aem1k.com</a><br>
+	  <a href="http://numeral.com/appletsoftware/eicon.html">http://numeral.com/appletsoftware/eicon.html</a><br>
+	  <a href="http://cachemonet.com">http://cachemonet.com/</a><br>
+	  <a href="http://comeonandsl.am">http://comeonandsl.am/</a><br>
+	  <a href="http://tilde.club">http://tilde.club/</a><br>
+	  <a href="http://www.teleferique.org">http://www.teleferique.org/</a><br>
+	  <a href="http://0100101110101101.org">http://0100101110101101.org</a><br>
+	  <a href="http://heaven.internetarchaeology.org/heaven.html#bottom">http://heaven.internetarchaeology.org/heaven.html#bottom</a><br>
+	  <a href="http://heathersanimations.com/alien1.html">http://heathersanimations.com/alien1.html</a><br>
+	  <a href="http://one-gif.com/positions/">http://one-gif.com/positions/</a><br>
+	  <a href="http://www.reveries.fr/gifs/">http://www.reveries.fr/gifs/</a><br>
+	  <a href="http://retraite.chez.com/">http://retraite.chez.com/</a><br>
+	  <a href="http://www.lingscars.com/">http://www.lingscars.com/</a><br>
+	  <a href="http://web.archive.org/web/20100813142028/http://havenworks.com/">http://havenworks.com/</a><br>
+	  <a href="http://web.archive.org/web/20110718150425/http://yvettesbridalformal.com/">http://yvettesbridalformal.com/</a><br>
+	  <a href="http://www.constellation7.org">http://www.constellation7.org</a><br>
+	  <a href="http://www.galaxion.com/">http://www.galaxion.com/</a><br>
+	  <a href="http://www.zion-corp.net/">http://www.zion-corp.net/</a><br>
+	  <a href="http://www.spaceark.net/">http://www.spaceark.net/</a><br>
+	  <a href="http://www.milliondollarhomepage.com/">http://www.milliondollarhomepage.com/</a><br>
+	  <a href="http://www.worlds-worst-website.com/">http://www.worlds-worst-website.com/</a><br>
+	  <a href="http://www.arngren.net/">http://www.arngren.net/</a><br>
+	  <a href="http://www.dpgraph.com/">http://www.dpgraph.com/</a><br>
+	  <a href="http://www.ifindit.com/">http://www.ifindit.com/</a><br>
+	  <a href="http://www.webkinglasvegas.com/">http://www.webkinglasvegas.com/</a><br>
+	  <a href="http://toastytech.com/evil/">http://toastytech.com/evil/</a><br>
+	  <a href="http://www.fogcam.org/">http://www.fogcam.org/</a><br>
+	  <a href="http://www.fishcam.com/">http://www.fishcam.com/</a><br>
+	  <a href="https://web.archive.org/web/20111227233818/http://geocities.com/spunk1111/">http://geocities.com/spunk1111/</a><br>
+	  <a href="http://www.geocities.ws/search/local/">http://www.geocities.ws/search/local/</a><br>
+	  <a href="http://www.ibiblio.org/gio/iconbrowser/">http://www.ibiblio.org/gio/iconbrowser/</a><br>
+	  <a href="http://jankenpopp.com">http://jankenpopp.com</a><br>
+	  <a href="http://zombect.ro">http://zombect.ro</a><br>
+	  <a href="http://databit.me/">http://databit.me/</a><br>
+	  <a href="http://freesson.com/festilab/index.php">http://freesson.com/festilab/index.php</a><br>
+	  <a href="http://pespmc1.vub.ac.be/">http://pespmc1.vub.ac.be/</a><br>
+	  <a href="https://meaningness.com/">https://meaningness.com/</a><br>
+	  <a href="http://wiki.c2.com/">http://wiki.c2.com/</a><br>
+	  <a href="http://naggum.no">http://naggum.no</a><br>
+	  <a href="http://web.archive.org/web/20010805153517/http://www.unsafe.nu/">http://www.unsafe.nu</a><br>
+	  <a href="http://web.archive.org/web/20020606043516/http://www.metamute.com/">http://www.metamute.com</a><br>
+	  <a href="http://web.archive.org/web/20150421220504/http://www.orphandrift.com/">http://www.orphandrift.com</a><br>
+	  <a href="http://switch.sjsu.edu/web/v5n3/issue.html">http://switch.sjsu.edu</a><br>
+	  <a href="http://web.archive.org/web/20060311034602/http://www.techgnosis.com/">http://www.techgnosis.com</a><br>
+	  <a href="http://www.notbored.org/">http://www.notbored.org</a><br>
+	  <a href="http://nenadseo.com/blog/">http://nenadseo.com/blog</a><br>
+	  <a href="http://harkonnen.pudelrock.com/unsafe/">http://harkonnen.pudelrock.com/unsafe/</a><br>
+	  <a href="http://bactra.org/">http://bactra.org</a><br>
+	  <a href="http://stoj.io/">http://stoj.io/</a><br>
+	  <a href="http://k-punk.org/">k</a>-<a href="http://k-punk.abstractdynamics.org/">punk</a><br>
+	  <a href="http://jurassicsystems.com/">http://jurassicsystems.com/</a><br>
+	  <a href="http://www.windows93.net/">http://www.windows93.net/</a><br>
+	  <a href="http://neugierig.org/">http://neugierig.org/</a><br>
+	  <a href="http://brad.livejournal.com/">http://brad.livejournal.com/</a><br>
+	</p>
+      </div>
+      <br><a href="http://hmpg.net/"><img src="assets/images/index/portal.png" alt=""></a><br>
+      <br> (this space intentionally left blank) <br>
+    </div>
+    <div class="content" id="weatherBox"></div>
+    <div id="footer">
+      <hr>
+      <a href="http://www.gettysburg.edu/"> <img id="seal" src="assets/images/about/old_seal_trans.gif" height="96" width="96" title="alma mater" style="position: absolute; right: 5px; bottom: 5px;" alt=""> </a>
+      <img id="illuminated" src="assets/images/index/john.gif" style="position: absolute; left: 5px; bottom: 5px;" alt="">
+      <a href="assets/about.html">about</a> <BR>
+      You are visitor number <a href="https://stuff.mit.edu/doc/counter-howto.html"><img src="http://www.mit.edu/cgi/counter/jduncan" style="vertical-align:middle" alt=""></a> <BR>
+      <a href="mailto:duncanjdiii@gmail.com?Subject=I%20would%20like%20to%20speak%20to%20your%20manager">	 <i>© 2016 John D. Duncan, III </i></a><BR>
+      <a href="https://www.anybrowser.org/campaign/index.html"> <img id="anyBrowser" src="#" alt=""></a> <BR>
+      <a href="http://vanilla-js.com/"> <img id="vanilla" src="assets/images/banners/button.gif" alt=""></a> <BR>
+      <img id="mail" src="assets/images/mail.gif" alt=""> <br>
+      <a href="http://www.kopimi.com/kopimi/"><img id="kopimi" src="http://www.kopimi.com/kopimi/c_mini_7.gif" alt=""></a>
+    </div>
+    <script src="assets/scripts/weather.js"></script>
+    <script src="assets/scripts/anybrowser.js"></script>
+    <script src="assets/scripts/border_index.js"></script>
+    <script> timerONE=window.setTimeout('scrollit_r2l(100)',250); </script>
+  </body>
 </html>
