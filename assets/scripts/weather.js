@@ -899,20 +899,22 @@ function helper(curTemp, precip, forecast, showDate, text) {
 	    baseline.appendChild(bar);
 	    bar.setAttribute('title', tempProb[0].childNodes[i].textContent+"F");
 
-	    var subBar = document.createElement('div');
-	    subBar.className = 'bar bar-windchill';
-	    if(bw) {
-		subBar.classList.add("bar-windchill-bw");
+	    if(windChillProb[0]) { // this does not work anymore...
+		var subBar = document.createElement('div');
+		subBar.className = 'bar bar-windchill';
+		if(bw) {
+		    subBar.classList.add("bar-windchill-bw");
+		}
+		subBar.id = 'bar'+bCount;
+		bCount++;
+		barTempArray.push(subBar);
+		subBar.setAttribute("style","height:"+(windChillProb[0].childNodes[i].textContent/2)+"px;");
+		if(!windChillProb[0].childNodes[i].textContent) {
+		    subBar.setAttribute("style","visibility: hidden");
+		}
+		bar.appendChild(subBar);
+		subBar.setAttribute('title', "Wind Chill: " + windChillProb[0].childNodes[i].textContent+"F");
 	    }
-	    subBar.id = 'bar'+bCount;
-	    bCount++;
-	    barTempArray.push(subBar);
-	    subBar.setAttribute("style","height:"+(windChillProb[0].childNodes[i].textContent/2)+"px;");
-	    if(!windChillProb[0].childNodes[i].textContent) {
-		subBar.setAttribute("style","visibility: hidden");
-	    }
-	    bar.appendChild(subBar);
-	    subBar.setAttribute('title', "Wind Chill: " + windChillProb[0].childNodes[i].textContent+"F");
 
 	    var bar = document.createElement('div');
 	    bar.className = 'bar bar-humidity';
