@@ -1,4 +1,21 @@
-// ADAPTED FROM: http://niewidoczna.pl/np.js
+function letterize(element) {
+        text = element.textContent;
+        letterized = '';
+        for (var i=0; i<text.length; i++) {
+                var letter = text.charAt(i);
+                if (letter==' ')
+                        letterized = letterized + ' ';
+                else
+                        letterized = letterized + '<span class="letter">' + text.charAt(i) + '</span>';
+        }
+        element.innerHTML=letterized;
+}
+
+
+var headers = document.getElementsByTagName("h1");
+for (var i=0; i<headers.length; i++)
+    letterize(headers[i]);
+
 var arena = document.getElementById("arena");
 var context = arena.getContext("2d");
 var width = arena.offsetWidth;

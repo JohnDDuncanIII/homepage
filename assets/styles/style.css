@@ -21,9 +21,9 @@ body {
     padding-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    /*border: 1px solid black;*/
-    border: double black 3px;
-    box-shadow:	 0 0 0 3px white, 0 0 0 4px black;
+    border: 5px solid black;
+    /*border: double black 3px;
+    box-shadow:	 0 0 0 3px white, 0 0 0 4px black;*/
     display: inline-block;
     cursor: url(../images/cursors/cursor.png), default;
     text-align: left;
