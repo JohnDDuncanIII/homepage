@@ -2,6 +2,11 @@ var colors = ["#E0E8FF", "#FDC", "#EEE", "#f7e0ff", "#e0fdff", "#ffc"];
 var NUM_PATS_BW = 430;
 var NUM_PATS= 117;
 
+var stylesheet = document.styleSheets[0];
+//stylesheet.cssRules[0].style.backgroundColor="blue";
+
+stylesheet.insertRule("html { background: transparent url(\"../images/patterns/102.gif\") repeat scroll 0% 0%; }", 0);
+
 if (window.localStorage) {
     if(!localStorage.getItem("pat")) {
 	localStorage.setItem("pat", "clr");
